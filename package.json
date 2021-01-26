@@ -1,0 +1,10 @@
+{
+  "name": "theme-builder-master-components",
+  "version": "1.0.0",
+  "description": "Master components for Upzaar theme builder",
+  "main": "index.js",
+  "repository": "https://github.com/buttercloud/theme-builder-master-components",
+  "author": "Buttercloud",
+  "license": "MIT",
+  "private": true
+}
