@@ -1,9 +1,12 @@
 {
   "name": "@buttercloud/theme-builder-master-components",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Master components for Upzaar theme builder",
   "main": "index.js",
-  "repository": "https://github.com/buttercloud/theme-builder-master-components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buttercloud/theme-builder-master-components.git"
+  },
   "author": "Buttercloud",
   "license": "MIT",
   "scripts": {
@@ -11,5 +14,10 @@
   },
   "publishConfig": {
     "registery": "https://npm.pkg.github.com/buttercloud"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/buttercloud/theme-builder-master-components/issues"
+  },
+  "homepage": "https://github.com/buttercloud/theme-builder-master-components#readme",
+  "keywords": []
 }
