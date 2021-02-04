@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --passWithNoTests",
-    "styleguide": "styleguidist server",
+    "start": "styleguidist server",
     "styleguide:build": "styleguidist build"
   },
   "publishConfig": {
@@ -26,7 +26,8 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "webpack": "^5.20.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
@@ -37,7 +38,6 @@
     "babel-plugin-styled-components": "^1.12.0",
     "jest": "^26.6.3",
     "react-styleguidist": "^11.1.5",
-    "react-test-renderer": "^17.0.1",
-    "webpack": "^5.20.1"
+    "react-test-renderer": "^17.0.1"
   }
 }
