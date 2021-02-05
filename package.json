@@ -2,7 +2,7 @@
   "name": "@buttercloud/theme-builder-master-components",
   "version": "0.1.2",
   "description": "Master components for Upzaar theme builder",
-  "main": "bundle.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/buttercloud/theme-builder-master-components.git"
@@ -11,6 +11,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --passWithNoTests",
+    "watch": "rollup -cw",
+    "build": "rm -rf lib && rollup -c",
     "start": "styleguidist server",
     "styleguide:build": "styleguidist build"
   },
