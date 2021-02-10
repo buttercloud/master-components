@@ -89,7 +89,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.1.0", "@babel/core@^7.12.1", "@babel/core@^7.12.3", "@babel/core@^7.7.5", "@babel/core@^7.8.4":
+"@babel/core@^7.1.0", "@babel/core@^7.12.1", "@babel/core@^7.12.13", "@babel/core@^7.12.3", "@babel/core@^7.7.5", "@babel/core@^7.8.4":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.12.13.tgz#b73a87a3a3e7d142a66248bf6ad88b9ceb093425"
   integrity sha512-BQKE9kXkPlXHPeqissfxo0lySWJcYdEP0hdtJOH/iJfDdhOCcgtNCjftCJg3qqauB4h+lz2N6ixM++b9DN1Tcw==
@@ -1139,7 +1139,7 @@
     core-js-compat "^3.8.0"
     semver "^5.5.0"
 
-"@babel/preset-flow@^7.12.1":
+"@babel/preset-flow@^7.12.1", "@babel/preset-flow@^7.12.13":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/preset-flow/-/preset-flow-7.12.13.tgz#71ee7fe65a95b507ac12bcad65a4ced27d8dfc3e"
   integrity sha512-gcEjiwcGHa3bo9idURBp5fmJPcyFPOszPQjztXrOjUE2wWVqc6fIVJPgWPIQksaQ5XZ2HWiRsf2s1fRGVjUtVw==
@@ -6898,6 +6898,11 @@ flatten@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.3.tgz#c1283ac9f27b368abc1e36d1ff7b04501a30356b"
   integrity sha512-dVsPA/UwQ8+2uoFe5GHtiBMu48dWLTdsuEd7CKGlZlD78r1TTWBvDuFaFGKCo/ZfEr95Uk56vZoX86OsHkUeIg==
+
+flow-bin@^0.144.0:
+  version "0.144.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.144.0.tgz#32fbeb94ef39cb8b9fa03d67b6f085042ce3a1bd"
+  integrity sha512-+TeTukkfRjimaNhOHt8iQ/M33Fg8Afrm+iBHS19XzAz2fH4GwgroKCrAxDHnZoAUnmRv6jm/XngFxADlcqwYkw==
 
 flush-write-stream@^1.0.0:
   version "1.1.1"
