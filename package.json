@@ -1,11 +1,27 @@
 {
   "name": "@buttercloud/master-components",
-  "version": "0.1.2",
-  "private": false,
+  "version": "0.1.3",
   "main": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/buttercloud/master-components.git"
+  "source": "src/components/index.js",
+  "private": false,
+  "files": [
+    "./dist/"
+  ],
+  "publishConfig": {
+    "registery": "https://registry.npmjs.org/"
+  },
+  "repository": "git://github.com/buttercloud/master-components",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "clean": "rimraf dist",
+    "compile": "yarn clean && NODE_ENV=production babel src/components --out-dir dist --ignore **/*.stories.jsx,**/test,**/*.wip.jsx",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "start-playground": "cd playground && yarn install && yarn start",
+    "update-playground": "cd playground && yarn upgrade @buttercloud/master-components && cd .."
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -31,17 +47,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
-    "react-test-renderer": "^17.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "clean": "rimraf dist",
-    "compile": "yarn clean && NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "react-test-renderer": "^17.0.1",
+    "styled-components": "^5.2.1"
   },
   "eslintConfig": {
     "extends": [
