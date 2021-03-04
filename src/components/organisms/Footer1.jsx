@@ -12,16 +12,14 @@ import InstagramButton from '../atoms/InstagramButton';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 300px;
-  background-color: ${props => (props.backgroundColor)};
+  background-color: ${(props) => (props.backgroundColor)};
+  padding: 10px 50px;
 `;
-
-const ContactInfoContainer = styled.div`
+const InfoFieldsContainer = styled.div`
   display: flex;
-  flex: 70%;
-  padding-left: 50px;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
 `;
-
 const SocialInfoContainer = styled.div`
   display: flex;
   flex: 30%;
@@ -29,72 +27,135 @@ const SocialInfoContainer = styled.div`
   align-items: center;
   padding-right: 50px;
 `;
-
 const InfoBlock = styled.div`
-  padding-right: 15px;
-  margin-right: 15px;
-  color: white;
+  margin-right: 20px;
+  color: ${(props) => props.fontColor};
+  font-family: ${(props) => props.fontFamily};
 `;
-
-const InfoBlockLabel = styled.h3`
+const InfoBlockLabel = styled.p`
+  font-size: ${(props) => props.fontSize}rem;
   font-weight: bold;
   margin-bottom: 0;
 `;
-
 const InfoBlockValue = styled.p`
+  font-size: ${(props) => props.fontSize}rem;
   margin-top: 0;
 `;
 
+/**
+* Basic footer component with dynamic sections and social icons
+*/
 const Footer1 = (props) => {
   const {
     backgroundColor,
-    facebookPageUrl,
     instagramPageUrl,
-    address,
-    contact,
-    hours,
+    instagramButtonColor,
+    facebookPageUrl,
+    facebookButtonColor,
+    fontFamily,
+    fontColor,
+    infoFields,
+    infoKeyFontSize,
+    infoValueFontSize,
   } = props;
 
-  const ContactInfo = () => {
-    return (
-      <ContactInfoContainer>
-        <row>
-          <InfoBlock>
-            <InfoBlockLabel>Address:</InfoBlockLabel>
-            <InfoBlockValue>{address}</InfoBlockValue>
+  const ContactInfo = () => (
+    <InfoFieldsContainer>
+      {
+        infoFields.map((field) => (
+          <InfoBlock
+            key={Math.random().toString().slice(10)}
+            fontColor={fontColor}
+            fontFamily={fontFamily}
+          >
+            <InfoBlockLabel fontSize={infoKeyFontSize}>
+              {field.name}
+            </InfoBlockLabel>
+            <InfoBlockValue fontSize={infoValueFontSize}>
+              {field.value}
+            </InfoBlockValue>
           </InfoBlock>
-          <InfoBlock>
-            <InfoBlockLabel>Hours:</InfoBlockLabel>
-            <InfoBlockValue>{hours}</InfoBlockValue>
-          </InfoBlock>
-        </row>
-        <InfoBlock>
-          <InfoBlockLabel>Contact:</InfoBlockLabel>
-          <InfoBlockValue>{contact}</InfoBlockValue>
-        </InfoBlock>
-      </ContactInfoContainer>
-    )
-  }
+        ))
+      }
+    </InfoFieldsContainer>
+  );
 
-  const SocialInfo = () => {
-    return (
-      <SocialInfoContainer>
-        <FacebookButton pageUrl={facebookPageUrl} color="#ffffff" />
-        <InstagramButton pageUrl={instagramPageUrl} color="#ffffff" />
-      </SocialInfoContainer>
-    )
-  }
+  const SocialInfo = () => (
+    <SocialInfoContainer>
+      <FacebookButton
+        pageUrl={facebookPageUrl}
+        color={facebookButtonColor}
+      />
+      <InstagramButton
+        pageUrl={instagramPageUrl}
+        color={instagramButtonColor}
+      />
+    </SocialInfoContainer>
+  );
 
   return (
     <Container backgroundColor={backgroundColor}>
       <ContactInfo />
       <SocialInfo />
     </Container>
-  )
-}
+  );
+};
+
+Footer1.defaultProps = {
+  infoFields: [],
+  backgroundColor: '#000000',
+  facebookButtonColor: '#ffffff',
+  instagramButtonColor: '#ffffff',
+  fontColor: '#ffffff',
+  fontFamily: 'Public Sans, sans-serif',
+  infoKeyFontSize: 1.7,
+  infoValueFontSize: 1,
+};
 
 Footer1.propTypes = {
-  backgroundColor: String, // TODO Convert to Color type if it exists
+  /**
+  * Background color
+  */
+  backgroundColor: PropTypes.string,
+  /**
+  * Facebook button color
+  */
+  facebookButtonColor: PropTypes.string,
+  /**
+  * Instagram button color
+  */
+  instagramButtonColor: PropTypes.string,
+  /**
+  * Font type
+  */
+  fontFamily: PropTypes.string,
+  /**
+  * Color of all text
+  */
+  fontColor: PropTypes.string,
+  /**
+  * Facebook page url
+  */
+  facebookPageUrl: PropTypes.string.isRequired,
+  /**
+  * Instagram page url
+  */
+  instagramPageUrl: PropTypes.string.isRequired,
+  /**
+  * Font size of info key in `rem`
+  */
+  infoKeyFontSize: PropTypes.number,
+  /**
+  * Font size of info value in `rem`
+  */
+  infoValueFontSize: PropTypes.number,
+  /**
+  * The fields to show on the footer
+  */
+  infoFields: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string,
+    value: PropTypes.string,
+  })),
 };
 
 export default Footer1;
