@@ -2,7 +2,7 @@ import React from 'react';
 import InstagramButton from './InstagramButton';
 
 export default {
-  title: "Atoms/Social Icons/Instagram",
+  title: 'Atoms/Social Icons/Instagram Button',
   component: InstagramButton,
   argTypes: {
     color: { control: 'color' },
@@ -19,4 +19,4 @@ Primary.args = {
   pageUrl: 'https://www.instagram.com/PageName',
 };
 
-Primary.storyName = 'Instagram';
+Primary.storyName = 'Instagram Button';
