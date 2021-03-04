@@ -9,27 +9,18 @@ import InstagramButton from '../atoms/InstagramButton';
 
 // TODO: change name later
 
-// A simple header component
-// Logo on the left
-// social icons on the right
-
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   height: 200px;
-  /*width: 100%;*
-  /*textAlign: 'center',*/
-  background-color: ${props => (props.backgroundColor)};
+  background-color: ${(props) => (props.backgroundColor)};
 `;
-
 const LogoContainer = styled.div`
   display: flex;
   flex: 0.50;
   align-items: center;
   padding-left: 40px;
-  /*background-color: red;*/
 `;
-
 const SocialIconsContainer = styled.div`
   display: flex;
   flex: 0.50;
@@ -37,58 +28,79 @@ const SocialIconsContainer = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding-right: 40px;
-  /*background-color: green;*/
 `;
 
+/**
+* A header component with logo on the left and social icons on the right
+*/
 const Header1 = (props) => {
   const {
     backgroundColor,
     facebookPageUrl,
     instagramPageUrl,
-    darkMode,
+    facebookButtonColor,
+    instagramButtonColor,
     logoUrl,
   } = props;
 
   const Logo = () => (
     <LogoContainer>
-      <img src={logoUrl} />
+      <img src={logoUrl} alt="logo" />
     </LogoContainer>
-  )
+  );
 
-  const SocialInfo = () => {
-    return (
-      <SocialIconsContainer>
-        <FacebookButton
-          pageUrl={facebookPageUrl}
-          color={darkMode ? '#000000' : "#ffffff"}
-        />
-        <InstagramButton
-          pageUrl={instagramPageUrl}
-          color={darkMode ? '#000000' : '#ffffff'}
-        />
-      </SocialIconsContainer>
-    )
-  }
+  const SocialInfo = () => (
+    <SocialIconsContainer>
+      <FacebookButton
+        pageUrl={facebookPageUrl}
+        color={facebookButtonColor}
+      />
+      <InstagramButton
+        pageUrl={instagramPageUrl}
+        color={instagramButtonColor}
+      />
+    </SocialIconsContainer>
+  );
 
   return (
     <Container backgroundColor={backgroundColor}>
       <Logo />
       <SocialInfo />
     </Container>
-  )
-}
+  );
+};
 
 Header1.defaultProps = {
   backgroundColor: '#000000',
-  darkMode: false,
-}
+  facebookButtonColor: '#000000',
+  instagramButtonColor: '#000000',
+};
 
 Header1.propTypes = {
-  backgroundColor: String,
-  darkMode: Boolean,
-  facebookPageUrl: String,
-  instagramPageUrl: String,
-  logoUrl: String,
+  /**
+  * Logo url to display on the left.
+  */
+  logoUrl: PropTypes.string.isRequired,
+  /**
+  * Facebook page url.
+  */
+  facebookPageUrl: PropTypes.string.isRequired,
+  /**
+  * Instagram page url.
+  */
+  instagramPageUrl: PropTypes.string.isRequired,
+  /**
+  * Custom color for the facebook social button.
+  */
+  facebookButtonColor: PropTypes.string,
+  /**
+  * Custom color for the instagram social button.
+  */
+  instagramButtonColor: PropTypes.string,
+  /**
+  * Header background color.
+  */
+  backgroundColor: PropTypes.string,
 };
 
 export default Header1;
