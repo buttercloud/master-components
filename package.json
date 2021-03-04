@@ -1,6 +1,7 @@
 {
   "name": "@buttercloud/master-components",
-  "version": "0.1.3",
+  "version": "0.2.6",
+  "homepage": "http://buttercloud.github.io/master-components",
   "main": "dist/index.js",
   "source": "src/components/index.js",
   "private": false,
@@ -20,14 +21,23 @@
     "compile": "yarn clean && NODE_ENV=production babel src/components --out-dir dist --ignore **/*.stories.jsx,**/test,**/*.wip.jsx",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
+    "deploy-storybook": "gh-pages -d storybook-static -m 'Update Storybook Docs'",
     "start-playground": "cd playground && yarn install && yarn start",
-    "update-playground": "cd playground && yarn upgrade @buttercloud/master-components && cd .."
+    "update-playground": "cd playground && yarn upgrade @buttercloud/master-components && cd ..",
+    "flow": "flow"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "web-vitals": "^1.0.1"
+    "prop-types": "^15.7.2",
+    "web-vitals": "^1.0.1",
+    "styled-components": "^5.2.1",
+    "bootstrap": "^4.6.0",
+    "react-bootstrap": "^1.5.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.13",
@@ -37,23 +47,34 @@
     "@babel/preset-react": "^7.12.13",
     "@storybook/addon-actions": "^6.1.17",
     "@storybook/addon-essentials": "^6.1.17",
+    "@storybook/addon-knobs": "^6.1.18",
     "@storybook/addon-links": "^6.1.17",
     "@storybook/addon-storyshots": "^6.1.17",
     "@storybook/node-logger": "^6.1.17",
     "@storybook/preset-create-react-app": "^3.1.5",
     "@storybook/react": "^6.1.17",
     "cross-env": "^7.0.3",
+    "eslint-config-airbnb": "^18.2.1",
     "flow-bin": "^0.144.0",
-    "react": "^17.0.1",
+    "gh-pages": "^3.1.0",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
-    "react-test-renderer": "^17.0.1",
-    "styled-components": "^5.2.1"
+    "react-test-renderer": "^17.0.1"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "airbnb"
+    ],
+    "overrides": [
+      {
+        "files": ["*.stories.jsx"],
+        "rules": {
+          "import/no-extraneous-dependencies": "off",
+          "react/jsx-props-no-spreading": "off"
+        }
+      }
     ]
   },
   "browserslist": {
