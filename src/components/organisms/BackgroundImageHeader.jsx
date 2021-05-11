@@ -28,7 +28,7 @@ const Title = styled.h1`
   color: ${(props) => props.color};
   text-transform: uppercase;
   font-family: raleway, sans-serif;
-  font-size: 72px;
+  font-size: 4.5rem;
   text-align: center;
   font-weight: 800;
   margin-top: 20px;
@@ -43,7 +43,7 @@ const Subtitle = styled.h2`
   text-transform: none;
   font-weight: 400;
   color: ${(props) => props.color};
-  font-size: 36px;
+  font-size: 2rem;
   font-family: 'raleway', sans-serif;
   text-align: center;
   margin-top: 20px;
