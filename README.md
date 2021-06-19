@@ -1,7 +1,21 @@
-# theme-builder-master-components
-Master components for Upzaar theme builder
+# Master components for [Upzaar](https://www.upzaar.com) theme builder
 
-Run the styleguide server with
+## [Storybook Documentation](https://buttercloud.github.io/master-components/)
+
+## Development
 ```
-npm styleguide
+yarn storybook
+```
+
+## Deploy docs
+```
+yarn build-storybook
+yarn deploy-storybook
+```
+
+## Build a new component
+- type is one of ['atoms', 'molecules', 'organisms']
+- name is in camelCase, and don't add a .jsx
+```
+yarn build-component type:{componentType} name:{ComponentName}
 ```
