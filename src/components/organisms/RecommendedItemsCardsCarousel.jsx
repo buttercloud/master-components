@@ -19,14 +19,14 @@ const Container = styled.div`
 const Title = styled.h5`
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize};
-  margin: 0 auto 20px;
+  margin: 0 auto 15px;
   max-width: 600px;
   text-align: center;
 `;
 const Subtitle = styled.h2`
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize};
-  margin: 0 auto 20px;
+  margin: 0 auto 15px;
   max-width: 600px;
   text-align: center;
 `;
@@ -86,15 +86,20 @@ const CardBody = styled.div`
   transition: 0.3s;
   box-shadow: 0 3px 12px 0 rgba(25, 31, 33, 0.1);
 `;
-const ItemDescription = styled.div`
+const ItemInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
 `;
-const CardTitle = styled.h4`
+const ItemDescription = styled.p`
+  margin: 0;
+`;
+const ItemTitle = styled.h4`
   color: #1D2228;
   font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
 `;
 const ItemPrice = styled.p`
   font-weight: 700;
@@ -102,14 +107,11 @@ const ItemPrice = styled.p`
   border: 1px solid rgba(0,0,0,.1);
   padding: 5px 15px;
   border-radius: 25px;
-  margin-bottom: 0;
-  /*background-color: red;*/
 `;
 const ItemControls = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 `;
@@ -159,6 +161,7 @@ const RecommendedItemsCardsCarousel = (props) => {
     description,
     items,
     navigationArrows,
+    centerMode,
   } = props;
 
   const sliderRef = useRef(null);
@@ -203,7 +206,7 @@ const RecommendedItemsCardsCarousel = (props) => {
         speed={500}
         slidesToShow={slidesToShow}
         slidesToScroll={1}
-        // centerMode
+        centerMode={centerMode}
         // centerPadding="50px"
       >
         {
@@ -222,13 +225,13 @@ const RecommendedItemsCardsCarousel = (props) => {
                   <CardImage src={item.img.url} />
                 </ImageContainer>
                 <CardBody>
-                  <ItemDescription>
-                    <CardTitle>{item.title.text}</CardTitle>
-                    <p>{item.description.text}</p>
+                  <ItemInfo>
+                    <ItemTitle>{item.title.text}</ItemTitle>
+                    <ItemDescription>{item.description.text}</ItemDescription>
                     <ItemPrice>
                       {priceFormatted}
                     </ItemPrice>
-                  </ItemDescription>
+                  </ItemInfo>
                   <ItemControls>
                     <ActionButton
                       backgroundColor={actionButton?.backgroundColor}
@@ -312,6 +315,7 @@ RecommendedItemsCardsCarousel.defaultProps = {
       arrowColor: '#fff',
     },
   },
+  centerMode: false,
 };
 
 const TextType = PropTypes.shape({
@@ -374,6 +378,10 @@ RecommendedItemsCardsCarousel.propTypes = {
       arrowColor: PropTypes.string,
     }),
   }),
+  /**
+   * Centers current card.
+   */
+  centerMode: PropTypes.bool,
 };
 
 export default RecommendedItemsCardsCarousel;

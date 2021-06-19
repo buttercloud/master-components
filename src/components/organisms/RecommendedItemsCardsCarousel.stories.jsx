@@ -11,6 +11,7 @@ const Template = (args) => <RecommendedItemsCardsCarousel {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
+  centerMode: true,
   title: {
     color: 'palevioletred',
     fontSize: 1.1,
