@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import CartButton from '../atoms/CartButton';
 
 // TODO:
 // * Change name later
@@ -10,8 +11,9 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   /*scroll-behaviour: smooth;*/
-  /*background-color: purple;*/
+  position: relative;
 `;
 const InnerContainer = styled.div`
   display: flex;
@@ -54,7 +56,6 @@ const MenuHyperlink = styled.a`
   text-decoration: none;
   color: #acabab;
 `;
-
 const ProductsContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -65,7 +66,6 @@ const ProductsList = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
-const CategorySeparator = styled.hr``;
 const ProductCard = styled.div`
   cursor: pointer;
   box-sizing: border-box;
@@ -109,6 +109,12 @@ const ProductDescription = styled.h5`
   font-weight: 500;
   color: #acabab;
   text-align: left;
+`;
+const CartIconContainer = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  /*background-color: red;*/
 `;
 
 const Menu01 = (props) => {
@@ -170,16 +176,35 @@ const Menu01 = (props) => {
         ))
       }
     </ProductsContainer>
-  )
+  );
 
   return (
     <Container>
       <InnerContainer>
         <NavBlock />
         <ProductsBlock />
+        <CartIconContainer>
+          <CartButton
+            iconColor="#1e774c"
+            badgeColor="#1e774c"
+            badgeNumber={3}
+          />
+        </CartIconContainer>
       </InnerContainer>
     </Container>
-  )
-}
+  );
+};
+
+Menu01.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    products: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      img_url: PropTypes.string,
+      description: PropTypes.string,
+      price: PropTypes.string,
+    })),
+  })).isRequired,
+};
 
 export default Menu01;

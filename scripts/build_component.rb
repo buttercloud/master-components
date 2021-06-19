@@ -1,17 +1,13 @@
 #
 ## Component builder script
-# ruby build_component type:organism name:ProductDetails
+# ruby build_component type:organisms name:ProductDetails
 #
 
 class String
-  def black;   "\033[30m#{self}\033[0m" end
   def red;     "\033[31m#{self}\033[0m" end
   def green;   "\033[32m#{self}\033[0m" end
-  def brown;   "\033[33m#{self}\033[0m" end
   def blue;    "\033[34m#{self}\033[0m" end
   def magenta; "\033[35m#{self}\033[0m" end
-  def cyan;    "\033[36m#{self}\033[0m" end
-  def gray;    "\033[37m#{self}\033[0m" end
 end
 
 type_key = 'type:'
@@ -49,7 +45,6 @@ puts "Building Component...".magenta
 puts "- path: #{component_path}".magenta
 
 File.open(component_path, "w") do |f|
-  f.write("// @flow\n")
   f.write("import React from 'react';\n")
   f.write("import PropTypes from 'prop-types';\n")
   f.write("import styled from 'styled-components';\n")
@@ -97,7 +92,7 @@ File.open(story_path, "w") do |f|
   f.write("export const Primary = Template.bind({});\n")
   f.write("\n")
   f.write("// Primary.args = {};\n")
-  f.write("// Primary.name = '';\n")
+  f.write("// Primary.storyName = '';\n")
 end
 
 puts "Done".green
