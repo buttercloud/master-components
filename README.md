@@ -15,7 +15,7 @@ yarn deploy-storybook
 
 ## Build a new component
 - type is one of ['atoms', 'molecules', 'organisms']
-- name is in camelCase, and don't add a .jsx
+- name is in PascalCase, and don't add a .jsx
 ```
 yarn build-component type:{componentType} name:{ComponentName}
 ```
