@@ -22,19 +22,19 @@ Primary.args = {
       products: [
         {
           name: 'Product #1',
-          img_url: 'some_url.png',
+          img_url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
           description: 'This is Product #1',
           price: 'JOD 7.49',
         },
         {
           name: 'Product #2',
-          img_url: 'some_url.png',
+          img_url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
           description: 'This is Product #2',
           price: 'JOD 3.49',
         },
         {
           name: 'Product #5',
-          img_url: 'some_url.png',
+          img_url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
           description: 'This is Product #5',
           price: 'JOD 5.50',
         },
@@ -45,13 +45,13 @@ Primary.args = {
       products: [
         {
           name: 'Product #3',
-          img_url: 'some_url.png',
+          img_url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
           description: 'This is Product #3',
           price: 'JOD 6.99',
         },
         {
           name: 'Product #4',
-          img_url: 'some_url.png',
+          img_url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
           description: 'This is Product #4',
           price: 'JOD 4.20',
         },

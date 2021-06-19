@@ -90,7 +90,7 @@ const PropertyLabelsContainer = styled.div`
 `;
 // --Other--
 const Subheader = styled.p`
-  margin: 0;
+  margin: 10px 0;
   font-weight: 500;
   font-size: ${(props) => props.fontSize}rem;
   color: ${(props) => props.color};
@@ -105,9 +105,8 @@ const Label = styled.label`
 const PriceLabel = styled.label`
   font-size: ${(props) => props.fontSize}rem;
   color: ${(props) => props.color};
-  margin-top: 0px;
-  padding-top: 0px;
   line-height: 5px;
+  margin: 5px 0;
 `;
 const StyledInput = styled.input`
   appearance: none;

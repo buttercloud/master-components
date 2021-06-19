@@ -120,7 +120,7 @@ Primary.args = {
       currency: 'JOD',
       precision: 3,
     },
-    imagesUrls: ['https://s3.amazonaws.com/alif-alif-online-store-production/ojs/spree/products/62/large/Spicy_Japanese_Salad_big_size.png?1613481646', 'https://s3.amazonaws.com/alif-alif-online-store-production/ojs/spree/products/102/large/Spicy_Japanese_Salad_-_OTG_.png?1616052427'],
+    imagesUrls: ['https://place-hold.it/300x300/aaa/000000.png&bold&fontsize=15', 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15'],
     options: [
       { name: 'Size', value: 'Personal' },
       { name: 'Color', value: 'Pink' },

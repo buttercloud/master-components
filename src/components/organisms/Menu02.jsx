@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -56,6 +55,7 @@ const Subtitle = styled.p`
   text-transform: none;
   white-space: pre-line;
   color: ${(props) => props.color};
+  margin-top: 0;
 `;
 const Product = styled.div`
   position: relative;
@@ -97,6 +97,7 @@ const ProductName = styled.h4`
   line-height: 1.25;
   text-transform: none;
   color: ${(props) => props.color};
+  margin: 0;
 `;
 const ProductDescription = styled.p`
   overflow: scroll;
