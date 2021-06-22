@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -19,6 +18,7 @@ const ImageAndContentContainer = styled.div`
 `;
 const ImageContainer = styled.div`
   display: flex;
+  align-items: flex-start;
   flex: 0.35;
   padding-left: 10px;
   padding-right: 10px;
@@ -30,23 +30,24 @@ const ContentContainer = styled.div`
 `;
 const Image = styled.img`
   width: 100%;
+  align-self: flex-start;
   border-radius: 5px;
 `;
 const Title = styled.p`
   font-size: 1.7rem;
   font-weight: bold;
-  margin-bottom: 0px;
+  margin: 0px;
   color: ${(props) => props.color};
 `;
 const Subtitle = styled.p`
   font-size: 1rem;
   color: ${(props) => props.color};
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0;
 `;
 const Content = styled.p`
   font-size: ${(props) => props.fontSize}rem;
   color: ${(props) => props.color};
+  margin: 0;
 `;
 const Separator = styled.hr`
   width: 10%;

@@ -1,25 +1,22 @@
-// @flow
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import FacebookButton from '../atoms/FacebookButton';
-import InstagramButton from '../atoms/InstagramButton';
+import SocialButton from '../atoms/SocialButton';
 
 // TODO: change name later
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  height: 200px;
+  max-height: 200px;
   background-color: ${(props) => (props.backgroundColor)};
 `;
 const LogoContainer = styled.div`
   display: flex;
   flex: 0.50;
   align-items: center;
-  padding-left: 40px;
+  padding: 15px;
 `;
 const SocialIconsContainer = styled.div`
   display: flex;
@@ -28,6 +25,10 @@ const SocialIconsContainer = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding-right: 40px;
+`;
+const Image = styled.img`
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 /**
@@ -45,18 +46,20 @@ const Header1 = (props) => {
 
   const Logo = () => (
     <LogoContainer>
-      <img src={logoUrl} alt="logo" />
+      <Image src={logoUrl} alt="logo" />
     </LogoContainer>
   );
 
   const SocialInfo = () => (
     <SocialIconsContainer>
-      <FacebookButton
-        pageUrl={facebookPageUrl}
+      <SocialButton
+        type="facebook"
+        url={facebookPageUrl}
         color={facebookButtonColor}
       />
-      <InstagramButton
-        pageUrl={instagramPageUrl}
+      <SocialButton
+        type="instagram"
+        url={instagramPageUrl}
         color={instagramButtonColor}
       />
     </SocialIconsContainer>

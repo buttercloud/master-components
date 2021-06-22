@@ -4,8 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import FacebookButton from '../atoms/FacebookButton';
-import InstagramButton from '../atoms/InstagramButton';
+import SocialButton from '../atoms/SocialButton';
 
 // TODO: change name later
 
@@ -82,12 +81,14 @@ const Footer1 = (props) => {
 
   const SocialInfo = () => (
     <SocialInfoContainer>
-      <FacebookButton
-        pageUrl={facebookPageUrl}
+      <SocialButton
+        type="facebook"
+        url={facebookPageUrl}
         color={facebookButtonColor}
       />
-      <InstagramButton
-        pageUrl={instagramPageUrl}
+      <SocialButton
+        type="instagram"
+        url={instagramPageUrl}
         color={instagramButtonColor}
       />
     </SocialInfoContainer>
