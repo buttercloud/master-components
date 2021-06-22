@@ -12,7 +12,7 @@ const Button = styled.div`
   align-items: center;
 `;
 const Label = styled.p`
-  margin-bottom: 0;
+  margin: 0;
   margin-left: 5px;
 `;
 

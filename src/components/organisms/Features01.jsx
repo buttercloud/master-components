@@ -64,6 +64,7 @@ const Title = styled.h5`
 const Description = styled.p`
   color: ${(props) => props.color};
   text-align: center;
+  margin: 0;
 `;
 
 const Features01 = (props) => {

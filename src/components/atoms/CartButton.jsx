@@ -44,7 +44,7 @@ const Badge = styled.div`
 `;
 const Number = styled.p`
   font-size: 0.7rem;
-  margin-bottom: 0;
+  margin: 0;
   color: ${(props) => props.color};
 `;
 

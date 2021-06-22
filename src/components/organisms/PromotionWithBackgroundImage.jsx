@@ -22,12 +22,14 @@ const Title = styled.h5`
 const Subtitle = styled.h2`
   color: white;
   font-weight: 700;
+  margin-top: 0;
   color: ${(props) => props.color} !important;
   font-size: ${(props) => props.fontSize}rem;
 `;
 const Description = styled.p`
   text-align: center;
   color: white;
+  margin-top: 0;
   margin-bottom: 20px;
   font-size: ${(props) => props.fontSize}rem;
   color: ${(props) => props.color} !important;

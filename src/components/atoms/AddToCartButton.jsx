@@ -16,7 +16,7 @@ const Container = styled.button`
   }
 `;
 const Label = styled.p`
-  margin-bottom: 0;
+  margin: 0;
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize}rem;
 `;
