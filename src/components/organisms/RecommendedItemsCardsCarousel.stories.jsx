@@ -29,8 +29,8 @@ Primary.args = {
   },
   items: [
     {
-      img: {
-        url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
+      image: {
+        src: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
         alt: '',
       },
       title: {
@@ -56,8 +56,8 @@ Primary.args = {
       },
     },
     {
-      img: {
-        url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
+      image: {
+        src: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
         alt: '',
       },
       title: {
@@ -83,8 +83,8 @@ Primary.args = {
       },
     },
     {
-      img: {
-        url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
+      image: {
+        src: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
         alt: '',
       },
       title: {
@@ -110,8 +110,8 @@ Primary.args = {
       },
     },
     {
-      img: {
-        url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
+      image: {
+        src: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
         alt: '',
       },
       title: {

@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import {
+  textType,
+  buttonType,
+} from '../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
   display: flex;
@@ -45,13 +49,14 @@ const TextBlock = (props) => {
   const {
     title,
     paragraph,
-    backgroundColor,
+    background,
     actionButton,
   } = props;
 
   return (
     <Container
-      backgroundColor={backgroundColor || TextBlock.defaultProps.backgroundColor}
+      backgroundColor={background?.backgroundColor
+        || TextBlock.defaultProps.background.backgroundColor}
     >
       <Title
         color={title.color || TextBlock.defaultProps.title.color}
@@ -66,7 +71,7 @@ const TextBlock = (props) => {
         {paragraph.text}
       </Paragraph>
       <ActionButton
-        onClick={actionButton?.callback}
+        onClick={actionButton?.onClick}
         backgroundColor={
           actionButton?.backgroundColor || TextBlock.defaultProps.actionButton.backgroundColor
         }
@@ -80,7 +85,9 @@ const TextBlock = (props) => {
 };
 
 TextBlock.defaultProps = {
-  backgroundColor: '#fff',
+  background: {
+    backgroundColor: '#fff',
+  },
   title: {
     color: '#000',
     fontSize: 1,
@@ -103,33 +110,21 @@ TextBlock.propTypes = {
   /**
    * Title.
    */
-  title: PropTypes.shape({
-    color: PropTypes.string,
-    fontSize: PropTypes.number,
-    text: PropTypes.string,
-  }),
+  title: textType,
   /**
    * Paragraph.
    */
-  paragraph: PropTypes.shape({
-    color: PropTypes.string,
-    fontSize: PropTypes.number,
-    text: PropTypes.string,
-  }),
+  paragraph: textType,
   /**
-   * Background color.
+   * Background styles.
    */
-  backgroundColor: PropTypes.string,
+  background: PropTypes.shape({
+    backgroundColor: PropTypes.string,
+  }),
   /**
    * Call to Action Button.
    */
-  actionButton: PropTypes.shape({
-    backgroundColor: PropTypes.string,
-    color: PropTypes.string,
-    fontSize: PropTypes.number,
-    text: PropTypes.string,
-    callback: PropTypes.func,
-  }),
+  actionButton: buttonType,
 };
 
 export default TextBlock;

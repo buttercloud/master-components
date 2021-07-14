@@ -1,13 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
+import { textType, imageType } from '../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
   display: block;
   position: relative;
   height: 100vh;
   width: 100%;
-  background: url(${(props) => props.imgUrl}) no-repeat center center;
+  background: url(${({ img }) => img}) no-repeat center center;
   background-size: cover;
 `;
 const ContentContainer = styled.div`
@@ -24,10 +25,10 @@ const LogoContainer = styled.div`
 `;
 const Title = styled.h1`
   opacity: 1;
-  color: ${(props) => props.color};
+  color: ${({ color }) => color};
   text-transform: uppercase;
   font-family: raleway, sans-serif;
-  font-size: 4.5rem;
+  font-size: ${({ fontSize }) => fontSize}rem;
   text-align: center;
   font-weight: 800;
   margin-top: 20px;
@@ -41,8 +42,8 @@ const Subtitle = styled.h2`
   opacity: 1;
   text-transform: none;
   font-weight: 400;
-  color: ${(props) => props.color};
-  font-size: 2rem;
+  color: ${({ color }) => color};
+  font-size: ${({ fontSize }) => fontSize}rem;
   font-family: 'raleway', sans-serif;
   text-align: center;
   margin-top: 20px;
@@ -59,23 +60,29 @@ const BackgroundImageHeader = (props) => {
   const {
     title,
     subtitle,
-    backgroundImageUrl,
-    logoUrl,
-    titleColor,
-    subtitleColor,
+    backgroundImage,
+    logo,
   } = props;
 
+  const defaults = BackgroundImageHeader.defaultProps;
+
   return (
-    <Container imgUrl={backgroundImageUrl}>
+    <Container img={backgroundImage?.url}>
       <ContentContainer>
         <LogoContainer>
-          <img src={logoUrl} alt="" />
+          <img src={logo?.url} alt={logo?.alt} />
         </LogoContainer>
-        <Title color={titleColor}>
-          {title}
+        <Title
+          color={title.color || defaults.title.color}
+          fontSize={title.fontSize || defaults.title.fontSize}
+        >
+          {title.text}
         </Title>
-        <Subtitle color={subtitleColor}>
-          {subtitle}
+        <Subtitle
+          color={subtitle.color || defaults.subtitle.color}
+          fontSize={subtitle.fontSize || defaults.subtitle.fontSize}
+        >
+          {subtitle.text}
         </Subtitle>
       </ContentContainer>
     </Container>
@@ -83,38 +90,39 @@ const BackgroundImageHeader = (props) => {
 };
 
 BackgroundImageHeader.defaultProps = {
-  title: '',
-  subtitle: '',
-  logoUrl: '',
-  titleColor: '#fff',
-  subtitleColor: '#e6e6e6',
+  title: {
+    text: '',
+    color: '#fff',
+    fontSize: 4.5,
+  },
+  subtitle: {
+    text: '',
+    color: '#e6e6e6',
+    fontSize: 2,
+  },
+  logo: {
+    url: '',
+    alt: '',
+  },
 };
 
 BackgroundImageHeader.propTypes = {
   /**
   * Title to appear at the center.
   */
-  title: PropTypes.string,
+  title: textType,
   /**
   * Subtitle.
   */
-  subtitle: PropTypes.string,
+  subtitle: textType,
   /**
   * Url of the image to display in the background.
   */
-  backgroundImageUrl: PropTypes.string.isRequired,
+  backgroundImage: imageType.isRequired,
   /**
   * Optional centered logo above the title.
   */
-  logoUrl: PropTypes.string,
-  /**
-  * Title color.
-  */
-  titleColor: PropTypes.string,
-  /**
-  * Subtitle color.
-  */
-  subtitleColor: PropTypes.string,
+  logo: imageType,
 };
 
 export default BackgroundImageHeader;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Dinero from 'dinero.js';
 import Carousel from '../molecules/Carousel';
-import * as CustomTypes from '../../customPropTypes/customPropTypes';
+import { textType, imageType, moneyType } from '../../customPropTypes/customPropTypes';
 
 import CartIcon from '../assets/CartIcon';
 import ArrowIcon from '../assets/ArrowIcon';
@@ -206,7 +206,7 @@ const RecommendedItemsCardsCarousel = (props) => {
             return (
               <Card key={Math.random.toString().substring(10)}>
                 <ImageContainer>
-                  <CardImage src={item.img.url} />
+                  <CardImage src={item.image?.src} />
                 </ImageContainer>
                 <CardBody>
                   <ItemInfo>
@@ -306,23 +306,23 @@ RecommendedItemsCardsCarousel.propTypes = {
   /**
    * Main title.
    */
-  title: CustomTypes.TextType,
+  title: textType,
   /**
    * Secondary title.
    */
-  subtitle: CustomTypes.TextType,
+  subtitle: textType,
   /**
    * Description.
    */
-  description: CustomTypes.TextType,
+  description: textType,
   /**
    * Items to show.
    */
   items: PropTypes.arrayOf(PropTypes.shape({
-    img: CustomTypes.ImageType,
-    title: CustomTypes.TextType,
-    description: CustomTypes.TextType,
-    price: CustomTypes.MoneyType,
+    image: imageType,
+    title: textType,
+    description: textType,
+    price: moneyType,
     /**
      * Call to Action Button.
      */

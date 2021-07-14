@@ -99,69 +99,103 @@ Primary.args = {
   nameFontSize: 2,
   nameColor: 'black',
   priceFontSize: 1.3,
-  priceColor: 'palevioletred', // #1e774c
+  priceColor: 'palevioletred',
   descriptionFontSize: 1,
   descriptionColor: '#acabab',
-  optionTypeSubheaderSize: 1.4,
-  optionTypeSubheaderColor: 'black',
-  optionValueLabelSize: 1,
-  optionValueLabelColor: 'black',
-  propertySubheaderSize: 1.2,
-  propertySubheaderColor: 'black',
-  propertyValueLabelSize: 1,
-  propertyValueLabelColor: 'black',
   filledInputColor: 'palevioletred',
 
+  addToCartButton: {
+    fontSize: 1.2,
+    color: '#fff',
+    backgroundColor: '#000',
+    text: 'ADD TO CART',
+  },
+
   masterVariant: {
-    name: 'Product #1',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    name: { text: 'Product #1' },
+    description: {
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    },
     price: {
       cents: 6490,
       currency: 'JOD',
       precision: 3,
+      color: 'palevioletred',
     },
-    imagesUrls: ['https://place-hold.it/300x300/aaa/000000.png&bold&fontsize=15', 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15'],
+    images: [
+      {
+        src: 'https://place-hold.it/425x425/aaa/000000.png',
+        alt: '',
+      },
+      {
+        src: 'https://place-hold.it/425x425/aaa/ffffff.png',
+        alt: '',
+      },
+    ],
     options: [
-      { name: 'Size', value: 'Personal' },
-      { name: 'Color', value: 'Pink' },
+      {
+        name: { text: 'Size' },
+        value: { text: 'Personal' },
+      },
+      {
+        name: { text: 'Color' },
+        value: { text: 'Pink' },
+      },
     ],
   },
   optionTypes: [
     {
-      name: 'Size',
-      values: ['Personal', 'On the Go'],
+      name: { text: 'Size' },
+      values: [
+        { text: 'Personal' },
+        { text: 'On the Go' },
+      ],
     },
     {
-      name: 'Color',
-      values: ['Red', 'Black', 'Purple', 'Pink', 'Yellow', 'Green', 'Brown', 'Orange', 'Gray', 'White'],
+      name: { text: 'Color' },
+      values: [
+        { text: 'Red' },
+        { text: 'Black' },
+        { text: 'Purple' },
+        { text: 'Pink' },
+        { text: 'Yellow' },
+        { text: 'Green' },
+        { text: 'Brown' },
+        { text: 'Orange' },
+        { text: 'Gray' },
+        { text: 'White' },
+      ],
     },
   ],
   properties: [
     {
-      name: 'Extras',
+      name: { text: 'Extras' },
       values: [
         {
-          name: 'Avocado Salsa',
+          name: { text: 'Avocado Salsa' },
           price: {
             cents: 900,
             currency: 'JOD',
             precision: 3,
+            color: 'palevioletred',
           },
         },
         {
-          name: 'Walnuts',
+          name: { text: 'Walnuts' },
           price: {
             cents: -900,
             currency: 'JOD',
             precision: 3,
+            color: 'palevioletred',
           },
         },
         {
-          name: 'Roasted Almonds',
+          name: { text: 'Roasted Almonds' },
           price: {
             cents: 900,
             currency: 'JOD',
             precision: 3,
+            color: 'palevioletred',
           },
         },
       ],
@@ -170,10 +204,10 @@ Primary.args = {
       maxRequired: null,
     },
     {
-      name: 'Serving Options',
+      name: { text: 'Serving Options' },
       values: [
         {
-          name: 'Mix Salad with Dressing',
+          name: { text: 'Mix Salad with Dressing' },
           price: null,
         },
       ],
@@ -182,15 +216,15 @@ Primary.args = {
       maxRequired: null,
     },
     {
-      name: 'Extra Dressing (choose up to 3)',
+      name: { text: 'Extra Dressing (choose up to 3)' },
       values: [
-        { name: 'Ginger Lemon', price: null },
-        { name: 'Chipotle Caesar Dressing', price: null },
-        { name: 'Balsamic Vinaigrette', price: null },
-        { name: 'Creamy Summaq Dressing', price: null },
-        { name: 'Peanut Thai Dressing', price: null },
-        { name: 'Pesto Dressing', price: null },
-        { name: 'Japanese Teriyaki Dressing', price: null },
+        { name: { text: 'Ginger Lemon' }, price: null },
+        { name: { text: 'Chipotle Caesar Dressing' }, price: null },
+        { name: { text: 'Balsamic Vinaigrette' }, price: null },
+        { name: { text: 'Creamy Summaq Dressing' }, price: null },
+        { name: { text: 'Peanut Thai Dressing' }, price: null },
+        { name: { text: 'Pesto Dressing' }, price: null },
+        { name: { text: 'Japanese Teriyaki Dressing' }, price: null },
       ],
       type: 'checkbox',
       minRequired: null,
@@ -199,51 +233,51 @@ Primary.args = {
   ],
   variants: [
     {
-      name: 'Product #1 (Size On the Go, Color Purple)',
-      description: 'testing',
+      name: { text: 'Product #1 (Size On the Go, Color Purple)' },
+      description: { text: 'testing' },
       price: {
         cents: 5990,
         currency: 'JOD',
         precision: 3,
       },
-      imagesUrls: [],
+      images: [],
       options: [
-        { name: 'Size', value: 'On the Go' },
-        { name: 'Color', value: 'Purple' },
+        { name: { text: 'Size' }, value: { text: 'On the Go' } },
+        { name: { text: 'Color' }, value: { text: 'Purple' } },
       ],
     },
     {
-      name: 'Product #1 (Size On the Go, Color Pink)',
-      description: null,
+      name: { text: 'Product #1 (Size On the Go, Color Pink)' },
+      description: { text: null },
       price: {
         cents: 6990,
         currency: 'JOD',
         precision: 3,
       },
-      imagesUrls: [],
+      images: [],
       options: [
-        { name: 'Size', value: 'On the Go' },
-        { name: 'Color', value: 'Pink' },
+        { name: { text: 'Size' }, value: { text: 'On the Go' } },
+        { name: { text: 'Color' }, value: { text: 'Pink' } },
       ],
     },
     {
-      name: 'Product #1 (Size Personal, Color Orange)',
-      description: null,
+      name: { text: 'Product #1 (Size Personal, Color Orange)' },
+      description: { text: null },
       price: {
         cents: 7990,
         currency: 'JOD',
         precision: 3,
       },
-      imagesUrls: [],
+      images: [],
       options: [
-        { name: 'Size', value: 'Personal' },
-        { name: 'Color', value: 'Orange' },
+        { name: { text: 'Size' }, value: { text: 'Personal' } },
+        { name: { text: 'Color' }, value: { text: 'Orange' } },
       ],
     },
   ],
 };
 
-// Primary.name = '';
+Primary.storyName = 'ProductDetails';
 // categories: [
 //   {
 //     name: 'cat1',

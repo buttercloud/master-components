@@ -4,26 +4,24 @@ import BackgroundImageHeader from './BackgroundImageHeader';
 export default {
   title: 'Organisms/Headers/BackgroundImage Header',
   component: BackgroundImageHeader,
-  argTypes: {
-    title: { control: 'text' },
-    titleColor: { control: 'color' },
-    subtitle: { control: 'text' },
-    subtitleColor: { control: 'color' },
-    backgroundImageUrl: { control: 'text' },
-    logoUrl: { control: 'text' },
-  },
+  argTypes: {},
   args: {
-    title: 'DELICIOUS FOOD',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    backgroundImageUrl: 'https://demo.web3canvas.com/themeforest/tomato/img/bg2.png',
-    logoUrl: 'https://demo.web3canvas.com/themeforest/tomato/img/logo.png',
-    titleColor: '#fff',
-    subtitleColor: '#D63BD6',
+    title: {
+      text: 'LOREM IPSUM',
+    },
+    subtitle: {
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    },
+    backgroundImage: {
+      url: 'https://place-hold.it/1000',
+    },
+    logo: {
+      url: 'https://place-hold.it/300x300/ffffff.png',
+      alt: '',
+    },
   },
 };
 
 const Template = (args) => <BackgroundImageHeader {...args} />;
 
 export const CenteredContent = Template.bind({});
-
-// CenteredContent.args = {}
