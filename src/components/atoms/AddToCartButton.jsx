@@ -29,7 +29,7 @@ const IconContainer = styled.div`
 const AddToCartButton = (props) => {
   const {
     label,
-    fontColor,
+    color,
     fontSize,
     cartIconIsVisible,
     cartIconColor,
@@ -42,7 +42,7 @@ const AddToCartButton = (props) => {
       color={backgroundColor}
       onClick={addToCart}
     >
-      <Label color={fontColor} fontSize={fontSize}>
+      <Label color={color} fontSize={fontSize}>
         {label}
       </Label>
       {
@@ -60,7 +60,7 @@ AddToCartButton.defaultProps = {
   label: 'Add to Cart',
   cartIconIsVisible: true,
   fontSize: 1.1,
-  fontColor: '#fff',
+  color: '#fff',
   cartIconColor: '#fff',
   backgroundColor: '#000',
 };
@@ -85,7 +85,7 @@ AddToCartButton.propTypes = {
   /**
   * Color of the button label
   */
-  fontColor: PropTypes.string,
+  color: PropTypes.string,
   /**
   * Cart Icon color
   */
