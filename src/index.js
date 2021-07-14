@@ -1,17 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import HeaderWithLogoAndSocial from './components/organisms/HeaderWithLogoAndSocial';
+import FooterWithInfoAndSocial from './components/organisms/FooterWithInfoAndSocial';
+import MenuWithStickyNavAndCategories from './components/organisms/MenuWithStickyNavAndCategories';
+import TitleImageAndText from './components/organisms/TitleImageAndText';
+import BackgroundImageHeader from './components/organisms/BackgroundImageHeader';
+import ImagesGridWithText from './components/organisms/ImagesGridWithText';
+import GridMenuWithItemCards from './components/organisms/GridMenuWithItemCards';
+import ProductDetails from './components/organisms/ProductDetails';
+import PromotionWithBackgroundImage from './components/organisms/PromotionWithBackgroundImage';
+import RecommendedItemsCardsCarousel from './components/organisms/RecommendedItemsCardsCarousel';
+import QuoteCarousel from './components/organisms/QuoteCarousel';
+import TextBlock from './components/organisms/TextBlock';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export {
+  HeaderWithLogoAndSocial,
+  FooterWithInfoAndSocial,
+  MenuWithStickyNavAndCategories,
+  BackgroundImageHeader,
+  TitleImageAndText,
+  ImagesGridWithText,
+  GridMenuWithItemCards,
+  ProductDetails,
+  PromotionWithBackgroundImage,
+  RecommendedItemsCardsCarousel,
+  QuoteCarousel,
+  TextBlock,
+};
