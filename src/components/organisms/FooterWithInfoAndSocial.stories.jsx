@@ -1,25 +1,11 @@
 import React from 'react';
-import Footer1 from './Footer1';
+import FooterWithInfoAndSocial from './FooterWithInfoAndSocial';
 
 export default {
-  title: 'Organisms/Footers/Footer1',
-  component: Footer1,
+  title: 'Organisms/Footers/Footer With Info And Social',
+  component: FooterWithInfoAndSocial,
   argTypes: {
     backgroundColor: {
-      table: { category: 'Styles' },
-      control: 'color',
-    },
-    facebookPageUrl: {
-      control: 'text',
-    },
-    facebookButtonColor: {
-      table: { category: 'Styles' },
-      control: 'color',
-    },
-    instagramPageUrl: {
-      control: 'text',
-    },
-    instagramButtonColor: {
       table: { category: 'Styles' },
       control: 'color',
     },
@@ -49,7 +35,7 @@ export default {
   },
 };
 
-const Template = (args) => <Footer1 {...args} />;
+const Template = (args) => <FooterWithInfoAndSocial {...args} />;
 
 export const Primary = Template.bind({});
 
@@ -59,13 +45,29 @@ Primary.args = {
     { name: 'Contact', value: '07********' },
     { name: 'Hours', value: '11am to 11pm daily' },
   ],
-  facebookPageUrl: 'https://www.facebook.com/PageName',
-  instagramPageUrl: 'https://www.instagram.com/PageName',
+  socialMedia: [
+    {
+      type: 'instagram',
+      color: 'white',
+      text: 'Instagram',
+      url: '#',
+    },
+    {
+      type: 'youtube',
+      color: 'white',
+      text: 'Youtube',
+      url: '#',
+    },
+    {
+      type: 'facebook',
+      color: 'white',
+      text: 'Facebook',
+      url: '#',
+    },
+  ],
   backgroundColor: '#000000',
-  facebookButtonColor: '#ffffff',
-  instagramButtonColor: '#ffffff',
   fontFamily: 'Public Sans, sans-serif',
   fontColor: '#ffffff',
 };
 
-Primary.storyName = 'Footer1';
+Primary.storyName = 'Footer With Info And Social';
