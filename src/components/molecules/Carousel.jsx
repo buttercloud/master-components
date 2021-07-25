@@ -41,6 +41,8 @@ const Carousel = (props) => {
     centerMode,
     dots,
     arrows,
+    asNavFor,
+    focusOnSelect,
   } = props;
 
   let alteredSlidesToShow = slidesToShow;
@@ -54,6 +56,7 @@ const Carousel = (props) => {
   return (
     <StyledSlider
       ref={carouselRef}
+      asNavFor={asNavFor?.current}
       accessibility
       infinite={infinite}
       swipe={swipe}
@@ -67,6 +70,7 @@ const Carousel = (props) => {
       dots={dots}
       arrows={arrows}
       centerPadding="50px"
+      focusOnSelect={focusOnSelect}
     >
       {children}
     </StyledSlider>
@@ -86,6 +90,8 @@ Carousel.defaultProps = {
   centerMode: true,
   dots: true,
   arrows: true,
+  asNavFor: undefined,
+  focusOnSelect: true,
 };
 
 Carousel.propTypes = {
@@ -149,6 +155,19 @@ Carousel.propTypes = {
    * Show/hide arrows.
    */
   arrows: PropTypes.bool,
+  /**
+   * Provide ref for another slider to sync them
+   */
+  asNavFor: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({
+      current: PropTypes.element,
+    }),
+  ]),
+  /**
+   * Go to the clicked on slide
+   */
+  focusOnSelect: PropTypes.bool,
 };
 
 export default Carousel;
