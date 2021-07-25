@@ -14,7 +14,7 @@ export const moneyType = PropTypes.shape({
   ...textStyles,
   cents: PropTypes.number.isRequired,
   currency: PropTypes.string.isRequired,
-  precision: PropTypes.string.isRequired,
+  precision: PropTypes.number.isRequired,
   backgroundColor: PropTypes.string,
 });
 
