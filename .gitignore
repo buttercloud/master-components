@@ -105,3 +105,6 @@ dist
 
 # Storybook static build (https://storybook.js.org/)
 storybook-static/
+
+.DS_Store
+src/__snapshots__/
