@@ -17,6 +17,7 @@ const ContentContainer = styled.div`
   width: 100%;
   transform: translateY(-50%);
   box-sizing: border-box;
+  max-width: 40%;
 `;
 const LogoContainer = styled.div`
   opacity: 1;
@@ -37,6 +38,7 @@ const Title = styled.h1`
   margin: 0.67rem 0;
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
+  text-align: ${({ textAlign }) => textAlign};
 `;
 const Subtitle = styled.h2`
   opacity: 1;
@@ -51,6 +53,7 @@ const Subtitle = styled.h2`
   line-height: 1.1;
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
+  text-align: ${({ textAlign }) => textAlign};
 `;
 
 /**
@@ -67,20 +70,22 @@ const BackgroundImageHeader = (props) => {
   const defaults = BackgroundImageHeader.defaultProps;
 
   return (
-    <Container img={backgroundImage?.url}>
+    <Container img={backgroundImage?.src}>
       <ContentContainer>
         <LogoContainer>
-          <img src={logo?.url} alt={logo?.alt} />
+          <img src={logo?.src} alt={logo?.alt} />
         </LogoContainer>
         <Title
           color={title.color || defaults.title.color}
           fontSize={title.fontSize || defaults.title.fontSize}
+          textAlign={title.textAlign || defaults.title.textAlign}
         >
           {title.text}
         </Title>
         <Subtitle
           color={subtitle.color || defaults.subtitle.color}
           fontSize={subtitle.fontSize || defaults.subtitle.fontSize}
+          textAlign={subtitle.textAlign || defaults.subtitle.textAlign}
         >
           {subtitle.text}
         </Subtitle>
@@ -94,14 +99,20 @@ BackgroundImageHeader.defaultProps = {
     text: '',
     color: '#fff',
     fontSize: 4.5,
+    textAlign: 'center',
   },
   subtitle: {
     text: '',
     color: '#e6e6e6',
     fontSize: 2,
+    textAlign: 'center',
   },
   logo: {
-    url: '',
+    src: '',
+    alt: '',
+  },
+  backgroundImage: {
+    src: '',
     alt: '',
   },
 };
@@ -116,9 +127,9 @@ BackgroundImageHeader.propTypes = {
   */
   subtitle: textType,
   /**
-  * Url of the image to display in the background.
+  * Image to display in the background.
   */
-  backgroundImage: imageType.isRequired,
+  backgroundImage: imageType,
   /**
   * Optional centered logo above the title.
   */

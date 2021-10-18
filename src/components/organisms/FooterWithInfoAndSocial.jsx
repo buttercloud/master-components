@@ -57,8 +57,8 @@ const FooterWithInfoAndSocial = (props) => {
             color={background?.color}
             fontFamily={background?.fontFamily}
           >
-            <InfoBlockLabel fontSize={field.name?.fontSize}>
-              {field.name?.text}
+            <InfoBlockLabel fontSize={field.label?.fontSize}>
+              {field.label?.text}
             </InfoBlockLabel>
             <InfoBlockValue fontSize={field.value?.fontSize}>
               {field.value?.text}
@@ -90,8 +90,6 @@ FooterWithInfoAndSocial.defaultProps = {
   },
   socialMedia: [],
   infoFields: [],
-  // infoKeyFontSize: 1.7,
-  // infoValueFontSize: 1,
 };
 
 FooterWithInfoAndSocial.propTypes = {
@@ -120,7 +118,7 @@ FooterWithInfoAndSocial.propTypes = {
    * The fields to show on the footer
    */
   infoFields: PropTypes.arrayOf(PropTypes.shape({
-    key: textType,
+    label: textType,
     value: textType,
   })),
 };

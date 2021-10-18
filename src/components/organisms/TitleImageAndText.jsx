@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
 import { textType, imageType } from '../../customPropTypes/customPropTypes';
+import { StyledParagraph } from '../assets/customStyledComponents';
 
 const Container = styled.div`
   display: flex;
@@ -37,21 +37,14 @@ const Image = styled.img`
   align-self: flex-start;
   border-radius: 5px;
 `;
-const Title = styled.p`
-  font-size: ${(props) => props.fontSize}rem;
+const Title = styled(StyledParagraph)`
   font-weight: bold;
   margin: 0;
-  color: ${(props) => props.color};
 `;
-const Subtitle = styled.p`
-  font-size: ${(props) => props.fontSize}rem;
-  color: ${(props) => props.color};
-  color: ${(props) => props.color};
+const Subtitle = styled(StyledParagraph)`
   margin: 0;
 `;
-const Content = styled.p`
-  font-size: ${(props) => props.fontSize}rem;
-  color: ${(props) => props.color};
+const Content = styled(StyledParagraph)`
   margin: 0;
 `;
 const Separator = styled.hr`
@@ -100,7 +93,7 @@ const TitleImageAndText = (props) => {
       </TitleContainer>
       <ImageAndContentContainer swap={swapImageAndContent}>
         <ImageContainer>
-          <Image src={image?.url} alt={image?.alt} />
+          <Image src={image?.src} alt={image?.alt} />
         </ImageContainer>
         <ContentContainer>
           <Content

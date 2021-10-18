@@ -162,7 +162,7 @@ const MenuWithStickyNavAndCategories = (props) => {
             categories?.map((category) => (
               <ListItem key={category.name?.text}>
                 <MenuHyperlink
-                  href={`#${category.name?.text}`}
+                  href={category.name?.text}
                   color={categoryNameLinkStyle.color || defaults.categoryNameLinkStyle.color}
                   fontSize={
                     categoryNameLinkStyle.fontSize
@@ -191,7 +191,9 @@ const MenuWithStickyNavAndCategories = (props) => {
             >
               {category.name.text}
             </CategoryTitle>
-            <ProductsList id={`#${category.name.text}`}>
+            <ProductsList
+              id={category.name?.text}
+            >
               {
                 category.products.map((product) => {
                   let price = '';
@@ -251,9 +253,9 @@ const MenuWithStickyNavAndCategories = (props) => {
         <ProductsBlock />
         <CartIconContainer>
           <CartButton
-            iconColor={cartButton.icon?.color || defaults.cartButton.icon.color}
-            badgeColor={cartButton.badge?.color || defaults.cartButton.badge.color}
-            badgeNumber={cartButton.badge?.number}
+            iconColor={cartButton?.icon?.color || defaults.cartButton.icon.color}
+            badgeColor={cartButton?.badge?.color || defaults.cartButton.badge.color}
+            badgeNumber={cartButton?.badge?.number}
           />
         </CartIconContainer>
       </InnerContainer>

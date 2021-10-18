@@ -107,9 +107,9 @@ const ClassicMenu = (props) => {
 
   return (
     <Container
-      backgroundColor={background.backgroundColor}
-      fontSize={background.fontSize || ClassicMenu.defaultProps.background.fontSize}
-      fontFamily={background.fontFamily || ClassicMenu.defaultProps.background.fontFamily}
+      backgroundColor={background?.backgroundColor}
+      fontSize={background?.fontSize || ClassicMenu.defaultProps.background.fontSize}
+      fontFamily={background?.fontFamily || ClassicMenu.defaultProps.background.fontFamily}
     >
       <Title
         fontFamily={title.fontFamily || ClassicMenu.defaultProps.title.fontFamily}

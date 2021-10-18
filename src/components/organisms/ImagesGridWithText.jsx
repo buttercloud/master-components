@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { textType, imageType } from '../../customPropTypes/customPropTypes';
+import {
+  textType,
+  imageType,
+  backgroundType,
+} from '../../customPropTypes/customPropTypes';
 
 const size = {
   mobileS: '320px',
@@ -73,15 +77,15 @@ const Description = styled.p`
 const ImagesGridWithText = (props) => {
   const {
     content,
-    backgroundColor,
+    background,
   } = props;
 
   return (
     <BackgroundColorContainer
-      backgroundColor={backgroundColor}
+      backgroundColor={background.backgroundColor}
     >
       {
-        content.map((item) => (
+        content?.map((item) => (
           <ElementContainer>
             {
               item.image?.url
@@ -89,16 +93,16 @@ const ImagesGridWithText = (props) => {
                 : null
             }
             <Title
-              color={item.title.color || '#000'}
-              fontSize={item.title.fontSize || 1.7}
+              color={item.title?.color || '#000'}
+              fontSize={item.title?.fontSize || 1.7}
             >
-              {item.title.text}
+              {item.title?.text}
             </Title>
             <Description
-              color={item.description.color || '#000'}
-              fontSize={item.description.fontSize || 1}
+              color={item.description?.color || '#000'}
+              fontSize={item.description?.fontSize || 1}
             >
-              {item.description.text}
+              {item.description?.text}
             </Description>
           </ElementContainer>
         ))
@@ -108,7 +112,9 @@ const ImagesGridWithText = (props) => {
 };
 
 ImagesGridWithText.defaultProps = {
-  backgroundColor: '#fff',
+  background: {
+    backgroundColor: '#fff',
+  },
 };
 
 ImagesGridWithText.propTypes = {
@@ -121,9 +127,9 @@ ImagesGridWithText.propTypes = {
     image: imageType,
   })).isRequired,
   /**
-  * Background color
+  * Background styles
   */
-  backgroundColor: PropTypes.string,
+  background: backgroundType,
 };
 
 export default ImagesGridWithText;

@@ -43,7 +43,7 @@ const IconContainer = styled.div`
 const StyledText = styled.p`
   text-align: center;
   color: ${(props) => props.color};
-  font-size: ${(props) => props.fontSize};
+  font-size: ${(props) => props.fontSize}rem;
   margin: 0;
   font-weight: 400;
 `;
@@ -113,10 +113,10 @@ const QuoteCarousel = (props) => {
                   />
                 </IconContainer>
                 <Quote
-                  color={element.quote.color || 'black'}
-                  fontSize={element.quote.fontSize}
+                  color={element.quote?.color || 'black'}
+                  fontSize={element.quote?.fontSize}
                 >
-                  {element.quote.text}
+                  {element.quote?.text}
                 </Quote>
                 <Quotee
                   color={element.quotee?.color || '#9e9fa5'}

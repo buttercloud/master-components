@@ -15,26 +15,28 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   logo: {
-    url: 'https://place-hold.it/300x300.png',
+    src: 'https://place-hold.it/300x300.png',
     alt: 'logo',
   },
-  backgroundColor: 'palevioletred',
+  background: {
+    backgroundColor: 'black',
+  },
   socialMedia: [
     {
       type: 'instagram',
-      color: 'black',
+      color: 'white',
       text: 'instagram',
       url: '#',
     },
     {
       type: 'discord',
-      color: 'black',
+      color: 'white',
       text: 'Discord',
       url: '#',
     },
     {
       type: 'facebook',
-      color: 'black',
+      color: 'white',
       text: 'facebook',
       url: '#',
     },

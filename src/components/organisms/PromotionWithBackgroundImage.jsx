@@ -65,8 +65,8 @@ const PromotionWithBackgroundImage = (props) => {
 
   return (
     <Container
-      imgUrl={background.image?.url}
-      backgroundColor={background.backgroundColor || defaults.background.backgroundColor}
+      imgUrl={background?.image?.src}
+      backgroundColor={background?.backgroundColor || defaults.background.backgroundColor}
     >
       <Title
         color={title.color || defaults.title.color}
@@ -116,13 +116,13 @@ PromotionWithBackgroundImage.defaultProps = {
   },
   actionButton: {
     text: '',
-    color: '#fff',
+    color: 'palevioletred',
     fontSize: 0.9,
-    backgroundColor: 'palevioletred',
+    backgroundColor: 'white',
   },
   background: {
     image: {
-      url: '',
+      srcz: '',
       alt: '',
     },
     backgroundColor: '#000',

@@ -28,7 +28,7 @@ Primary.args = {
             text: 'Product #1',
           },
           image: {
-            url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
+            src: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
           },
           description: {
             text: 'This is Product #1',
@@ -44,7 +44,7 @@ Primary.args = {
             text: 'Product #2',
           },
           image: {
-            url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
+            src: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
           },
           description: {
             text: 'This is Product #2',
@@ -60,7 +60,7 @@ Primary.args = {
             text: 'Product #5',
           },
           image: {
-            url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
+            src: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
           },
           description: {
             text: 'This is Product #5',
@@ -83,7 +83,7 @@ Primary.args = {
             text: 'Product #3',
           },
           image: {
-            url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
+            src: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
           },
           description: {
             text: 'This is Product #3',
@@ -99,7 +99,7 @@ Primary.args = {
             text: 'Product #4',
           },
           image: {
-            url: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
+            src: 'https://place-hold.it/300x300/aaa/ffffff.png&bold&fontsize=15',
           },
           description: {
             text: 'This is Product #4',

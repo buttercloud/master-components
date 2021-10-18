@@ -41,9 +41,30 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   infoFields: [
-    { name: 'Address', value: 'Your address here' },
-    { name: 'Contact', value: '07********' },
-    { name: 'Hours', value: '11am to 11pm daily' },
+    {
+      label: {
+        text: 'Address',
+      },
+      value: {
+        text: 'Your address here',
+      },
+    },
+    {
+      label: {
+        text: 'Contact',
+      },
+      value: {
+        text: '07********',
+      },
+    },
+    {
+      label: {
+        text: 'Hours',
+      },
+      value: {
+        text: '11am to 11pm daily',
+      },
+    },
   ],
   socialMedia: [
     {

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import SocialButton, { socialTypes } from '../atoms/SocialButton';
+import { textType } from '../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
   display: flex;
@@ -81,7 +82,7 @@ export const socialMediaType = PropTypes.arrayOf(PropTypes.shape({
   type: PropTypes.oneOf(socialTypes),
   url: PropTypes.string,
   color: PropTypes.string,
-  text: PropTypes.string,
+  text: textType,
 }));
 
 SocialButtons.defaultProps = {

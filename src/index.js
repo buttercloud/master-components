@@ -10,6 +10,11 @@ import PromotionWithBackgroundImage from './components/organisms/PromotionWithBa
 import RecommendedItemsCardsCarousel from './components/organisms/RecommendedItemsCardsCarousel';
 import QuoteCarousel from './components/organisms/QuoteCarousel';
 import TextBlock from './components/organisms/TextBlock';
+import ClassicMenu from './components/organisms/ClassicMenu';
+import ItemCategoriesMenuWithBackgroundImage from './components/organisms/ItemCategoriesMenuWithBackgroundImage';
+import ItemsImageShowcase from './components/organisms/ItemsImageShowcase';
+import ProductDetailsWithTopImage from './components/organisms/ProductDetailsWithTopImage';
+import ProductsShowcaseCarousel from './components/organisms/ProductsShowcaseCarousel';
 
 export {
   HeaderWithLogoAndSocial,
@@ -24,4 +29,9 @@ export {
   RecommendedItemsCardsCarousel,
   QuoteCarousel,
   TextBlock,
+  ClassicMenu,
+  ItemCategoriesMenuWithBackgroundImage,
+  ItemsImageShowcase,
+  ProductDetailsWithTopImage,
+  ProductsShowcaseCarousel,
 };

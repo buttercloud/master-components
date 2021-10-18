@@ -166,7 +166,7 @@ const ProductDetails = (props) => {
   useEffect(() => {
     // Fill in customOptions
     const tempOptions = {};
-    masterVariant.options.forEach((type) => {
+    masterVariant.options?.forEach((type) => {
       tempOptions[type.name.text] = type.value.text;
     });
 
@@ -185,7 +185,7 @@ const ProductDetails = (props) => {
     const foundVariant = variants.find((variant) => {
       let found = true;
 
-      variant.options.every((option) => {
+      variant.options?.every((option) => {
         if (customOptions[option.name.text] !== option.value.text) {
           found = false;
           return false;
@@ -317,7 +317,7 @@ const ProductDetails = (props) => {
   };
 
   const OptionTypesBlock = () => optionTypes.map((type) => {
-    const defaultValue = masterVariant.options.find((o) => o.name.text === type.name.text)?.value;
+    const defaultValue = masterVariant.options?.find((o) => o.name.text === type.name.text)?.value;
 
     console.log(defaultValue);
 
@@ -470,11 +470,11 @@ const ProductDetails = (props) => {
               ) : null
           }
           <AddToCartButton
-            addToCart={addToCartButton.onClick}
-            label={addToCartButton.text}
-            fontSize={addToCartButton.fontSize || 1.3}
-            backgroundColor={addToCartButton.backgroundColor}
-            color={addToCartButton.color}
+            addToCart={addToCartButton?.onClick}
+            label={addToCartButton?.text}
+            fontSize={addToCartButton?.fontSize || 1.3}
+            backgroundColor={addToCartButton?.backgroundColor}
+            color={addToCartButton?.color}
           />
         </QuantityAndCartButtonsContainer>
       </ProductInfoContainer>

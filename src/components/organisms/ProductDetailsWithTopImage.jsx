@@ -580,7 +580,7 @@ const ProductDetailsWithTopImage = (props) => {
   useEffect(() => {
     // Fill in customOptions
     const tempOptions = {};
-    masterVariant.options.forEach((type) => {
+    masterVariant.options?.forEach((type) => {
       tempOptions[type.name.text] = type.value.text;
     });
 
@@ -599,7 +599,7 @@ const ProductDetailsWithTopImage = (props) => {
     const foundVariant = variants.find((variant) => {
       let found = true;
 
-      variant.options.every((option) => {
+      variant.options?.every((option) => {
         if (customOptions[option.name.text] !== option.value.text) {
           found = false;
           return false;
