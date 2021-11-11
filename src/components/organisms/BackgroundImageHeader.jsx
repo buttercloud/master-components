@@ -1,14 +1,14 @@
-// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
+import { textType, imageType } from '../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
   display: block;
   position: relative;
   height: 100vh;
   width: 100%;
-  background: url(${(props) => props.imgUrl}) no-repeat center center;
+  background: url(${({ img }) => img}) no-repeat center center;
   background-size: cover;
 `;
 const ContentContainer = styled.div`
@@ -17,6 +17,7 @@ const ContentContainer = styled.div`
   width: 100%;
   transform: translateY(-50%);
   box-sizing: border-box;
+  max-width: 40%;
 `;
 const LogoContainer = styled.div`
   opacity: 1;
@@ -25,10 +26,10 @@ const LogoContainer = styled.div`
 `;
 const Title = styled.h1`
   opacity: 1;
-  color: ${(props) => props.color};
+  color: ${({ color }) => color};
   text-transform: uppercase;
   font-family: raleway, sans-serif;
-  font-size: 72px;
+  font-size: ${({ fontSize }) => fontSize}rem;
   text-align: center;
   font-weight: 800;
   margin-top: 20px;
@@ -37,13 +38,14 @@ const Title = styled.h1`
   margin: 0.67rem 0;
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
+  text-align: ${({ textAlign }) => textAlign};
 `;
 const Subtitle = styled.h2`
   opacity: 1;
   text-transform: none;
   font-weight: 400;
-  color: ${(props) => props.color};
-  font-size: 36px;
+  color: ${({ color }) => color};
+  font-size: ${({ fontSize }) => fontSize}rem;
   font-family: 'raleway', sans-serif;
   text-align: center;
   margin-top: 20px;
@@ -51,6 +53,7 @@ const Subtitle = styled.h2`
   line-height: 1.1;
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
+  text-align: ${({ textAlign }) => textAlign};
 `;
 
 /**
@@ -60,23 +63,31 @@ const BackgroundImageHeader = (props) => {
   const {
     title,
     subtitle,
-    backgroundImageUrl,
-    logoUrl,
-    titleColor,
-    subtitleColor,
+    backgroundImage,
+    logo,
   } = props;
 
+  const defaults = BackgroundImageHeader.defaultProps;
+
   return (
-    <Container imgUrl={backgroundImageUrl}>
+    <Container img={backgroundImage?.src}>
       <ContentContainer>
         <LogoContainer>
-          <img src={logoUrl} alt="" />
+          <img src={logo?.src} alt={logo?.alt} />
         </LogoContainer>
-        <Title color={titleColor}>
-          {title}
+        <Title
+          color={title.color || defaults.title.color}
+          fontSize={title.fontSize || defaults.title.fontSize}
+          textAlign={title.textAlign || defaults.title.textAlign}
+        >
+          {title.text}
         </Title>
-        <Subtitle color={subtitleColor}>
-          {subtitle}
+        <Subtitle
+          color={subtitle.color || defaults.subtitle.color}
+          fontSize={subtitle.fontSize || defaults.subtitle.fontSize}
+          textAlign={subtitle.textAlign || defaults.subtitle.textAlign}
+        >
+          {subtitle.text}
         </Subtitle>
       </ContentContainer>
     </Container>
@@ -84,38 +95,45 @@ const BackgroundImageHeader = (props) => {
 };
 
 BackgroundImageHeader.defaultProps = {
-  title: '',
-  subtitle: '',
-  logoUrl: '',
-  titleColor: '#fff',
-  subtitleColor: '#e6e6e6',
+  title: {
+    text: '',
+    color: '#fff',
+    fontSize: 4.5,
+    textAlign: 'center',
+  },
+  subtitle: {
+    text: '',
+    color: '#e6e6e6',
+    fontSize: 2,
+    textAlign: 'center',
+  },
+  logo: {
+    src: '',
+    alt: '',
+  },
+  backgroundImage: {
+    src: '',
+    alt: '',
+  },
 };
 
 BackgroundImageHeader.propTypes = {
   /**
   * Title to appear at the center.
   */
-  title: PropTypes.string,
+  title: textType,
   /**
   * Subtitle.
   */
-  subtitle: PropTypes.string,
+  subtitle: textType,
   /**
-  * Url of the image to display in the background.
+  * Image to display in the background.
   */
-  backgroundImageUrl: PropTypes.string.isRequired,
+  backgroundImage: imageType,
   /**
   * Optional centered logo above the title.
   */
-  logoUrl: PropTypes.string,
-  /**
-  * Title color.
-  */
-  titleColor: PropTypes.string,
-  /**
-  * Subtitle color.
-  */
-  subtitleColor: PropTypes.string,
+  logo: imageType,
 };
 
 export default BackgroundImageHeader;
