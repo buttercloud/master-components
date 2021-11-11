@@ -19,7 +19,7 @@
     "eject": "react-scripts eject",
     "clean": "rimraf dist",
     "compile": "yarn clean && NODE_ENV=production babel src --out-dir dist --ignore **/*.stories.jsx,**/test,**/*.wip.jsx,**/*.test.js",
-    "esbuild": "yarn clean && NODE_ENV=publish node scripts/customBuild.js",
+    "esbuild": "yarn clean && NODE_ENV=publish node scripts/esbuild.js",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "deploy-storybook": "gh-pages -d storybook-static -m 'Update Storybook Docs'",
