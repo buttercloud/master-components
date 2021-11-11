@@ -203,7 +203,7 @@ const ProductDetails = (props) => {
     }
   }, [customOptions]);
 
-  const handleOptionChange = (event: SyntheticMouseEvent<HTMLElement>) => {
+  const handleOptionChange = (event) => {
     const optionName = event.target.name;
     const optionValue = event.target.value;
     setCustomOptions({
@@ -213,7 +213,7 @@ const ProductDetails = (props) => {
   };
 
   // currently for checkboxes
-  const handlePropertyChange = (event: SyntheticMouseEvent<HTMLElement>) => {
+  const handlePropertyChange = (event) => {
     const { target } = event;
     const targetName = target.name;
     const targetValue = target.value;
