@@ -4,11 +4,7 @@ import QuoteCarousel from './QuoteCarousel';
 export default {
   title: 'organisms/Quote Carousel',
   component: QuoteCarousel,
-  argTypes: {
-    backgroundColor: {
-      control: 'color',
-    },
-  },
+  // argTypes: {},
 };
 
 const Template = (args) => <QuoteCarousel {...args} />;
@@ -16,7 +12,9 @@ const Template = (args) => <QuoteCarousel {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  backgroundColor: '#f6f0eb',
+  background: {
+    backgroundColor: '#f6f0eb',
+  },
   quotesIcon: {
     color: '#9e9fa5',
   },
@@ -51,4 +49,5 @@ Primary.args = {
     },
   ],
 };
+
 Primary.storyName = 'Quote Carousel';

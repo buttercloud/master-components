@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Carousel from '../molecules/Carousel';
-import CustomTypes from '../../customPropTypes/customPropTypes';
+import { textType } from '../../customPropTypes/customPropTypes';
 
 import DoubleQuotesIcon from '../assets/DoubleQuotesIcon';
 
@@ -43,7 +43,7 @@ const IconContainer = styled.div`
 const StyledText = styled.p`
   text-align: center;
   color: ${(props) => props.color};
-  font-size: ${(props) => props.fontSize};
+  font-size: ${(props) => props.fontSize}rem;
   margin: 0;
   font-weight: 400;
 `;
@@ -73,7 +73,7 @@ ArrowIcon.propTypes = { transform: PropTypes.string };
 ArrowIcon.defaultProps = { transform: 'rotate(0)' };
 
 const QuoteCarousel = (props) => {
-  const { quotes, quotesIcon, backgroundColor } = props;
+  const { quotes, quotesIcon, background } = props;
 
   const carouselRef = useRef(null);
 
@@ -88,7 +88,7 @@ const QuoteCarousel = (props) => {
   };
 
   return (
-    <Container backgroundColor={backgroundColor}>
+    <Container backgroundColor={background.backgroundColor}>
       <LeftBlock>
         <NavButton onClick={scrollLeft}>
           <ArrowIcon transform="rotate(-180)" />
@@ -113,10 +113,10 @@ const QuoteCarousel = (props) => {
                   />
                 </IconContainer>
                 <Quote
-                  color={element.quote.color || 'black'}
-                  fontSize={element.quote.fontSize}
+                  color={element.quote?.color || 'black'}
+                  fontSize={element.quote?.fontSize}
                 >
-                  {element.quote.text}
+                  {element.quote?.text}
                 </Quote>
                 <Quotee
                   color={element.quotee?.color || '#9e9fa5'}
@@ -143,7 +143,9 @@ QuoteCarousel.defaultProps = {
   quotesIcon: {
     color: '#9e9fa5',
   },
-  backgroundColor: '#fff',
+  background: {
+    backgroundColor: '#fff',
+  },
 };
 
 QuoteCarousel.propTypes = {
@@ -151,13 +153,15 @@ QuoteCarousel.propTypes = {
    * Quotes array.
    */
   quotes: PropTypes.arrayOf(PropTypes.shape({
-    quote: CustomTypes.TextType.isRequired,
-    quotee: CustomTypes.TextType,
+    quote: textType.isRequired,
+    quotee: textType,
   })),
   quotesIcon: PropTypes.shape({
     color: PropTypes.string,
   }),
-  backgroundColor: PropTypes.string,
+  background: PropTypes.shape({
+    backgroundColor: PropTypes.string,
+  }),
 };
 
 export default QuoteCarousel;

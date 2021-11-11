@@ -4,11 +4,7 @@ import TextBlock from './TextBlock';
 export default {
   title: 'organisms/Text Block',
   component: TextBlock,
-  argTypes: {
-    backgroundColor: {
-      control: 'color',
-    },
-  },
+  // argTypes: {},
 };
 
 const Template = (args) => <TextBlock {...args} />;
@@ -26,7 +22,9 @@ Primary.args = {
     color: '#000',
     fontSize: 1.3,
   },
-  backgroundColor: '#fff',
+  background: {
+    backgroundColor: '#fff',
+  },
   actionButton: {
     text: 'LOREM IPSUM',
     backgroundColor: '#fff',

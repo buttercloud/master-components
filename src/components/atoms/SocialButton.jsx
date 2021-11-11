@@ -11,7 +11,9 @@ import ChainIcon from '../assets/ChainIcon';
 const Container = styled.div`
   margin: 5px;
 `;
-const Link = styled.a``;
+const Link = styled.a`
+  cursor: pointer;
+`;
 
 export const socialTypes = ['facebook', 'instagram', 'youtube', 'twitter', 'discord', 'custom'];
 

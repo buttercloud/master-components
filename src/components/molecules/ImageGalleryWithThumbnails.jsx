@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { imageType } from '../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
   display: flex;
@@ -19,7 +20,6 @@ const ThumbnailList = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  /*background-color: red;*/
 `;
 const ThumbnailContainer = styled.button`
   padding: 0;
@@ -39,10 +39,10 @@ const Thumbnail = styled.img`
 
 const ImageGalleryWithThumbnails = (props) => {
   const {
-    srcs,
+    images,
     thumbnailListLocation,
   } = props;
-  const [currentImage, setCurrentImage] = useState(srcs?.[0]);
+  const [currentImage, setCurrentImage] = useState(images?.[0]);
 
   let containerDirection = 'column';
   let listDirection = 'row';
@@ -52,32 +52,33 @@ const ImageGalleryWithThumbnails = (props) => {
   }
 
   const handleChangingImage = (event: SyntheticMouseEvent<HTMLElement>) => {
-    setCurrentImage(event.target.src);
+    const foundImage = images.find((image) => image?.src === event.target.src);
+    setCurrentImage(foundImage);
   };
 
   return (
     <Container direction={containerDirection}>
       {
         ['right', 'bottom'].includes(thumbnailListLocation)
-          ? <Image src={currentImage} alt="" />
+          ? <Image src={currentImage?.src} alt={currentImage?.alt} />
           : null
       }
       <ThumbnailList direction={listDirection}>
         {
-          srcs.map((image) => (
+          images?.map((image) => (
             <ThumbnailContainer
               key={Math.random().toString().slice(10)}
               borderColor={image === currentImage ? 'blue' : '#DADADA'}
               onClick={handleChangingImage}
             >
-              <Thumbnail src={image} alt="" />
+              <Thumbnail src={image.src} alt={image.alt} />
             </ThumbnailContainer>
           ))
         }
       </ThumbnailList>
       {
         ['left', 'top'].includes(thumbnailListLocation)
-          ? <Image src={currentImage} alt="" />
+          ? <Image src={currentImage?.src} alt={currentImage?.alt} />
           : null
       }
     </Container>
@@ -90,12 +91,12 @@ ImageGalleryWithThumbnails.defaultProps = {
 
 ImageGalleryWithThumbnails.propTypes = {
   /**
-  * A list of images urls/paths
-  */
-  srcs: PropTypes.arrayOf(PropTypes.string).isRequired,
+   * A list of images.
+   */
+  images: PropTypes.arrayOf(imageType).isRequired,
   /**
-  * Thumbnail list location
-  */
+   * Thumbnail list location
+   */
   thumbnailListLocation: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
 };
 

@@ -2,35 +2,9 @@ import React from 'react';
 import PromotionWithBackgroundImage from './PromotionWithBackgroundImage';
 
 export default {
-  title: 'organisms/Features/PromotionWithBackgroundImage',
+  title: 'organisms/Features/Promotion With Background Image',
   component: PromotionWithBackgroundImage,
-  argTypes: {
-    titleFontSize: {
-      control: {
-        type: 'range', min: 0, max: 5, step: 0.1,
-      },
-    },
-    titleColor: { control: 'color' },
-    subtitleFontSize: {
-      control: {
-        type: 'range', min: 0, max: 5, step: 0.1,
-      },
-    },
-    subtitleColor: { control: 'color' },
-    descriptionFontSize: {
-      control: {
-        type: 'range', min: 0, max: 5, step: 0.1,
-      },
-    },
-    descriptionColor: { control: 'color' },
-    actionButtonFontSize: {
-      control: {
-        type: 'range', min: 0, max: 5, step: 0.1,
-      },
-    },
-    actionButtonTextColor: { control: 'color' },
-    actionButtonBackgroundColor: { control: 'color' },
-  },
+  argTypes: {},
 };
 
 const Template = (args) => <PromotionWithBackgroundImage {...args} />;
@@ -38,13 +12,25 @@ const Template = (args) => <PromotionWithBackgroundImage {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  title: 'Order Online',
-  subtitle: 'Get 10% Off Your First Order',
-  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-  backgroundImage: {
-    url: 'http://androthemes.com/themes/html/slices/assets/img/bg/cta.jpg',
-    alt: '',
+  title: {
+    text: 'Order Online',
   },
-
+  subtitle: {
+    text: 'Get 10% Off Your First Order',
+  },
+  description: {
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+  },
+  actionButton: {
+    text: 'LOREM IPSUM',
+  },
+  background: {
+    image: {
+      url: 'https://place-hold.it/1000.png',
+      alt: '',
+    },
+    backgroundColor: 'palevioletred',
+  },
 };
-Primary.storyName = 'PromotionWithBackgroundImage';
+
+Primary.storyName = 'Promotion With Background Image';

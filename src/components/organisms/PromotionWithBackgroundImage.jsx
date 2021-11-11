@@ -2,25 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import { textType, imageType, buttonType } from '../../customPropTypes/customPropTypes';
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url(${(props) => props.imgUrl}) no-repeat center center;
-  background-color: rgba(0, 0, 0, 0.6);
-  background-blend-mode: darken;
-  padding: 80px 20px;
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  ${({ imgUrl }) => imgUrl && `
+    background: url(${imgUrl}) no-repeat center center;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: darken;
+  `}
+  padding: 80px 0;
   width: 100%;
 `;
 const Title = styled.h5`
-  color: palevioletred;
   font-weight: 700;
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize}rem;
 `;
 const Subtitle = styled.h2`
-  color: white;
   font-weight: 700;
   margin-top: 0;
   color: ${(props) => props.color} !important;
@@ -28,23 +31,20 @@ const Subtitle = styled.h2`
 `;
 const Description = styled.p`
   text-align: center;
-  color: white;
-  margin-top: 0;
-  margin-bottom: 20px;
+  margin: 0 20px 20px 20px;
   font-size: ${(props) => props.fontSize}rem;
   color: ${(props) => props.color} !important;
 `;
-const ActionButton = styled.a`
-  position: relative;
-  color: ${(props) => props.color} !important;
-  background-color: ${(props) => props.backgroundColor};
+const ActionButton = styled.button`
+  color: ${({ color }) => color};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   border: 0;
   border-radius: 25px;
   padding: 12px 30px;
   box-shadow: none;
-  text-decoration: none !important;
+  text-decoration: none;
   cursor: pointer;
-  font-size: ${(props) => props.fontSize}rem;
+  font-size: ${({ fontSize }) => fontSize}rem;
   font-weight: 600;
   margin-top: 20px;
   &:active {
@@ -57,130 +57,101 @@ const PromotionWithBackgroundImage = (props) => {
     title,
     subtitle,
     description,
-    actionButtonText,
-    backgroundImage,
-    actionButtonUrl,
-
-    titleFontSize,
-    titleColor,
-    subtitleFontSize,
-    subtitleColor,
-    descriptionFontSize,
-    descriptionColor,
-    actionButtonTextColor,
-    actionButtonFontSize,
-    actionButtonBackgroundColor,
+    actionButton,
+    background,
   } = props;
 
+  const defaults = PromotionWithBackgroundImage.defaultProps;
+
   return (
-    <Container imgUrl={backgroundImage.url}>
-      <Title color={titleColor} fontSize={titleFontSize}>
-        {title}
+    <Container
+      imgUrl={background?.image?.src}
+      backgroundColor={background?.backgroundColor || defaults.background.backgroundColor}
+    >
+      <Title
+        color={title.color || defaults.title.color}
+        fontSize={title.fontSize || defaults.title.fontSize}
+      >
+        {title.text}
       </Title>
-      <Subtitle color={subtitleColor} fontSize={subtitleFontSize}>
-        {subtitle}
+      <Subtitle
+        color={subtitle.color || defaults.subtitle.color}
+        fontSize={subtitle.fontSize || defaults.subtitle.fontSize}
+      >
+        {subtitle.text}
       </Subtitle>
-      <Description color={descriptionColor} fontSize={descriptionFontSize}>
-        {description}
+      <Description
+        color={description.color || defaults.description.color}
+        fontSize={description.fontSize || defaults.description.fontSize}
+      >
+        {description.text}
       </Description>
       <ActionButton
-        href={actionButtonUrl}
-        color={actionButtonTextColor}
-        backgroundColor={actionButtonBackgroundColor}
-        fontSize={actionButtonFontSize}
+        onClick={actionButton.onClick}
+        color={actionButton.color || defaults.actionButton.color}
+        backgroundColor={actionButton.backgroundColor || defaults.actionButton.backgroundColor}
+        fontSize={actionButton.fontSize || defaults.actionButton.fontSize}
       >
-        {actionButtonText}
+        {actionButton.text}
       </ActionButton>
     </Container>
   );
 };
 
 PromotionWithBackgroundImage.defaultProps = {
-  title: '',
-  subtitle: '',
-  description: '',
-  actionButtonText: 'ORDER ONLINE',
-  actionButtonUrl: '#',
-  backgroundImage: {
-    url: '',
-    alt: '',
+  title: {
+    text: '',
+    color: '#fff',
+    fontSize: 1,
   },
-
-  // styles
-  titleColor: '#fff',
-  titleFontSize: 1,
-  subtitleColor: '#fff',
-  subtitleFontSize: 1.9,
-  descriptionColor: '#fff',
-  descriptionFontSize: 1.1,
-  actionButtonTextColor: '#fff',
-  actionButtonFontSize: 0.9,
-  actionButtonBackgroundColor: 'palevioletred',
+  subtitle: {
+    text: '',
+    color: '#fff',
+    fontSize: 1.9,
+  },
+  description: {
+    text: '',
+    color: '#fff',
+    fontSize: 1.1,
+  },
+  actionButton: {
+    text: '',
+    color: 'palevioletred',
+    fontSize: 0.9,
+    backgroundColor: 'white',
+  },
+  background: {
+    image: {
+      srcz: '',
+      alt: '',
+    },
+    backgroundColor: '#000',
+  },
 };
 
 PromotionWithBackgroundImage.propTypes = {
   /**
-  * Main title.
-  */
-  title: PropTypes.string,
+   * Main title.
+   */
+  title: textType,
   /**
-  * Main title color.
-  */
-  titleColor: PropTypes.string,
+   * Secondary title.
+   */
+  subtitle: textType,
   /**
-  * Main title font size.
-  */
-  titleFontSize: PropTypes.number,
+   * Description.
+   */
+  description: textType,
   /**
-  * Secondary title.
-  */
-  subtitle: PropTypes.string,
+   * Action button.
+   */
+  actionButton: buttonType,
   /**
-  * Secondary color.
-  */
-  subtitleColor: PropTypes.string,
-  /**
-  * Secondary font size.
-  */
-  subtitleFontSize: PropTypes.number,
-  /**
-  * Description.
-  */
-  description: PropTypes.string,
-  /**
-  * Description color.
-  */
-  descriptionColor: PropTypes.number,
-  /**
-  * Description font size.
-  */
-  descriptionFontSize: PropTypes.number,
-  /**
-  * Action button text.
-  */
-  actionButtonText: PropTypes.string,
-  /**
-  * Action button text color.
-  */
-  actionButtonTextColor: PropTypes.string,
-  /**
-  * Action button font size.
-  */
-  actionButtonFontSize: PropTypes.number,
-  /**
-  * Action button background color.
-  */
-  actionButtonBackgroundColor: PropTypes.string,
-  /**
-  * Action button url.
-  */
-  actionButtonUrl: PropTypes.string,
-  /**
-  * Background image.
-  */
-  backgroundImage: PropTypes.shape({
-    url: PropTypes.string,
-    alt: PropTypes.string,
+   * Background.
+   */
+  background: PropTypes.shape({
+    image: imageType,
+    backgroundColor: PropTypes.string,
   }),
 };
 
