@@ -1,0 +1,12 @@
+.storybook/
+playground/
+public/
+src/
+storybook-static/
+node_modules/
+.flowconfig
+.gitignore
+babel.config.js
+yarn.lock
+yarn-error.log
+.DS_Store
