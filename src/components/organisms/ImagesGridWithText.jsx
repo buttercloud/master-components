@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import {
+  textType,
+  imageType,
+  backgroundType,
+} from '../../customPropTypes/customPropTypes';
+
 const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -34,10 +40,6 @@ const Container = styled.div`
     /*flex-direction: column;*/
   }
 `;
-const BackgroundImageContainer = styled(Container)`
-  background: url(${(props) => props.imageUrl}) no-repeat center center;
-  background-size: cover;
-`;
 const BackgroundColorContainer = styled(Container)`
   background-color: ${(props) => props.backgroundColor};
 `;
@@ -49,6 +51,8 @@ const ElementContainer = styled.div`
   align-items: center;
   padding-right: 10px;
   padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -60,86 +64,72 @@ const Image = styled.img`
 `;
 const Title = styled.h5`
   color: ${(props) => props.color};
+  font-size: ${(props) => props.fontSize}rem;
+  margin: 15px 0;
 `;
 const Description = styled.p`
   color: ${(props) => props.color};
+  font-size: ${(props) => props.fontSize}rem;
   text-align: center;
   margin: 0;
 `;
 
-const Features01 = (props) => {
+const ImagesGridWithText = (props) => {
   const {
     content,
-    backgroundColor,
-    backgroundImage,
-    titleColor,
-    descriptionColor,
+    background,
   } = props;
 
-  let MainContainer = BackgroundColorContainer;
-
-  if (backgroundImage) {
-    MainContainer = BackgroundImageContainer;
-  }
-
   return (
-    <MainContainer
-      backgroundColor={backgroundColor}
-      imageUrl={backgroundImage}
+    <BackgroundColorContainer
+      backgroundColor={background.backgroundColor}
     >
       {
-        content.map((item) => (
+        content?.map((item) => (
           <ElementContainer>
             {
-              item.imageUrl
-                ? <Image src={item.imageUrl} />
+              item.image?.url
+                ? <Image src={item.image.url} alt={item.image.alt} />
                 : null
             }
-            <Title color={titleColor}>
-              {item.title}
+            <Title
+              color={item.title?.color || '#000'}
+              fontSize={item.title?.fontSize || 1.7}
+            >
+              {item.title?.text}
             </Title>
-            <Description color={descriptionColor}>
-              {item.description}
+            <Description
+              color={item.description?.color || '#000'}
+              fontSize={item.description?.fontSize || 1}
+            >
+              {item.description?.text}
             </Description>
           </ElementContainer>
         ))
       }
-    </MainContainer>
+    </BackgroundColorContainer>
   );
 };
 
-Features01.defaultProps = {
-  backgroundColor: '#fff',
-  backgroundImage: '',
-  titleColor: '#000',
-  descriptionColor: '#000',
+ImagesGridWithText.defaultProps = {
+  background: {
+    backgroundColor: '#fff',
+  },
 };
 
-Features01.propTypes = {
+ImagesGridWithText.propTypes = {
   /**
-  *
+  * Image, title and description
   */
   content: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    imageUrl: PropTypes.string,
+    title: textType.isRequired,
+    description: textType,
+    image: imageType,
   })).isRequired,
   /**
-  * Background Image that goes on top of the background color
+  * Background styles
   */
-  backgroundImage: PropTypes.string,
-  /**
-  * Background color to show if image is not provided
-  */
-  backgroundColor: PropTypes.string,
-  /**
-  * Custom color for the title
-  */
-  titleColor: PropTypes.string,
-  /**
-  * Custom color for the description
-  */
-  descriptionColor: PropTypes.string,
+  background: backgroundType,
 };
 
-export default Features01;
+export default ImagesGridWithText;

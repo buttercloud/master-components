@@ -1,12 +1,21 @@
+// @flow
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Dinero from 'dinero.js';
-
 import AddToCartButton from '../atoms/AddToCartButton';
 import TextareaWithLabel from '../molecules/TextareaWithLabel';
 import NumberInputWithCircleActionButtons from '../molecules/NumberInputWithCircleActionButtons';
 import ImageGalleryWithThumbnails from '../molecules/ImageGalleryWithThumbnails';
+import {
+  textType,
+  imageType,
+  buttonType,
+  moneyType,
+} from '../../customPropTypes/customPropTypes';
+
+// TODO
+// add default values for fontSize, color, ...
 
 const DeviceWidth = 650;
 
@@ -49,22 +58,22 @@ const Title = styled.h2`
   font-weight: 600;
   line-height: 3rem;
   margin: 0;
-  font-size: ${(props) => props.fontSize}rem;
-  color: ${(props) => props.color};
+  font-size: ${({ fontSize }) => fontSize}rem;
+  color: ${({ color }) => color};
 `;
 const Price = styled.h3`
   margin: 0;
   font-weight: 500;
   line-height: 1.2;
-  font-size: ${(props) => props.fontSize}rem;
-  color: ${(props) => props.color};
+  font-size: ${({ fontSize }) => fontSize}rem;
+  color: ${({ color }) => color};
 `;
 const Description = styled.p`
   padding: 0;
   margin-top: 0;
   margin-bottom: 1rem;
-  font-size: ${(props) => props.fontSize}rem;
-  color: ${(props) => props.color};
+  font-size: ${({ fontSize }) => fontSize}rem;
+  color: ${({ color }) => color};
 `;
 // --OptionType--
 const OptionType = styled.div``;
@@ -92,19 +101,19 @@ const PropertyLabelsContainer = styled.div`
 const Subheader = styled.p`
   margin: 10px 0;
   font-weight: 500;
-  font-size: ${(props) => props.fontSize}rem;
-  color: ${(props) => props.color};
+  font-size: ${({ fontSize }) => fontSize}rem;
+  color: ${({ color }) => color};
 `;
 const Label = styled.label`
   margin-left: 3px;
   margin-right: 15px;
   /*font-weight: 500;*/
-  font-size: ${(props) => props.fontSize}rem;
-  color: ${(props) => props.color};
+  font-size: ${({ fontSize }) => fontSize}rem;
+  color: ${({ color }) => color};
 `;
 const PriceLabel = styled.label`
-  font-size: ${(props) => props.fontSize}rem;
-  color: ${(props) => props.color};
+  font-size: ${({ fontSize }) => fontSize}rem;
+  color: ${({ color }) => color};
   line-height: 5px;
   margin: 5px 0;
 `;
@@ -118,14 +127,14 @@ const StyledInput = styled.input`
 const RadioButton = styled(StyledInput)`
   border-radius: 50%;
   &:checked {
-    background-color: ${(props) => props.filledColor};
-    border-color: ${(props) => props.filledColor};
+    background-color: ${({ filledColor }) => filledColor};
+    border-color: ${({ filledColor }) => filledColor};
   }
 `;
 const Checkbox = styled(StyledInput)`
   &:checked {
-    background-color: ${(props) => props.filledColor};
-    border-color: ${(props) => props.filledColor};
+    background-color: ${({ filledColor }) => filledColor};
+    border-color: ${({ filledColor }) => filledColor};
   }
 `;
 const QuantityAndCartButtonsContainer = styled.div`
@@ -139,29 +148,12 @@ const ProductDetails = (props) => {
     id,
     showSpecialRequests,
     maxQuantity,
-
     masterVariant,
     optionTypes,
     properties,
     variants,
-    // styles props
-    nameFontSize,
-    nameColor,
-    priceFontSize,
-    priceColor,
-    descriptionFontSize,
-    descriptionColor,
-    optionTypeSubheaderSize,
-    optionTypeSubheaderColor,
-    optionValueLabelSize,
-    optionValueLabelColor,
-    propertySubheaderSize,
-    propertySubheaderColor,
-    propertyValueLabelSize,
-    propertyValueLabelColor,
     filledInputColor,
-    // methods
-    addToCart,
+    addToCartButton,
   } = props;
 
   const [currentVariant, setCurrentVariant] = useState(masterVariant);
@@ -171,13 +163,11 @@ const ProductDetails = (props) => {
   const [specialRequests, setSpecialRequests] = useState('');
   const [quantity, setQuantity] = useState(1);
 
-  console.log('id: ', id);
-
   useEffect(() => {
     // Fill in customOptions
     const tempOptions = {};
-    masterVariant.options.forEach((type) => {
-      tempOptions[type.name] = type.value;
+    masterVariant.options?.forEach((type) => {
+      tempOptions[type.name.text] = type.value.text;
     });
 
     setCustomOptions(tempOptions);
@@ -185,7 +175,7 @@ const ProductDetails = (props) => {
     // Fill in customProperties
     const tempProperties = {};
     properties.forEach((property) => {
-      tempProperties[property.name] = [];
+      tempProperties[property.name.text] = [];
     });
 
     setCustomProperties(tempProperties);
@@ -195,8 +185,8 @@ const ProductDetails = (props) => {
     const foundVariant = variants.find((variant) => {
       let found = true;
 
-      variant.options.every((option) => {
-        if (customOptions[option.name] !== option.value) {
+      variant.options?.every((option) => {
+        if (customOptions[option.name.text] !== option.value.text) {
           found = false;
           return false;
         }
@@ -206,17 +196,11 @@ const ProductDetails = (props) => {
       return found;
     });
 
-    let defaultImage = masterVariant.imagesUrls?.[0];
-
     if (foundVariant) {
       setCurrentVariant(foundVariant);
-      defaultImage = foundVariant.imagesUrls?.[0] || defaultImage;
     } else {
       setCurrentVariant(masterVariant);
     }
-
-    console.log('defaultImage: ', defaultImage);
-    // setCurrentImage(defaultImage);
   }, [customOptions]);
 
   const handleOptionChange = (event: SyntheticMouseEvent<HTMLElement>) => {
@@ -234,23 +218,19 @@ const ProductDetails = (props) => {
     const targetName = target.name;
     const targetValue = target.value;
     const customProperty = Array.from(customProperties[targetName]);
-    const index = customProperty.findIndex((value) => value.name === targetValue);
+    const index = customProperty.findIndex((value) => value.name.text === targetValue);
 
     if (index === -1) {
-      const originalProperty = properties.find((property) => property.name === targetName);
+      const originalProperty = properties.find((property) => property.name.text === targetName);
 
       // reached maximum amount required
       if (originalProperty.maxRequired === customProperty.length) return;
 
       const originalPropertyValue = originalProperty.values.find(
-        (value) => value.name === targetValue,
+        (value) => value.name.text === targetValue,
       );
 
       customProperty.splice(index, 0, originalPropertyValue);
-
-      console.log('maxRequired: ', originalProperty.maxRequired);
-      console.log('customProperty.length: ', customProperty.length);
-      console.log('customProperty: ', customProperty);
     } else {
       customProperty.splice(index, 1);
     }
@@ -262,25 +242,28 @@ const ProductDetails = (props) => {
   };
 
   const ImagesBlock = () => {
-    let urls;
+    let imagesToShow;
 
-    if (currentVariant.imagesUrls.length > 0) {
-      urls = currentVariant.imagesUrls;
+    if (currentVariant.images?.length > 0) {
+      imagesToShow = currentVariant.images;
     } else {
-      urls = masterVariant.imagesUrls;
+      imagesToShow = masterVariant.images;
     }
 
     return (
       <ImageGalleryWithThumbnails
-        srcs={urls}
+        images={imagesToShow}
         thumbnailListLocation="bottom"
       />
     );
   };
 
   const TitleBlock = () => (
-    <Title fontSize={nameFontSize} color={nameColor}>
-      {currentVariant?.name}
+    <Title
+      fontSize={currentVariant?.name?.fontSize}
+      color={currentVariant?.name?.color}
+    >
+      {currentVariant?.name.text}
     </Title>
   );
 
@@ -309,34 +292,42 @@ const ProductDetails = (props) => {
     });
 
     return (
-      <Price fontSize={priceFontSize} color={priceColor}>
+      <Price
+        fontSize={currentVariant?.price?.fontSize}
+        color={currentVariant?.price?.color}
+      >
         {priceAmount.toFormat()}
       </Price>
     );
   };
 
   const DescriptionBlock = () => {
-    const descriptionDisplay = currentVariant.description || masterVariant.description;
+    const descriptionDisplay = currentVariant.description?.text || masterVariant.description?.text;
+    const descriptionFontSize = currentVariant.description?.fontSize;
+    const descriptionColor = currentVariant.description?.color;
 
     return (
-      <Description fontSize={descriptionFontSize} color={descriptionColor}>
+      <Description
+        fontSize={descriptionFontSize}
+        color={descriptionColor}
+      >
         {descriptionDisplay}
       </Description>
     );
   };
 
   const OptionTypesBlock = () => optionTypes.map((type) => {
-    const defaultValue = masterVariant.options.find((o) => o.name === type.name).value;
+    const defaultValue = masterVariant.options?.find((o) => o.name.text === type.name.text)?.value;
 
-    console.log('defaultValue: ', defaultValue);
+    console.log(defaultValue);
 
     return (
       <OptionType key={Math.random().toString().slice(10)}>
         <Subheader
-          fontSize={optionTypeSubheaderSize}
-          color={optionTypeSubheaderColor}
+          fontSize={type.name?.fontSize || 1.4}
+          color={type.name?.color || '#000'}
         >
-          {type.name}
+          {type.name?.text}
         </Subheader>
         <OptionValues>
           {
@@ -344,20 +335,20 @@ const ProductDetails = (props) => {
               <OptionValue key={Math.random().toString().slice(10)}>
                 <RadioButton
                   type="radio"
-                  name={type.name}
-                  id={typeValue}
-                  value={typeValue}
+                  name={type.name.text}
+                  id={typeValue.text}
+                  value={typeValue.text}
                   filledColor={filledInputColor}
                   // defaultChecked={(defaultValue === typeValue)}
                   onChange={handleOptionChange}
-                  checked={customOptions[type.name] === typeValue}
+                  checked={customOptions[type.name.text] === typeValue.text}
                 />
                 <Label
-                  htmlFor={typeValue}
-                  fontSize={optionValueLabelSize}
-                  color={optionValueLabelColor}
+                  htmlFor={typeValue.text}
+                  fontSize={typeValue.fontSize}
+                  color={typeValue.color}
                 >
-                  {typeValue}
+                  {typeValue.text}
                 </Label>
               </OptionValue>
             ))
@@ -378,10 +369,10 @@ const ProductDetails = (props) => {
     return (
       <Property key={Math.random().toString().slice(10)}>
         <Subheader
-          fontSize={propertySubheaderSize}
-          color={propertySubheaderColor}
+          fontSize={property.name.fontSize}
+          color={property.name.color}
         >
-          {property.name}
+          {property.name.text}
         </Subheader>
         <PropertyValues>
           {
@@ -403,8 +394,8 @@ const ProductDetails = (props) => {
                 }
               }
 
-              const exists = customProperties[property.name]?.find?.(
-                (value) => value.name === propertyValue.name,
+              const exists = customProperties[property.name.text]?.find?.(
+                (value) => value.name.text === propertyValue.name.text,
               );
               const isChecked = !!exists;
 
@@ -412,25 +403,25 @@ const ProductDetails = (props) => {
                 <PropertyValue key={Math.random().toString().slice(10)}>
                   <CustomInput
                     type={property.type}
-                    name={property.name}
-                    id={propertyValue.name}
-                    value={propertyValue.name}
+                    name={property.name.text}
+                    id={propertyValue.name.text}
+                    value={propertyValue.name.text}
                     filledColor={filledInputColor}
                     onChange={handlePropertyChange}
                     checked={isChecked}
                   />
                   <PropertyLabelsContainer>
                     <Label
-                      htmlFor={propertyValue.name}
-                      fontSize={propertyValueLabelSize}
-                      color={propertyValueLabelColor}
+                      htmlFor={propertyValue.name.text}
+                      fontSize={propertyValue.name.fontSize}
+                      color={propertyValue.name.color}
                     >
-                      {propertyValue.name}
+                      {propertyValue.name.text}
                     </Label>
                     <PriceLabel
-                      htmlFor={propertyValue.name}
-                      fontSize={propertyValueLabelSize}
-                      color={priceColor}
+                      htmlFor={propertyValue.name.text}
+                      fontSize={propertyValue.price?.fontSize}
+                      color={propertyValue.price?.color}
                     >
                       {propertyValueAmountDisplay}
                     </PriceLabel>
@@ -445,7 +436,7 @@ const ProductDetails = (props) => {
   });
 
   return (
-    <Container>
+    <Container id={id}>
       <ImagesContainer>
         <ImagesBlock />
       </ImagesContainer>
@@ -479,10 +470,11 @@ const ProductDetails = (props) => {
               ) : null
           }
           <AddToCartButton
-            addToCart={addToCart}
-            label="Add to Cart"
-            fontSize={1.3}
-            backgroundColor="#1e774c"
+            addToCart={addToCartButton?.onClick}
+            label={addToCartButton?.text}
+            fontSize={addToCartButton?.fontSize || 1.3}
+            backgroundColor={addToCartButton?.backgroundColor}
+            color={addToCartButton?.color}
           />
         </QuantityAndCartButtonsContainer>
       </ProductInfoContainer>
@@ -499,173 +491,104 @@ ProductDetails.defaultProps = {
   properties: [],
   variants: [],
 
-  nameFontSize: 2,
-  nameColor: 'black',
-  priceFontSize: 1.3,
-  priceColor: 'black',
-  descriptionFontSize: 1,
-  descriptionColor: 'black',
-  optionTypeSubheaderSize: 1.4,
-  optionTypeSubheaderColor: 'black',
-  optionValueLabelSize: 1,
-  optionValueLabelColor: 'black',
-  propertySubheaderSize: 1.2,
-  propertySubheaderColor: 'black',
-  propertyValueLabelSize: 1,
-  propertyValueLabelColor: 'black',
+  // nameFontSize: 2,
+  // nameColor: 'black',
+  // priceFontSize: 1.3,
+  // priceColor: 'black',
+  // descriptionFontSize: 1,
+  // descriptionColor: 'black',
+  // optionTypeSubheaderSize: 1.4,
+  // optionTypeSubheaderColor: 'black',
+  // optionValueLabelSize: 1,
+  // optionValueLabelColor: 'black',
+  // propertySubheaderSize: 1.2,
+  // propertySubheaderColor: 'black',
+  // propertyValueLabelSize: 1,
+  // propertyValueLabelColor: 'black',
   filledInputColor: 'black',
 };
 
 ProductDetails.propTypes = {
   /**
-  * Master Variant
-  */
+   * Master Variant
+   */
   masterVariant: PropTypes.shape({
-    name: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.shape({
-      cents: PropTypes.number.isRequired,
-      currency: PropTypes.string.isRequired,
-      precision: PropTypes.number.isRequired,
-    }),
-    imagesUrls: PropTypes.arrayOf(PropTypes.string),
+    name: textType,
+    description: textType,
+    price: moneyType,
+    images: PropTypes.arrayOf(imageType),
     options: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string,
-      value: PropTypes.string,
+      name: textType,
+      value: textType,
     })),
   }).isRequired,
   /**
-  * Product Variants
-  */
+   * Product Variants
+   */
   variants: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.shape({
-      cents: PropTypes.number.isRequired,
-      currency: PropTypes.string.isRequired,
-      precision: PropTypes.number.isRequired,
-    }),
-    // TODO: Maybe change to image type of `alt` and `src`
-    images: PropTypes.arrayOf(PropTypes.string),
+    name: textType,
+    description: textType,
+    price: moneyType,
+    images: PropTypes.arrayOf(imageType),
     options: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string,
-      value: PropTypes.string,
+      name: textType,
+      value: textType,
     })),
   })),
   /**
-  * OptionTypes.
-  */
+   * OptionTypes.
+   */
   optionTypes: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    values: PropTypes.arrayOf(PropTypes.string),
+    name: textType,
+    values: PropTypes.arrayOf(textType),
   })),
   /**
-  * Properties
-  */
+   * Properties
+   */
   properties: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
+    name: textType,
     values: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string,
-      price: PropTypes.shape({
-        cents: PropTypes.number.isRequired,
-        currency: PropTypes.string.isRequired,
-        precision: PropTypes.number.isRequired,
-      }),
+      name: textType,
+      price: moneyType,
     })),
     type: PropTypes.string,
     minRequired: PropTypes.number,
     maxRequired: PropTypes.number,
   })),
   /**
-  * Product name font size.
-  */
-  nameFontSize: PropTypes.number,
-  /**
-  * Product name color.
-  */
-  nameColor: PropTypes.string,
-  /**
-  * Product price font size.
-  */
-  priceFontSize: PropTypes.number,
-  /**
-  * Product price color.
-  */
-  priceColor: PropTypes.string,
-  /**
-  * Product description font size.
-  */
-  descriptionFontSize: PropTypes.number,
-  /**
-  * Product description color.
-  */
-  descriptionColor: PropTypes.string,
-  /**
-  * OptionType label font size in rem
-  */
-  optionTypeSubheaderSize: PropTypes.number,
-  /**
-  * OptionType label color
-  */
-  optionTypeSubheaderColor: PropTypes.string,
-  /**
-  * Option value font size in rem
-  */
-  optionValueLabelSize: PropTypes.number,
-  /**
-  * Option value label color
-  */
-  optionValueLabelColor: PropTypes.string,
-  /**
-  * Property label font size in rem
-  */
-  propertySubheaderSize: PropTypes.number,
-  /**
-  * Property label color
-  */
-  propertySubheaderColor: PropTypes.string,
-  /**
-  * Property value font size in rem
-  */
-  propertyValueLabelSize: PropTypes.number,
-  /**
-  * Property value color
-  */
-  propertyValueLabelColor: PropTypes.string,
-  /**
-  * Filled checkbox/radio input color
-  */
+   * Filled checkbox/radio input color
+   */
   filledInputColor: PropTypes.string,
 
   /**
-  * Product ID.
-  */
+   * Product ID.
+   */
   id: PropTypes.string.isRequired,
   /**
-  * Product options
-  */
+   * Product options
+   */
   options: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
+    name: textType,
     values: PropTypes.arrayOf(
       PropTypes.shape({
-        name: PropTypes.string,
-        price: PropTypes.string,
+        name: textType,
+        price: moneyType,
       }),
     ),
     type: PropTypes.string,
   })),
   /**
-  * Show/hide Special Requests.
-  */
+   * Show/hide Special Requests.
+   */
   showSpecialRequests: PropTypes.bool,
   /**
-  * Maximum number of quantity a user can order. If its 1, quantity block will be hidden.
-  */
+   * Maximum number of quantity a user can order. If its 1, quantity block will be hidden.
+   */
   maxQuantity: PropTypes.number,
   /**
-  * A method to add the current item to the cart.
-  */
-  addToCart: PropTypes.func.isRequired,
+   * Add to cart button.
+   */
+  addToCartButton: buttonType.isRequired,
 };
 
 export default ProductDetails;

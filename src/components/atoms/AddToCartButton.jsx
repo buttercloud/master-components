@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import CartIcon from '../assets/CartIcon';
+import { textType } from '../../customPropTypes/customPropTypes';
 
 const Container = styled.button`
   display: flex;
@@ -29,7 +30,7 @@ const IconContainer = styled.div`
 const AddToCartButton = (props) => {
   const {
     label,
-    fontColor,
+    color,
     fontSize,
     cartIconIsVisible,
     cartIconColor,
@@ -42,8 +43,8 @@ const AddToCartButton = (props) => {
       color={backgroundColor}
       onClick={addToCart}
     >
-      <Label color={fontColor} fontSize={fontSize}>
-        {label}
+      <Label color={color} fontSize={fontSize}>
+        {label?.text}
       </Label>
       {
         cartIconIsVisible && (
@@ -60,7 +61,7 @@ AddToCartButton.defaultProps = {
   label: 'Add to Cart',
   cartIconIsVisible: true,
   fontSize: 1.1,
-  fontColor: '#fff',
+  color: '#fff',
   cartIconColor: '#fff',
   backgroundColor: '#000',
 };
@@ -73,7 +74,7 @@ AddToCartButton.propTypes = {
   /**
   * Text on the button.
   */
-  label: PropTypes.string,
+  label: textType,
   /**
   * Show/hide icon on the button
   */
@@ -85,7 +86,7 @@ AddToCartButton.propTypes = {
   /**
   * Color of the button label
   */
-  fontColor: PropTypes.string,
+  color: PropTypes.string,
   /**
   * Cart Icon color
   */

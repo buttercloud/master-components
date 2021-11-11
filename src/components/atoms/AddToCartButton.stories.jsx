@@ -6,7 +6,7 @@ export default {
   component: AddToCartButton,
   argTypes: {
     label: { control: 'text' },
-    fontColor: { control: 'color' },
+    color: { control: 'color' },
     fontSize: { control: 'number' },
     cartIconColor: { control: 'color' },
     backgroundColor: { control: 'color' },
@@ -20,7 +20,7 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   label: 'Add to Cart',
-  fontColor: '#fff',
+  color: '#fff',
   fontSize: 1.1,
   cartIconIsVisible: true,
   cartIconColor: '#fff',

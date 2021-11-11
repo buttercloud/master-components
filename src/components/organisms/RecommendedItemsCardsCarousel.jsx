@@ -1,14 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Slider from 'react-slick';
 import Dinero from 'dinero.js';
+import Carousel from '../molecules/Carousel';
+import { textType, imageType, moneyType } from '../../customPropTypes/customPropTypes';
 
 import CartIcon from '../assets/CartIcon';
 import ArrowIcon from '../assets/ArrowIcon';
-
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 const Container = styled.div`
   display: flex;
@@ -36,20 +34,6 @@ const Description = styled.p`
   margin: 0 auto 20px;
   max-width: 600px;
   text-align: center;
-`;
-const Carousel = styled(Slider)`
-  width: 100%;
-  max-width: 1000px;
-
-  .slick-slide > div {
-    margin: 0 10px;
-  }
-  .slick-list {
-    margin: 0 -10px;
-  }
-  .slick-slide *:focus{
-    outline: none;
-  }
 `;
 const ImageContainer = styled.div`
   display: flex;
@@ -196,18 +180,18 @@ const RecommendedItemsCardsCarousel = (props) => {
         {description.text}
       </Description>
       <Carousel
-        ref={sliderRef}
+        carouselRef={sliderRef}
         accessibility
         dots={false}
         infinite
         swipeToSlide
+        swipe
         autoplay={false}
         arrows={false}
         speed={500}
         slidesToShow={slidesToShow}
         slidesToScroll={1}
         centerMode={centerMode}
-        // centerPadding="50px"
       >
         {
           items.map((item) => {
@@ -222,7 +206,7 @@ const RecommendedItemsCardsCarousel = (props) => {
             return (
               <Card key={Math.random.toString().substring(10)}>
                 <ImageContainer>
-                  <CardImage src={item.img.url} />
+                  <CardImage src={item.image?.src} />
                 </ImageContainer>
                 <CardBody>
                   <ItemInfo>
@@ -318,42 +302,27 @@ RecommendedItemsCardsCarousel.defaultProps = {
   centerMode: false,
 };
 
-const TextType = PropTypes.shape({
-  color: PropTypes.string,
-  fontSize: PropTypes.number,
-  text: PropTypes.string,
-});
-const MoneyType = PropTypes.shape({
-  cents: PropTypes.number.isRequired,
-  currency: PropTypes.string.isRequired,
-  precision: PropTypes.string.isRequired,
-});
-const ImageType = PropTypes.shape({
-  url: PropTypes.string,
-  alt: PropTypes.string,
-});
-
 RecommendedItemsCardsCarousel.propTypes = {
   /**
    * Main title.
    */
-  title: TextType,
+  title: textType,
   /**
    * Secondary title.
    */
-  subtitle: TextType,
+  subtitle: textType,
   /**
    * Description.
    */
-  description: TextType,
+  description: textType,
   /**
    * Items to show.
    */
   items: PropTypes.arrayOf(PropTypes.shape({
-    img: ImageType,
-    title: TextType,
-    description: TextType,
-    price: MoneyType,
+    image: imageType,
+    title: textType,
+    description: textType,
+    price: moneyType,
     /**
      * Call to Action Button.
      */
