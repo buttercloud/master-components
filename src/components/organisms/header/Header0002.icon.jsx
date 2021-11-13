@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header0001() {
+function Header0002() {
   return (
     <svg fill="none" viewBox="0 0 266 150">
       <path fill="var(--solid)" d="M0 0h266v150H0z" />
@@ -8,4 +8,4 @@ function Header0001() {
   );
 }
 
-export default Header0001;
+export default Header0002;

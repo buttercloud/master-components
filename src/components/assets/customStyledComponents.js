@@ -29,6 +29,7 @@ const StyledSpan = styled.span.attrs((props) => ({
 `;
 const StyledParagraph = styled.p.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
   font-size: ${({ styles }) => styles?.fontSize}rem;
@@ -116,7 +117,10 @@ const StyledInput = styled.input.attrs((props) => ({
 }))``;
 const StyledFooter = styled.footer.attrs((props) => ({
   onClick: props?.customProps?.onClick,
-}))``;
+  styles: props?.customProps?.styles,
+}))`
+  background-color: ${({ styles }) => styles?.backgroundColor}
+`;
 const StyledHeader = styled.header.attrs((props) => ({
   onClick: props?.customProps?.onClick,
   styles: props?.customProps?.styles,

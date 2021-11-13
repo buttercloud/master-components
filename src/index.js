@@ -1,6 +1,6 @@
 import './assets/css/tailwind.css';
 import './assets/css/icons.css';
-import FooterWithInfoAndSocial from './components/organisms/FooterWithInfoAndSocial';
+
 import MenuWithStickyNavAndCategories from './components/organisms/MenuWithStickyNavAndCategories';
 import TitleImageAndText from './components/organisms/TitleImageAndText';
 import ImagesGridWithText from './components/organisms/ImagesGridWithText';
@@ -40,6 +40,7 @@ import Cta5887 from './components/organisms/cta/Cta5887';
 import Cta9114 from './components/organisms/cta/Cta9114';
 import Cta9291 from './components/organisms/cta/Cta9291';
 
+import Footer0001 from './components/organisms/footer/Footer0001';
 import Footer1670 from './components/organisms/footer/Footer1670';
 import Footer4879 from './components/organisms/footer/Footer4879';
 import Footer8030 from './components/organisms/footer/Footer8030';
@@ -77,7 +78,6 @@ import Testimonial8468 from './components/organisms/testimonial/Testimonial8468'
 import Testimonial9017 from './components/organisms/testimonial/Testimonial9017';
 
 export {
-  FooterWithInfoAndSocial,
   MenuWithStickyNavAndCategories,
   TitleImageAndText,
   ImagesGridWithText,
@@ -112,6 +112,7 @@ export {
   Cta5887,
   Cta9114,
   Cta9291,
+  Footer0001,
   Footer1670,
   Footer4879,
   Footer8030,

@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import SocialButtons, { socialMediaType } from '../molecules/SocialButtons';
-import { textType } from '../../customPropTypes/customPropTypes';
+import { StyledFooter, StyledParagraph } from '../../assets/customStyledComponents';
+import SocialButtons, { socialMediaType } from '../../molecules/SocialButtons';
+import { textType, backgroundType } from '../../../customPropTypes/customPropTypes';
+import Footer0001Icon from './Footer0001.icon';
 
-const Container = styled.div`
+const Container = styled(StyledFooter)`
   display: flex;
   flex-direction: column;
-  background-color: ${(props) => (props.backgroundColor)};
   padding: 10px 50px;
 `;
 const InfoFieldsContainer = styled.div`
@@ -25,23 +26,19 @@ const SocialInfoContainer = styled.div`
 `;
 const InfoBlock = styled.div`
   margin-right: 20px;
-  color: ${({ color }) => color};
-  font-family: ${({ fontFamily }) => fontFamily};
 `;
-const InfoBlockLabel = styled.p`
-  font-size: ${({ fontSize }) => fontSize}rem;
+const InfoBlockLabel = styled(StyledParagraph)`
   font-weight: bold;
   margin-bottom: 0;
 `;
-const InfoBlockValue = styled.p`
-  font-size: ${({ fontSize }) => fontSize}rem;
+const InfoBlockValue = styled(StyledParagraph)`
   margin-top: 0;
 `;
 
 /**
 * Basic footer component with dynamic sections and social icons.
 */
-const FooterWithInfoAndSocial = (props) => {
+const Footer0001 = (props) => {
   const {
     background,
     infoFields,
@@ -51,16 +48,12 @@ const FooterWithInfoAndSocial = (props) => {
   const ContactInfo = () => (
     <InfoFieldsContainer>
       {
-        infoFields.map((field) => (
-          <InfoBlock
-            key={Math.random().toString().slice(10)}
-            color={background?.color}
-            fontFamily={background?.fontFamily}
-          >
-            <InfoBlockLabel fontSize={field.label?.fontSize}>
+        infoFields?.map((field) => (
+          <InfoBlock key={field.id} id={field.id}>
+            <InfoBlockLabel customProps={field.label}>
               {field.label?.text}
             </InfoBlockLabel>
-            <InfoBlockValue fontSize={field.value?.fontSize}>
+            <InfoBlockValue customProps={field.value}>
               {field.value?.text}
             </InfoBlockValue>
           </InfoBlock>
@@ -70,7 +63,7 @@ const FooterWithInfoAndSocial = (props) => {
   );
 
   return (
-    <Container backgroundColor={background?.backgroundColor}>
+    <Container customProps={background}>
       <ContactInfo />
       <SocialInfoContainer>
         <SocialButtons
@@ -82,34 +75,19 @@ const FooterWithInfoAndSocial = (props) => {
   );
 };
 
-FooterWithInfoAndSocial.defaultProps = {
-  background: {
-    backgroundColor: '#000000',
-    color: '#ffffff',
-    fontFamily: 'Public Sans, sans-serif',
-  },
+Footer0001.icon = Footer0001Icon;
+
+Footer0001.defaultProps = {
+  background: {},
   socialMedia: [],
   infoFields: [],
 };
 
-FooterWithInfoAndSocial.propTypes = {
+Footer0001.propTypes = {
   /**
   * Background
   */
-  background: PropTypes.shape({
-    /**
-     * Background color
-     */
-    backgroundColor: PropTypes.string,
-    /**
-     * Font type
-     */
-    fontFamily: PropTypes.string,
-    /**
-     * Color of all text
-     */
-    color: PropTypes.string,
-  }),
+  background: backgroundType,
   /**
    * Social media icons to show.
    */
@@ -118,9 +96,10 @@ FooterWithInfoAndSocial.propTypes = {
    * The fields to show on the footer
    */
   infoFields: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
     label: textType,
     value: textType,
   })),
 };
 
-export default FooterWithInfoAndSocial;
+export default Footer0001;

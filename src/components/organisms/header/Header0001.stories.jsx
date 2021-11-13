@@ -31,19 +31,25 @@ Primary.args = {
   socialMedia: [
     {
       type: 'instagram',
-      color: 'white',
+      styles: {
+        color: 'white',
+      },
       text: 'instagram',
       url: '#',
     },
     {
       type: 'discord',
-      color: 'white',
+      styles: {
+        color: 'white',
+      },
       text: 'Discord',
       url: '#',
     },
     {
       type: 'facebook',
-      color: 'white',
+      styles: {
+        color: 'white',
+      },
       text: 'facebook',
       url: '#',
     },

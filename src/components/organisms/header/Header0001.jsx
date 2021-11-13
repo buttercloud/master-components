@@ -67,7 +67,9 @@ Header0001.defaultProps = {
     {
       type: 'instagram',
       url: '',
-      color: '#000',
+      styles: {
+        color: '#000',
+      },
       text: 'Instagram',
     },
   ],
