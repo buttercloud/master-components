@@ -1,10 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { textType, imageType } from '../../customPropTypes/customPropTypes';
+import {
+  StyledContainer,
+  StyledH1,
+  StyledH2,
+  StyledImage,
+} from '../../assets/customStyledComponents';
+import { textType, imageType } from '../../../customPropTypes/customPropTypes';
+import Header0002Icon from './Header0002.icon';
 
-const Container = styled.div`
-  display: block;
+const Container = styled(StyledContainer)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   height: 100vh;
   width: 100%;
@@ -13,6 +22,10 @@ const Container = styled.div`
 `;
 const ContentContainer = styled.div`
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   top: 50%;
   width: 100%;
   transform: translateY(-50%);
@@ -22,14 +35,10 @@ const ContentContainer = styled.div`
 const LogoContainer = styled.div`
   opacity: 1;
   text-align: center;
-  text-rendering: optimizeLegibility;
 `;
-const Title = styled.h1`
+const Title = styled(StyledH1)`
   opacity: 1;
-  color: ${({ color }) => color};
   text-transform: uppercase;
-  font-family: raleway, sans-serif;
-  font-size: ${({ fontSize }) => fontSize}rem;
   text-align: center;
   font-weight: 800;
   margin-top: 20px;
@@ -37,29 +46,22 @@ const Title = styled.h1`
   line-height: 1.1;
   margin: 0.67rem 0;
   box-sizing: border-box;
-  text-rendering: optimizeLegibility;
-  text-align: ${({ textAlign }) => textAlign};
 `;
-const Subtitle = styled.h2`
+const Subtitle = styled(StyledH2)`
   opacity: 1;
   text-transform: none;
   font-weight: 400;
-  color: ${({ color }) => color};
-  font-size: ${({ fontSize }) => fontSize}rem;
-  font-family: 'raleway', sans-serif;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
   line-height: 1.1;
   box-sizing: border-box;
-  text-rendering: optimizeLegibility;
-  text-align: ${({ textAlign }) => textAlign};
 `;
 
 /**
 * Header with a background cover image and centered content
 */
-const BackgroundImageHeader = (props) => {
+const Header0002 = (props) => {
   const {
     title,
     subtitle,
@@ -67,26 +69,20 @@ const BackgroundImageHeader = (props) => {
     logo,
   } = props;
 
-  const defaults = BackgroundImageHeader.defaultProps;
-
   return (
     <Container img={backgroundImage?.src}>
       <ContentContainer>
         <LogoContainer>
-          <img src={logo?.src} alt={logo?.alt} />
+          <StyledImage
+            src={logo?.src}
+            alt={logo?.alt}
+            customProps={logo}
+          />
         </LogoContainer>
-        <Title
-          color={title.color || defaults.title.color}
-          fontSize={title.fontSize || defaults.title.fontSize}
-          textAlign={title.textAlign || defaults.title.textAlign}
-        >
+        <Title customProps={title}>
           {title.text}
         </Title>
-        <Subtitle
-          color={subtitle.color || defaults.subtitle.color}
-          fontSize={subtitle.fontSize || defaults.subtitle.fontSize}
-          textAlign={subtitle.textAlign || defaults.subtitle.textAlign}
-        >
+        <Subtitle customProps={subtitle}>
           {subtitle.text}
         </Subtitle>
       </ContentContainer>
@@ -94,7 +90,9 @@ const BackgroundImageHeader = (props) => {
   );
 };
 
-BackgroundImageHeader.defaultProps = {
+Header0002.icon = Header0002Icon;
+
+Header0002.defaultProps = {
   title: {
     text: '',
     color: '#fff',
@@ -117,7 +115,7 @@ BackgroundImageHeader.defaultProps = {
   },
 };
 
-BackgroundImageHeader.propTypes = {
+Header0002.propTypes = {
   /**
   * Title to appear at the center.
   */
@@ -136,4 +134,4 @@ BackgroundImageHeader.propTypes = {
   logo: imageType,
 };
 
-export default BackgroundImageHeader;
+export default Header0002;

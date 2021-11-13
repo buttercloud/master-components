@@ -45,6 +45,7 @@ const StyledLabel = styled.label.attrs((props) => ({
 `;
 const StyledH1 = styled.h1.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
   font-size: ${({ styles }) => styles?.fontSize}rem;
@@ -53,6 +54,7 @@ const StyledH1 = styled.h1.attrs((props) => ({
 `;
 const StyledH2 = styled.h2.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
   font-size: ${({ styles }) => styles?.fontSize}rem;
@@ -117,7 +119,10 @@ const StyledFooter = styled.footer.attrs((props) => ({
 }))``;
 const StyledHeader = styled.header.attrs((props) => ({
   onClick: props?.customProps?.onClick,
-}))``;
+  styles: props?.customProps?.styles,
+}))`
+  background-color: ${({ styles }) => styles?.backgroundColor}
+`;
 
 export {
   StyledContainer,

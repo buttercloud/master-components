@@ -1,15 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import SocialButtons, { socialMediaType } from '../molecules/SocialButtons';
-import { imageType } from '../../customPropTypes/customPropTypes';
+import { StyledHeader, StyledImage } from '../../assets/customStyledComponents';
+import SocialButtons, { socialMediaType } from '../../molecules/SocialButtons';
+import { backgroundType, imageType } from '../../../customPropTypes/customPropTypes';
+import Header0001Icon from './Header0001.icon';
 
-const Container = styled.div`
+const Container = styled(StyledHeader)`
   display: flex;
   flex-direction: row;
-  max-height: 200px;
-  background-color: ${(props) => (props.backgroundColor)};
 `;
 const LogoContainer = styled.div`
   display: flex;
@@ -25,15 +24,11 @@ const SocialIconsContainer = styled.div`
   align-items: center;
   padding-right: 40px;
 `;
-const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-`;
 
 /**
 * A header component with logo and social icons.
 */
-const HeaderWithLogoAndSocial = (props) => {
+const Header0001 = (props) => {
   const {
     logo,
     socialMedia,
@@ -41,9 +36,13 @@ const HeaderWithLogoAndSocial = (props) => {
   } = props;
 
   return (
-    <Container backgroundColor={background?.backgroundColor}>
+    <Container customProps={background}>
       <LogoContainer>
-        <Image src={logo?.src} alt={logo?.alt} />
+        <StyledImage
+          src={logo?.src}
+          alt={logo?.alt}
+          customProps={logo}
+        />
       </LogoContainer>
       <SocialIconsContainer>
         <SocialButtons
@@ -55,10 +54,15 @@ const HeaderWithLogoAndSocial = (props) => {
   );
 };
 
-HeaderWithLogoAndSocial.defaultProps = {
+Header0001.icon = Header0001Icon;
+
+Header0001.defaultProps = {
   background: {
-    backgroundColor: '#000000',
+    styles: {
+      backgroundColor: '#000000',
+    },
   },
+  logo: {},
   socialMedia: [
     {
       type: 'instagram',
@@ -69,21 +73,19 @@ HeaderWithLogoAndSocial.defaultProps = {
   ],
 };
 
-HeaderWithLogoAndSocial.propTypes = {
+Header0001.propTypes = {
   /**
   * Logo to display on the left.
   */
-  logo: imageType.isRequired,
+  logo: imageType,
   /**
   * Header background color.
   */
-  background: PropTypes.shape({
-    backgroundColor: PropTypes.string,
-  }),
+  background: backgroundType,
   /**
    * Social media icons to show
    */
   socialMedia: socialMediaType,
 };
 
-export default HeaderWithLogoAndSocial;
+export default Header0001;

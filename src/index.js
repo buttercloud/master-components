@@ -1,10 +1,8 @@
 import './assets/css/tailwind.css';
 import './assets/css/icons.css';
-import HeaderWithLogoAndSocial from './components/organisms/HeaderWithLogoAndSocial';
 import FooterWithInfoAndSocial from './components/organisms/FooterWithInfoAndSocial';
 import MenuWithStickyNavAndCategories from './components/organisms/MenuWithStickyNavAndCategories';
 import TitleImageAndText from './components/organisms/TitleImageAndText';
-import BackgroundImageHeader from './components/organisms/BackgroundImageHeader';
 import ImagesGridWithText from './components/organisms/ImagesGridWithText';
 import GridMenuWithItemCards from './components/organisms/GridMenuWithItemCards';
 import ProductDetails from './components/organisms/ProductDetails';
@@ -52,6 +50,8 @@ import Gallery3216 from './components/organisms/gallery/Gallery3216';
 import Gallery4193 from './components/organisms/gallery/Gallery4193';
 import Gallery8538 from './components/organisms/gallery/Gallery8538';
 
+import Header0001 from './components/organisms/header/Header0001';
+import Header0002 from './components/organisms/header/Header0002';
 import Header7610 from './components/organisms/header/Header7610';
 import Header0069 from './components/organisms/header/Header0069';
 import Header0248 from './components/organisms/header/Header0248';
@@ -77,10 +77,8 @@ import Testimonial8468 from './components/organisms/testimonial/Testimonial8468'
 import Testimonial9017 from './components/organisms/testimonial/Testimonial9017';
 
 export {
-  HeaderWithLogoAndSocial,
   FooterWithInfoAndSocial,
   MenuWithStickyNavAndCategories,
-  BackgroundImageHeader,
   TitleImageAndText,
   ImagesGridWithText,
   GridMenuWithItemCards,
@@ -122,6 +120,8 @@ export {
   Gallery3216,
   Gallery4193,
   Gallery8538,
+  Header0001,
+  Header0002,
   Header7610,
   Header0069,
   Header0248,
