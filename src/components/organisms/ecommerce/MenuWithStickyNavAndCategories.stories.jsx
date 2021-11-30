@@ -2,7 +2,7 @@ import React from 'react';
 import MenuWithStickyNavAndCategories from './MenuWithStickyNavAndCategories';
 
 export default {
-  title: 'Organisms/Menus/Menu With Sticky Nav And Categories',
+  title: 'organisms/ecommerce/Menu With Sticky Nav And Categories',
   component: MenuWithStickyNavAndCategories,
   argTypes: {
     categories: {

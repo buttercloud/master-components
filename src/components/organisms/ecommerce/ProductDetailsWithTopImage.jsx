@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
@@ -9,14 +8,14 @@ import {
   StyledLabel,
   StyledH4,
   StyledH5,
-} from '../assets/customStyledComponents';
+} from '../../assets/customStyledComponents';
 import {
   textType,
   imageType,
   buttonType,
   moneyType,
   backgroundType,
-} from '../../customPropTypes/customPropTypes';
+} from '../../../customPropTypes/customPropTypes';
 
 const variantType = PropTypes.shape({
   name: textType,

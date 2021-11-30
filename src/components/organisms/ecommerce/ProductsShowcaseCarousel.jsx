@@ -2,21 +2,21 @@ import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Dinero from 'dinero.js';
-import Carousel from '../molecules/Carousel';
+import Carousel from '../../molecules/Carousel';
 import {
   textType,
   imageType,
   buttonType,
   moneyType,
   backgroundType,
-} from '../../customPropTypes/customPropTypes';
+} from '../../../customPropTypes/customPropTypes';
 import {
   StyledContainer,
   StyledParagraph,
   StyledH1,
   StyledH4,
   StyledH5,
-} from '../assets/customStyledComponents';
+} from '../../assets/customStyledComponents';
 
 const ONE_SLIDE_BREAKPOINT = 500;
 const THREE_SLIDES_BREAKPOINT = 760;

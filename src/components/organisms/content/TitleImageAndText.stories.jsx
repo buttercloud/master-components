@@ -2,7 +2,7 @@ import React from 'react';
 import TitleImageAndText from './TitleImageAndText';
 
 export default {
-  title: 'Organisms/Features/ContentBlock/Title Image and Text',
+  title: 'organisms/content/Title Image and Text',
   component: TitleImageAndText,
   argTypes: {
     separatorColor: { control: 'color' },

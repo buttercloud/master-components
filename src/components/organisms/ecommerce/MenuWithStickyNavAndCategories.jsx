@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Dinero from 'dinero.js';
-import CartButton from '../atoms/CartButton';
+import CartButton from '../../atoms/CartButton';
 import {
   textType,
   imageType,
   buttonType,
   moneyType,
-} from '../../customPropTypes/customPropTypes';
+} from '../../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
   display: flex;

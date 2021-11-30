@@ -2,7 +2,7 @@ import React from 'react';
 import ItemCategoriesMenuWithBackgroundImage from './ItemCategoriesMenuWithBackgroundImage';
 
 export default {
-  title: 'organisms/Menus/Item Categories Menu with Background Image',
+  title: 'organisms/ecommerce/Item Categories Menu with Background Image',
   component: ItemCategoriesMenuWithBackgroundImage,
 };
 

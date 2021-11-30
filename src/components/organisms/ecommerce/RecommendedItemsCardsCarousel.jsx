@@ -2,11 +2,11 @@ import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Dinero from 'dinero.js';
-import Carousel from '../molecules/Carousel';
-import { textType, imageType, moneyType } from '../../customPropTypes/customPropTypes';
+import Carousel from '../../molecules/Carousel';
+import { textType, imageType, moneyType } from '../../../customPropTypes/customPropTypes';
 
-import CartIcon from '../assets/CartIcon';
-import ArrowIcon from '../assets/ArrowIcon';
+import CartIcon from '../../assets/CartIcon';
+import ArrowIcon from '../../assets/ArrowIcon';
 
 const Container = styled.div`
   display: flex;

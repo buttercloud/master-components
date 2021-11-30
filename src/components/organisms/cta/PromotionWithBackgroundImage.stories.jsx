@@ -2,7 +2,7 @@ import React from 'react';
 import PromotionWithBackgroundImage from './PromotionWithBackgroundImage';
 
 export default {
-  title: 'organisms/Features/Promotion With Background Image',
+  title: 'organisms/cta/Promotion With Background Image',
   component: PromotionWithBackgroundImage,
   argTypes: {},
 };

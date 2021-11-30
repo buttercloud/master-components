@@ -2,7 +2,7 @@ import React from 'react';
 import ImagesGridWithText from './ImagesGridWithText';
 
 export default {
-  title: 'Organisms/Features/Images Grid With Text',
+  title: 'organisms/blog/Images Grid With Text',
   component: ImagesGridWithText,
   argTypes: {
     content: { control: 'object' },

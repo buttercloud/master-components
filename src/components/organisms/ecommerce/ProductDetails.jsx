@@ -1,18 +1,17 @@
-// @flow
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Dinero from 'dinero.js';
-import AddToCartButton from '../atoms/AddToCartButton';
-import TextareaWithLabel from '../molecules/TextareaWithLabel';
-import NumberInputWithCircleActionButtons from '../molecules/NumberInputWithCircleActionButtons';
-import ImageGalleryWithThumbnails from '../molecules/ImageGalleryWithThumbnails';
+import AddToCartButton from '../../atoms/AddToCartButton';
+import TextareaWithLabel from '../../molecules/TextareaWithLabel';
+import NumberInputWithCircleActionButtons from '../../molecules/NumberInputWithCircleActionButtons';
+import ImageGalleryWithThumbnails from '../../molecules/ImageGalleryWithThumbnails';
 import {
   textType,
   imageType,
   buttonType,
   moneyType,
-} from '../../customPropTypes/customPropTypes';
+} from '../../../customPropTypes/customPropTypes';
 
 // TODO
 // add default values for fontSize, color, ...

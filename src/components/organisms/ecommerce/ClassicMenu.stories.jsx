@@ -2,7 +2,7 @@ import React from 'react';
 import ClassicMenu from './ClassicMenu';
 
 export default {
-  title: 'organisms/Menus/Classic Menu',
+  title: 'organisms/ecommerce/Classic Menu',
   component: ClassicMenu,
 };
 

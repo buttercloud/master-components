@@ -7,7 +7,7 @@ import {
   imageType,
   buttonType,
   moneyType,
-} from '../../customPropTypes/customPropTypes';
+} from '../../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
   display: flex;

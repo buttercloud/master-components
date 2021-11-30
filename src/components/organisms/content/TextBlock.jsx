@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {
   textType,
   buttonType,
-} from '../../customPropTypes/customPropTypes';
+} from '../../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
   display: flex;

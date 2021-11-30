@@ -2,7 +2,7 @@ import React from 'react';
 import ProductDetails from './ProductDetails';
 
 export default {
-  title: 'organisms/ProductDetails',
+  title: 'organisms/ecommerce/ProductDetails',
   component: ProductDetails,
   argTypes: {
     maxQuantity: {

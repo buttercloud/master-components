@@ -2,7 +2,7 @@ import React from 'react';
 import GridMenuWithItemCards from './GridMenuWithItemCards';
 
 export default {
-  title: 'Organisms/Menus/Grid Menu With Item Cards',
+  title: 'organisms/ecommerce/Grid Menu With Item Cards',
   component: GridMenuWithItemCards,
   argTypes: {
     fontFamily: { control: 'text' },

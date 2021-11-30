@@ -2,7 +2,7 @@ import React from 'react';
 import ProductDetailsWithTopImage from './ProductDetailsWithTopImage';
 
 export default {
-  title: 'organisms/ProductDetailsWithTopImage',
+  title: 'organisms/ecommerce/ProductDetailsWithTopImage',
   component: ProductDetailsWithTopImage,
 };
 

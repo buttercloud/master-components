@@ -2,7 +2,7 @@ import React from 'react';
 import ProductsShowcaseCarousel from './ProductsShowcaseCarousel';
 
 export default {
-  title: 'organisms/Features/Products Showcase Carousel',
+  title: 'organisms/ecommerce/Products Showcase Carousel',
   component: ProductsShowcaseCarousel,
 };
 

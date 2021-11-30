@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { textType, imageType, buttonType } from '../../customPropTypes/customPropTypes';
+import { textType, imageType, buttonType } from '../../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
   display: flex;

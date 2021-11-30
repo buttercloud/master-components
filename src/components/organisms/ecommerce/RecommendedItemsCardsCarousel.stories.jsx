@@ -2,7 +2,7 @@ import React from 'react';
 import RecommendedItemsCardsCarousel from './RecommendedItemsCardsCarousel';
 
 export default {
-  title: 'organisms/Features/RecommendedItemsCardsCarousel',
+  title: 'organisms/ecommerce/RecommendedItemsCardsCarousel',
   component: RecommendedItemsCardsCarousel,
 };
 

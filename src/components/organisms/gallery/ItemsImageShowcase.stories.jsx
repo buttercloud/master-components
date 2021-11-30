@@ -2,7 +2,7 @@ import React from 'react';
 import ItemsImageShowcase from './ItemsImageShowcase';
 
 export default {
-  title: 'organisms/Features/Items Image Showcase',
+  title: 'organisms/gallery/Items Image Showcase',
   component: ItemsImageShowcase,
 };
 

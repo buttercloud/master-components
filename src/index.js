@@ -2,18 +2,19 @@ import './assets/css/tailwind.css';
 import './assets/css/icons.css';
 
 import MenuWithStickyNavAndCategories from './components/organisms/MenuWithStickyNavAndCategories';
-import TitleImageAndText from './components/organisms/TitleImageAndText';
-import ImagesGridWithText from './components/organisms/ImagesGridWithText';
 import GridMenuWithItemCards from './components/organisms/GridMenuWithItemCards';
 import ProductDetails from './components/organisms/ProductDetails';
-import PromotionWithBackgroundImage from './components/organisms/PromotionWithBackgroundImage';
-import RecommendedItemsCardsCarousel from './components/organisms/RecommendedItemsCardsCarousel';
-import QuoteCarousel from './components/organisms/QuoteCarousel';
-import TextBlock from './components/organisms/TextBlock';
 import ClassicMenu from './components/organisms/ClassicMenu';
 import ItemCategoriesMenuWithBackgroundImage from './components/organisms/ItemCategoriesMenuWithBackgroundImage';
-import ItemsImageShowcase from './components/organisms/ItemsImageShowcase';
 import ProductDetailsWithTopImage from './components/organisms/ProductDetailsWithTopImage';
+
+import RecommendedItemsCardsCarousel from './components/organisms/RecommendedItemsCardsCarousel';
+import TitleImageAndText from './components/organisms/TitleImageAndText';
+import ImagesGridWithText from './components/organisms/ImagesGridWithText';
+import PromotionWithBackgroundImage from './components/organisms/PromotionWithBackgroundImage';
+import QuoteCarousel from './components/organisms/QuoteCarousel';
+import TextBlock from './components/organisms/TextBlock';
+import ItemsImageShowcase from './components/organisms/ItemsImageShowcase';
 import ProductsShowcaseCarousel from './components/organisms/ProductsShowcaseCarousel';
 
 import Blog1776 from './components/organisms/blog/Blog1776';

@@ -2,7 +2,7 @@ import React from 'react';
 import QuoteCarousel from './QuoteCarousel';
 
 export default {
-  title: 'organisms/Quote Carousel',
+  title: 'organisms/testimonial/Quote Carousel',
   component: QuoteCarousel,
   // argTypes: {},
 };

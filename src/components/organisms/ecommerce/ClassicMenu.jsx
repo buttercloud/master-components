@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Dinero from 'dinero.js';
-import { textType, moneyType, backgroundType } from '../../customPropTypes/customPropTypes';
+import { textType, moneyType, backgroundType } from '../../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
   display: flex;

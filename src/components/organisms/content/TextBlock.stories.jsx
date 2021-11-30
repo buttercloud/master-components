@@ -2,7 +2,7 @@ import React from 'react';
 import TextBlock from './TextBlock';
 
 export default {
-  title: 'organisms/Text Block',
+  title: 'organisms/content/Text Block',
   component: TextBlock,
   // argTypes: {},
 };

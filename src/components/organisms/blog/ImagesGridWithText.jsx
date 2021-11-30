@@ -6,7 +6,7 @@ import {
   textType,
   imageType,
   backgroundType,
-} from '../../customPropTypes/customPropTypes';
+} from '../../../customPropTypes/customPropTypes';
 
 const size = {
   mobileS: '320px',
