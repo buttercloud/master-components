@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const StyledContainer = styled.div.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))`
   width: 100%;
   font-size: ${({ styles }) => styles?.fontSize}rem;
@@ -21,6 +22,7 @@ const StyledContainer = styled.div.attrs((props) => ({
 
 const StyledSpan = styled.span.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
   font-size: ${({ styles }) => styles?.fontSize}rem;
@@ -38,6 +40,7 @@ const StyledParagraph = styled.p.attrs((props) => ({
 `;
 const StyledLabel = styled.label.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
   font-size: ${({ styles }) => styles?.fontSize}rem;
@@ -64,6 +67,7 @@ const StyledH2 = styled.h2.attrs((props) => ({
 `;
 const StyledH3 = styled.h3.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
   font-size: ${({ styles }) => styles?.fontSize}rem;
@@ -72,6 +76,7 @@ const StyledH3 = styled.h3.attrs((props) => ({
 `;
 const StyledH4 = styled.h4.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
   font-size: ${({ styles }) => styles?.fontSize}rem;
@@ -80,6 +85,7 @@ const StyledH4 = styled.h4.attrs((props) => ({
 `;
 const StyledH5 = styled.h5.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
   font-size: ${({ styles }) => styles?.fontSize}rem;
@@ -88,6 +94,7 @@ const StyledH5 = styled.h5.attrs((props) => ({
 `;
 const StyledH6 = styled.h6.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
   font-size: ${({ styles }) => styles?.fontSize}rem;
@@ -97,10 +104,12 @@ const StyledH6 = styled.h6.attrs((props) => ({
 
 const StyledImage = styled.img.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))``;
 
 const StyledButton = styled.button.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
   font-size: ${({ styles }) => styles?.fontSize}rem;

@@ -48,9 +48,11 @@ import Footer8030 from './components/organisms/footer/Footer8030';
 import Footer8324 from './components/organisms/footer/Footer8324';
 import Footer9657 from './components/organisms/footer/Footer9657';
 
+import Gallery0001 from './components/organisms/gallery/Gallery0001';
 import Gallery3216 from './components/organisms/gallery/Gallery3216';
 import Gallery4193 from './components/organisms/gallery/Gallery4193';
 import Gallery8538 from './components/organisms/gallery/Gallery8538';
+import Showcase0001 from './components/organisms/gallery/Showcase0001';
 
 import Header0001 from './components/organisms/header/Header0001';
 import Header0002 from './components/organisms/header/Header0002';
@@ -119,9 +121,11 @@ export {
   Footer8030,
   Footer8324,
   Footer9657,
+  Gallery0001,
   Gallery3216,
   Gallery4193,
   Gallery8538,
+  Showcase0001,
   Header0001,
   Header0002,
   Header7610,
