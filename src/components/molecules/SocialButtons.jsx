@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import SocialButton, { socialTypes } from '../atoms/SocialButton';
+import { StyledButton } from '../assets/customStyledComponents';
 import { textType } from '../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
@@ -35,7 +36,7 @@ const TooltipText = styled.span`
     border-color: #555 transparent transparent transparent;
   }
 `;
-const Button = styled.div`
+const Button = styled(StyledButton)`
   display: flex;
   align-items: center;
   position: relative;
@@ -64,7 +65,7 @@ const SocialButtons = (props) => {
             <SocialButton
               type={social.type}
               url={social.url}
-              color={social.color}
+              color={social.styles?.color}
             />
             {
               alignment === 'column' && (

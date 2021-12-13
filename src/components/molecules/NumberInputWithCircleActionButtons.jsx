@@ -48,7 +48,7 @@ const NumberInputWithCircleActionButtons = (props) => {
     max,
   } = props;
 
-  const handleChange = (event: SyntheticMouseEvent<HTMLElement>) => {
+  const handleChange = (event) => {
     const newValue = parseInt(event.target.value, 10);
 
     if (newValue > max) return setValue(max);

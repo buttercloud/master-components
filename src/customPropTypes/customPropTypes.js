@@ -1,36 +1,66 @@
 import PropTypes from 'prop-types';
 
 export const textType = PropTypes.shape({
-  color: PropTypes.string,
-  fontSize: PropTypes.number,
-  fontFamily: PropTypes.string,
   text: PropTypes.string,
-  textAlign: PropTypes.oneOf(['left', 'center', 'right']),
+  styles: PropTypes.shape({
+    color: PropTypes.string,
+    fontSize: PropTypes.number,
+    fontFamily: PropTypes.string,
+    textAlign: PropTypes.oneOf(['left', 'center', 'right']),
+  }),
 });
 
 const { text, ...textStyles } = textType;
 
 export const moneyType = PropTypes.shape({
-  ...textStyles,
   cents: PropTypes.number.isRequired,
   currency: PropTypes.string.isRequired,
   precision: PropTypes.number.isRequired,
-  backgroundColor: PropTypes.string,
+  styles: PropTypes.shape({
+    ...textStyles,
+    backgroundColor: PropTypes.string,
+  }),
 });
 
 export const imageType = PropTypes.shape({
   src: PropTypes.string,
   alt: PropTypes.string,
+  styles: PropTypes.shape({}),
 });
 
 export const buttonType = PropTypes.shape({
   ...textType,
-  backgroundColor: PropTypes.string,
+  styles: PropTypes.shape({
+    ...textStyles,
+    backgroundColor: PropTypes.string,
+  }),
   onClick: PropTypes.func,
 });
 
 export const backgroundType = PropTypes.shape({
-  backgroundColor: PropTypes.string,
-  fontSize: PropTypes.number,
-  fontFamily: PropTypes.string,
+  styles: PropTypes.shape({
+    backgroundColor: PropTypes.string,
+    fontSize: PropTypes.number,
+    fontFamily: PropTypes.string,
+  }),
+});
+
+export const textareaType = PropTypes.shape({
+  styles: PropTypes.shape({
+    ...textStyles,
+  }),
+  placeholder: PropTypes.string,
+  maxLength: PropTypes.number,
+  minLength: PropTypes.number,
+  required: PropTypes.bool,
+});
+
+export const inputType = PropTypes.shape({
+  styles: PropTypes.shape({
+    ...textStyles,
+  }),
+  placeholder: PropTypes.string,
+  maxLength: PropTypes.number,
+  minLength: PropTypes.number,
+  required: PropTypes.bool,
 });

@@ -51,7 +51,7 @@ const ImageGalleryWithThumbnails = (props) => {
     listDirection = 'column';
   }
 
-  const handleChangingImage = (event: SyntheticMouseEvent<HTMLElement>) => {
+  const handleChangingImage = (event) => {
     const foundImage = images.find((image) => image?.src === event.target.src);
     setCurrentImage(foundImage);
   };
