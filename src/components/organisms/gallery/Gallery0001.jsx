@@ -22,10 +22,19 @@ const Container = styled(StyledContainer)`
   width: 100%;
 `;
 const Title = styled(StyledParagraph)`
-  margin-bottom: 30px;
+  margin: 30px 0;
+  letter-spacing: 0px;
+  width: 90%;
+  @media (min-width: 700px) {
+    width: 60%;
+  }
 `;
 const Subtitle = styled(StyledParagraph)`
   margin-bottom: 50px;
+  width: 90%;
+  @media (min-width: 700px) {
+    width: 60%;
+  }
 `;
 const Items = styled.div`
   display: flex;
@@ -43,7 +52,7 @@ const Card = styled.div`
   margin-bottom: 30px;
   width: 100%;
   border-radius: 30px;
-  @media (min-width: 350px) and (max-width: 699px) {
+  @media (min-width: 400px) and (max-width: 699px) {
     width: 48%;
   }
   @media (min-width: 700px) and (max-width: 1023px) {
@@ -93,7 +102,11 @@ const Gallery0001 = (props) => {
               key={item.id}
               id={item.id}
             >
-              <CardImage src={item.image?.src} alt={item.image?.alt} />
+              <CardImage
+                src={item.image?.src}
+                alt={item.image?.alt}
+                customProps={item.image}
+              />
               <CardText customProps={item.p87a657}>
                 {item.p87a657?.text}
               </CardText>

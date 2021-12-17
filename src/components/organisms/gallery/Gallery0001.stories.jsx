@@ -50,17 +50,6 @@ export default {
           text: 'Learn More',
         },
       },
-      {
-        image: {
-          src: 'https://dummyimage.com/300x500',
-        },
-        p87a657: {
-          text: 'Name',
-        },
-        button163210: {
-          text: 'Learn More',
-        },
-      },
     ],
   },
 };

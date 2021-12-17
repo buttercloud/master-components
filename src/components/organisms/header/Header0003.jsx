@@ -6,6 +6,7 @@ import {
   StyledButton,
   StyledH1,
   StyledParagraph,
+  StyledImage,
 } from '../../assets/customStyledComponents';
 import {
   backgroundType,
@@ -14,8 +15,8 @@ import {
   textType,
 } from '../../../customPropTypes/customPropTypes';
 import Header0003Icon from './Header0003.icon';
-import { ReactComponent as XIcon } from '../../../assets/svg/x.svg';
-import { ReactComponent as HamburgerMenuIcon } from '../../../assets/svg/hamburger-menu.svg';
+import XIcon from '../../../assets/svg/x.svg';
+import HamburgerMenuIcon from '../../../assets/svg/hamburger-menu.svg';
 
 const Container = styled(StyledHeader)`
   display: flex;
@@ -132,7 +133,11 @@ const DesktopNav = (props) => {
         ))
       }
       <Logo>
-        <img src={logo.src} alt={logo.alt} />
+        <StyledImage
+          src={logo.src}
+          alt={logo.alt}
+          customProps={logo}
+        />
       </Logo>
       {
         rightLinks?.map((link) => (
@@ -207,7 +212,11 @@ const MobileNav = (props) => {
       </SideNav>
       <Nav>
         <MobileLogo>
-          <img src={logo.src} alt={logo.alt} />
+          <StyledImage
+            src={logo.src}
+            alt={logo.alt}
+            customProps={logo}
+          />
         </MobileLogo>
         <MobileNavBarCallToActionButton
           onClick={navCallToActionButton?.onClick}
@@ -251,20 +260,25 @@ const Header0003 = (props) => {
     actionButton,
   } = props;
 
-  const [showMobileNav, setShowMobileNav] = useState(window.innerWidth < 768);
+  const [showMobileNav, setShowMobileNav] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      if (window.innerWidth < 768) {
-        setShowMobileNav(true);
-      } else {
-        setShowMobileNav(false);
-      }
-    });
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', () => {
+        if (window.innerWidth < 768) {
+          setShowMobileNav(true);
+        } else {
+          setShowMobileNav(false);
+        }
+      });
+    }
   }, []);
 
   return (
-    <Container image={background.image}>
+    <Container
+      image={background.image?.src}
+      customProps={background}
+    >
       {
         showMobileNav
           ? (
@@ -283,14 +297,10 @@ const Header0003 = (props) => {
           )
       }
       <MainContent>
-        <MainText
-          customProps={mainText}
-        >
+        <MainText customProps={mainText}>
           {mainText.text}
         </MainText>
-        <SecondaryText
-          customProps={secondaryText}
-        >
+        <SecondaryText customProps={secondaryText}>
           {secondaryText.text}
         </SecondaryText>
         <ActionButton

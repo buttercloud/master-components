@@ -5,6 +5,7 @@ import {
   StyledContainer,
   StyledButton,
   StyledParagraph,
+  StyledImage,
 } from '../../assets/customStyledComponents';
 import {
   textType,
@@ -18,6 +19,7 @@ const Container = styled(StyledContainer)`
   display: flex;
   justify-content: center;
   width: 100%;
+  padding: 50px 0;
 `;
 const InnerContainer = styled.div`
   display: flex;
@@ -32,7 +34,7 @@ const Title = styled(StyledParagraph)`
 `;
 const CallToAction = styled(StyledButton)`
   border-radius: 25px;
-  padding: 25px;
+  padding: 15px 20px;
   border: 1px solid black;
   margin: 15px 0;
   align-self: flex-start;
@@ -50,6 +52,7 @@ const Card = styled.div`
   border-radius: 20px;
   width: 100%;
   margin-bottom: 30px;
+  padding: 20px;
   @media (min-width: 600px) and (max-width: 1023px) {
     width: 48%;
   }
@@ -57,18 +60,16 @@ const Card = styled.div`
     width: 32%;
   }
 `;
-const CardImg = styled.img`
+const CardImg = styled(StyledImage)`
   height: 250px;
   width: 100%;
   object-fit: cover;
-  border-top-right-radius: inherit;
-  border-top-left-radius: inherit;
+  border-radius: inherit;
 `;
 const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px;
 `;
 const CardTitle = styled(StyledParagraph)`
   margin-top: 20px;
@@ -104,7 +105,11 @@ const Showcase0001 = (props) => {
                 key={item.key}
                 id={item.id}
               >
-                <CardImg src={item.image?.src} alt={item.image?.alt} />
+                <CardImg
+                  src={item.image?.src}
+                  alt={item.image?.alt}
+                  customProps={item.image}
+                />
                 <CardInfo>
                   <CardTitle customProps={item.title}>
                     {item.title?.text}

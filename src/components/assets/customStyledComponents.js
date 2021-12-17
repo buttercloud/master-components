@@ -115,7 +115,7 @@ const StyledButton = styled.button.attrs((props) => ({
   font-size: ${({ styles }) => styles?.fontSize}rem;
   color: ${({ styles }) => styles?.color};
   text-align: ${({ styles }) => styles?.textAlign};
-  background-color: ${({ styles }) => styles?.backgroundColor}
+  background-color: ${({ styles }) => styles?.backgroundColor};
 `;
 
 const StyledTextarea = styled.textarea.attrs((props) => ({
@@ -128,13 +128,13 @@ const StyledFooter = styled.footer.attrs((props) => ({
   onClick: props?.customProps?.onClick,
   styles: props?.customProps?.styles,
 }))`
-  background-color: ${({ styles }) => styles?.backgroundColor}
+  background-color: ${({ styles }) => styles?.backgroundColor};
 `;
 const StyledHeader = styled.header.attrs((props) => ({
   onClick: props?.customProps?.onClick,
   styles: props?.customProps?.styles,
 }))`
-  background-color: ${({ styles }) => styles?.backgroundColor}
+  background-color: ${({ styles }) => styles?.backgroundColor};
 `;
 
 export {

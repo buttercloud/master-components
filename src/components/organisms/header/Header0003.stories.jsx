@@ -10,7 +10,10 @@ export default {
       styles: {
         backgroundColor: 'black',
       },
-      image: 'https://dummyimage.com/1920x1080',
+      image: {
+        src: 'https://dummyimage.com/1920x1080',
+        alt: '',
+      },
     },
     logo: {
       src: 'https://dummyimage.com/100x100',
@@ -51,14 +54,14 @@ export default {
       },
     ],
     mainText: {
-      text: 'Keep in touch with your inner Self',
+      text: 'Lorem ipsum dolor sit amet',
       styles: {
         textAlign: 'center',
         color: 'white',
       },
     },
     secondaryText: {
-      text: 'JOFLOW Yoga is where love lives. Feel the peace and lightness in the whole body after your first session.',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       styles: {
         textAlign: 'center',
         color: 'white',
