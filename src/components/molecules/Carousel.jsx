@@ -7,8 +7,8 @@ import Slider from 'react-slick';
 // copy css from these 2 files and paste them here.
 // then remove the slick-carousel library
 // cause it has jquery as a peer dependency
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
 
 const StyledSlider = styled(Slider)`
   width: 100%;

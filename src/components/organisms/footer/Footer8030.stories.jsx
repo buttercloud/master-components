@@ -6,6 +6,10 @@ export default {
   title: 'organisms/footer/Footer8030',
   component: Footer8030,
   args: {
+    logo: {
+      src: 'https://dummyimage.com/100x100',
+      alt: '',
+    },
     sections: [
       {
         h2c60623: {

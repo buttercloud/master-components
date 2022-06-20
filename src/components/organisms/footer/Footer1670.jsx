@@ -42,7 +42,6 @@ const Footer1670 = (props) => {
     <StyledFooter
       className="text-gray-600 body-font"
       id="background73223f"
-      styles={background73223f.styles}
       customProps={background73223f}
     >
       <div className="container px-5 py-24 mx-auto">
@@ -57,7 +56,6 @@ const Footer1670 = (props) => {
                 <StyledH2
                   className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
                   id={section.id + 'h28c72d3'}
-                  styles={section.h28c72d3?.styles}
                   customProps={section.h28c72d3}
                 >
                   {section.h28c72d3?.text}
@@ -69,7 +67,6 @@ const Footer1670 = (props) => {
                         <StyledButton
                           className="text-gray-600 hover:text-gray-800"
                           id={link.id + 'button50095b'}
-                          styles={link.button50095b?.styles}
                           onClick={link.button50095b?.onClick}
                           customProps={link.button50095b}
                         >
@@ -86,7 +83,6 @@ const Footer1670 = (props) => {
             <StyledH2
               className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
               id="h2935cfe"
-              styles={h2935cfe.styles}
               customProps={h2935cfe}
             >
               {h2935cfe.text}
@@ -97,7 +93,6 @@ const Footer1670 = (props) => {
                   for="footer-field"
                   className="leading-7 text-sm text-gray-600"
                   id="labeld1eab9"
-                  styles={labeld1eab9.styles}
                   customProps={labeld1eab9}
                 >
                   {labeld1eab9.text}
@@ -107,7 +102,6 @@ const Footer1670 = (props) => {
                   id="input7414f4"
                   name="{input7414f4.name}"
                   className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  styles={input7414f4.styles}
                   placeholder={input7414f4.placeholder}
                   maxlength={input7414f4.maxLength}
                   minlength={input7414f4.minLength}
@@ -120,7 +114,6 @@ const Footer1670 = (props) => {
               <StyledButton
                 className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
                 id="button1c8973"
-                styles={button1c8973.styles}
                 onClick={button1c8973.onClick}
                 customProps={button1c8973}
               >
@@ -130,7 +123,6 @@ const Footer1670 = (props) => {
             <StyledParagraph
               className="text-gray-500 text-sm mt-2 md:text-left text-center"
               id="p777c7d"
-              styles={p777c7d.styles}
               customProps={p777c7d}
             >
               {p777c7d.text}
@@ -144,7 +136,6 @@ const Footer1670 = (props) => {
           <StyledButton
             className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
             id="buttonfdfac6"
-            styles={buttonfdfac6.styles}
             onClick={buttonfdfac6.onClick}
             customProps={buttonfdfac6}
           >
@@ -163,7 +154,6 @@ const Footer1670 = (props) => {
             <StyledSpan
               className="ml-3 text-xl"
               id="span16135d"
-              styles={span16135d.styles}
               customProps={span16135d}
             >
               {span16135d.text}
@@ -172,7 +162,6 @@ const Footer1670 = (props) => {
           <StyledParagraph
             className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4"
             id="p3089f9"
-            styles={p3089f9.styles}
             customProps={p3089f9}
           >
             {p3089f9.text}
@@ -182,7 +171,6 @@ const Footer1670 = (props) => {
               className="text-gray-600 ml-1"
               target="_blank"
               id="buttonbf0dd7"
-              styles={buttonbf0dd7.styles}
               onClick={buttonbf0dd7.onClick}
               customProps={buttonbf0dd7}
             >
@@ -192,13 +180,11 @@ const Footer1670 = (props) => {
           <StyledSpan
             className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"
             id="span3d6c66"
-            styles={span3d6c66.styles}
             customProps={span3d6c66}
           >
             <StyledButton
               className="text-gray-500"
               id="buttonc1147a"
-              styles={buttonc1147a.styles}
               onClick={buttonc1147a.onClick}
               customProps={buttonc1147a}
             >
@@ -216,7 +202,6 @@ const Footer1670 = (props) => {
             <StyledButton
               className="ml-3 text-gray-500"
               id="button87d0c2"
-              styles={button87d0c2.styles}
               onClick={button87d0c2.onClick}
               customProps={button87d0c2}
             >
@@ -234,7 +219,6 @@ const Footer1670 = (props) => {
             <StyledButton
               className="ml-3 text-gray-500"
               id="buttone4e6ff"
-              styles={buttone4e6ff.styles}
               onClick={buttone4e6ff.onClick}
               customProps={buttone4e6ff}
             >
@@ -261,7 +245,6 @@ const Footer1670 = (props) => {
             <StyledButton
               className="ml-3 text-gray-500"
               id="button27804d"
-              styles={button27804d.styles}
               onClick={button27804d.onClick}
               customProps={button27804d}
             >

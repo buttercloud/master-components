@@ -1,6 +1,8 @@
 const esbuild = require('esbuild');
+const svgrPlugin = require('esbuild-plugin-svgr');
 
-const results = esbuild.buildSync({
+// const results = esbuild.buildSync({
+esbuild.build({
   entryPoints: ['./src/index.js'],
   bundle: true,
   // sourcemap: true,
@@ -11,6 +13,9 @@ const results = esbuild.buildSync({
   target: ['node10.4'],
   outdir: 'dist',
   external: ['react'],
+  plugins: [
+    svgrPlugin(),
+  ],
 });
 
-console.log(results);
+// console.log(results);

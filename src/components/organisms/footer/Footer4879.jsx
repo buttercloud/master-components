@@ -40,7 +40,6 @@ const Footer4879 = (props) => {
     <StyledFooter
       className="text-gray-600 body-font"
       id="backgroundb0dc52"
-      styles={backgroundb0dc52.styles}
       customProps={backgroundb0dc52}
     >
       <div className="container px-5 py-24 mx-auto">

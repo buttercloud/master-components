@@ -7,17 +7,20 @@ import {
   StyledParagraph,
   StyledH2,
   StyledButton,
+  StyledImage,
 } from '../../assets/customStyledComponents';
 import {
   textType,
   backgroundType,
   buttonType,
+  imageType,
 } from '../../../customPropTypes/customPropTypes';
 import Footer8030Icon from './Footer8030.icon';
 
 const Footer8030 = (props) => {
   const {
     background3923cc,
+    logo,
     p03b1dc,
     p6ba6fa,
     span415a1e,
@@ -35,7 +38,6 @@ const Footer8030 = (props) => {
     <StyledFooter
       className="text-gray-600 body-font"
       id="background3923cc"
-      styles={background3923cc.styles}
       customProps={background3923cc}
     >
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
@@ -47,18 +49,11 @@ const Footer8030 = (props) => {
             onClick={buttonb4c6c7.onClick}
             customProps={buttonb4c6c7}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
+            <StyledImage
+              src={logo?.src}
+              alt={logo?.alt}
+              customProps={logo}
+            />
             <StyledSpan
               className="ml-3 text-xl"
               id="span415a1e"
@@ -235,6 +230,10 @@ Footer8030.defaultProps = {
   background3923cc: {
     styles: {},
   },
+  logo: {
+    src: '',
+    alt: '',
+  },
   sections: [],
   p03b1dc: {
     text: 'Lorem ipsum dolor sit amet',
@@ -289,6 +288,10 @@ Footer8030.propTypes = {
    * Background prop for background3923cc.
    */
   background3923cc: backgroundType,
+  /**
+   * Logo
+   */
+  logo: imageType,
   /**
    * Sections array
    */

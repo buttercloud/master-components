@@ -32,7 +32,6 @@ const Footer9657 = (props) => {
     <StyledFooter
       className="text-gray-600 body-font"
       id="backgroundf5367c"
-      styles={backgroundf5367c.styles}
       customProps={backgroundf5367c}
     >
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">

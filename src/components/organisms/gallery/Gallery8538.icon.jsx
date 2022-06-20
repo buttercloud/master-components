@@ -17,14 +17,6 @@ function Gallery8538() {
         fill="var(--base-500)"
       />
       <rect
-        x={81}
-        y={31}
-        width={104.391}
-        height={4}
-        rx={2}
-        fill="var(--base-500)"
-      />
-      <rect
         x={96}
         y={20}
         width={74}

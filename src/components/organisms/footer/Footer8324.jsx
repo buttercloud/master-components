@@ -35,7 +35,6 @@ const Footer8324 = (props) => {
     <StyledFooter
       className="text-gray-600 body-font"
       id="background9e8f73"
-      styles={background9e8f73.styles}
       customProps={background9e8f73}
     >
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
