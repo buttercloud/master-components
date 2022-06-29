@@ -9,12 +9,14 @@ import {
   StyledButton,
   StyledInput,
   StyledFooter,
+  StyledImage,
 } from '../../assets/customStyledComponents';
 import {
   textType,
   backgroundType,
   buttonType,
   inputType,
+  imageType,
 } from '../../../customPropTypes/customPropTypes';
 import Footer1670Icon from './Footer1670.icon';
 
@@ -36,6 +38,7 @@ const Footer1670 = (props) => {
     button27804d,
     input7414f4,
     sections,
+    logo,
   } = props;
 
   return (
@@ -139,18 +142,11 @@ const Footer1670 = (props) => {
             onClick={buttonfdfac6.onClick}
             customProps={buttonfdfac6}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
+            <StyledImage
+              src={logo?.src}
+              alt={logo?.alt}
+              customProps={logo}
+            />
             <StyledSpan
               className="ml-3 text-xl"
               id="span16135d"
@@ -277,6 +273,7 @@ Footer1670.defaultProps = {
   background73223f: {
     styles: {},
   },
+  logo: {},
   sections: [],
   h2935cfe: {
     text: 'Subscribe',
@@ -348,6 +345,10 @@ Footer1670.propTypes = {
    * Background prop for background73223f.
    */
   background73223f: backgroundType,
+  /**
+  * Logo props.
+  */
+  logo: imageType,
   /**
    * Sections array
    */

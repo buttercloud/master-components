@@ -6,11 +6,13 @@ import {
   StyledSpan,
   StyledParagraph,
   StyledButton,
+  StyledImage,
 } from '../../assets/customStyledComponents';
 import {
   textType,
   backgroundType,
   buttonType,
+  imageType,
 } from '../../../customPropTypes/customPropTypes';
 import Footer9657Icon from './Footer9657.icon';
 
@@ -26,6 +28,7 @@ const Footer9657 = (props) => {
     button3043d9,
     button1fd09b,
     button6882c5,
+    logo,
   } = props;
 
   return (
@@ -42,18 +45,11 @@ const Footer9657 = (props) => {
           onClick={button040e09.onClick}
           customProps={button040e09}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
+          <StyledImage
+            src={logo?.src}
+            alt={logo?.alt}
+            customProps={logo}
+          />
           <StyledSpan
             className="ml-3 text-xl"
             id="span8fd2de"
@@ -180,6 +176,7 @@ Footer9657.defaultProps = {
   backgroundf5367c: {
     styles: {},
   },
+  logo: {},
   p7ae461: {
     text: '&#xA9; 2020 Tailblocks &#x2014;',
     styles: {},
@@ -229,6 +226,10 @@ Footer9657.propTypes = {
    * Background prop for backgroundf5367c.
    */
   backgroundf5367c: backgroundType,
+  /**
+  * Logo props.
+  */
+  logo: imageType,
   /**
    * Text prop for p7ae461.
    */

@@ -5,6 +5,12 @@ import Footer9657Icon from './Footer9657.icon';
 export default {
   title: 'organisms/footer/Footer9657',
   component: Footer9657,
+  args: {
+    logo: {
+      src: 'https://dummyimage.com/50x50',
+      alt: 'logo',
+    },
+  },
 };
 
 const Template = (args) => <Footer9657 {...args} />;
