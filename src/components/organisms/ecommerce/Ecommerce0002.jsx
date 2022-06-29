@@ -8,29 +8,18 @@ import {
   buttonType,
   moneyType,
 } from '../../../customPropTypes/customPropTypes';
+import {
+  StyledContainer,
+  StyledImage,
+  StyledH3,
+  StyledH4,
+  StyledH5,
+  StyledParagraph,
+  StyledDiv,
+  StyledAnchor,
+} from '../../assets/customStyledComponents';
 
-const Container = styled.div`
-  display: flex;
-  background-color: ${(props) => props.backgroundColor};
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  font-family: ${(props) => props.fontFamily};
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0px;
-  line-height: 1.5;
-  text-transform: none;
-  padding-top: 20px;
-`;
-const HeaderContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /*width: 100%;*/
-`;
-const Logo = styled.img`
+const Logo = styled(StyledImage)`
   padding-bottom: 10px;
   max-height: 100px;
 `;
@@ -46,14 +35,12 @@ const ProductsContainer = styled.div`
   overflow-wrap: break-word;
   color: #ffffff;
 `;
-const Title = styled.h3`
-  color: ${({ color }) => color};
-  font-size: ${({ fontSize }) => fontSize}rem;
+const Title = styled(StyledH3)`
   font-weight: 900;
   line-height: 1.3;
   text-transform: none;
 `;
-const Subtitle = styled.p`
+const Subtitle = styled(StyledParagraph)`
   text-align: center;
   font-weight: 400;
   letter-spacing: 0px;
@@ -64,7 +51,7 @@ const Subtitle = styled.p`
   font-size: ${({ fontSize }) => fontSize}rem;
   margin-top: 0;
 `;
-const Product = styled.div`
+const Product = styled(StyledDiv)`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -78,7 +65,6 @@ const Product = styled.div`
   box-sizing: border-box;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
   background-clip: border-box;
-  background-color: ${({ backgroundColor }) => backgroundColor};
   color: #414143;
   cursor: pointer;
 
@@ -98,7 +84,7 @@ const Product = styled.div`
     transition: all 0.2s ease-in;
   }
 `;
-const ProductName = styled.h4`
+const ProductName = styled(StyledH4)`
   font-size: calc( (1.25rem) / 1.2);
   font-weight: 900;
   line-height: 1.25;
@@ -106,7 +92,7 @@ const ProductName = styled.h4`
   color: ${(props) => props.color};
   margin: 0;
 `;
-const ProductDescription = styled.p`
+const ProductDescription = styled(StyledParagraph)`
   overflow: scroll;
   color: ${(props) => props.color};
   font-size: 1rem;
@@ -125,25 +111,18 @@ const PriceBox = styled.div`
   background: ${(props) => props.color};
   pointer-events: none;
   border-bottom: 3px solid #c7a17a;
+  border-bottom-color: black; // for now until we make this customizable
   box-sizing: border-box;
-`;
-const ProductPrice = styled.h5`
-  margin: 0px;
-  color: ${({ color }) => color};
-  font-size: ${({ fontSize }) => fontSize}rem;
-  font-weight: 600;
 `;
 const ActionButtonContainer = styled.div`
   margin: 2rem auto;
   clear: both;
   box-sizing: border-box;
-  color: #ffffff;
 `;
-const ActionButton = styled.a`
+const ActionButton = styled(StyledAnchor)`
   cursor: pointer;
   padding: 0.3rem 24px 0.3rem 0;
   position: relative;
-  color: ${(props) => props.color} !important;
   text-transform: uppercase;
   transition: all 0.35s cubic-bezier(0.215, 0.61, 0.355, 1); // TODO: not working
   box-shadow: none !important;
@@ -213,7 +192,7 @@ const DEFAULTS_FOR_REQUIRED = {
   },
 };
 
-const GridMenuWithItemCards = (props) => {
+const Ecommerce0002 = (props) => {
   const {
     logo,
     title,
@@ -224,33 +203,25 @@ const GridMenuWithItemCards = (props) => {
   } = props;
 
   const defaults = {
-    ...GridMenuWithItemCards.defaultProps,
+    ...Ecommerce0002.defaultProps,
     ...DEFAULTS_FOR_REQUIRED,
   };
 
-  const renderActionButton = () => {
-    if (!actionButton?.text) return null;
-
-    return (
-      <ActionButtonContainer>
-        <ActionButton
-          color={actionButton?.color || defaults.actionButton.color}
-          fontSize={actionButton?.fontSize || defaults.actionButton.fontSize}
-          onClick={actionButton?.onClick}
-        >
-          {actionButton?.text}
-        </ActionButton>
-      </ActionButtonContainer>
-    );
-  };
-
   return (
-    <Container fontFamily={background?.fontFamily} backgroundColor={background?.backgroundColor}>
-      <HeaderContainer>
-        <Logo src={logo?.url} alt={logo?.alt} />
+    <StyledContainer
+      className="flex flex-col text-base w-full font-normal tracking-normal leading-normal normal-case justify-center items-center pt-5"
+      customProps={background}
+    >
+      <div className="flex flex-col items-center">
+        <Logo
+          className="pb-2.5 max-h-24"
+          customProps={logo}
+          src={logo?.url}
+          alt={logo?.alt}
+        />
         <Title
-          color={title?.color || defaults.title.color}
-          fontSize={title?.fontSize || defaults.title.fontSize}
+          // className="font-black leading-snug normal-case" // not working for some reason
+          customProps={title}
         >
           {title?.text}
         </Title>
@@ -260,7 +231,7 @@ const GridMenuWithItemCards = (props) => {
         >
           {subtitle?.text}
         </Subtitle>
-      </HeaderContainer>
+      </div>
       <ProductsContainer>
         {
           products?.map((product) => {
@@ -280,67 +251,78 @@ const GridMenuWithItemCards = (props) => {
             return (
               <Product
                 key={product.id || Math.random().toString().slice(10)}
+                customProps={product}
                 backgroundColor={product.backgroundColor || defaults.product.backgroundColor}
                 borderColor={product.borderBottomColor || defaults.product.borderBottomColor}
                 onClick={() => product.onClick?.({ product })}
               >
-                <ProductName
-                  color={product.name?.color || defaults.product.name.color}
-                  fontSize={product.name?.fontSize || defaults.product.name.fontSize}
-                >
+                <ProductName customProps={product.name}>
                   {product.name?.text}
                 </ProductName>
-                <ProductDescription
-                  color={product.description?.color || defaults.product.description.color}
-                  fontSize={product.description?.fontSize || defaults.product.description.fontSize}
-                >
+                <ProductDescription customProps={product.description}>
                   {product.description?.text}
                 </ProductDescription>
                 <PriceBox backgroundColor={product.price?.backgroundColor}>
-                  <ProductPrice
-                    color={product.price?.color || defaults.product.price.color}
-                    fontSize={product.price?.fontSize || defaults.product.price.fontSize}
+                  <StyledH5
+                    className="font-semibold m-0"
+                    customProps={product.price}
                   >
                     {price}
-                  </ProductPrice>
+                  </StyledH5>
                 </PriceBox>
               </Product>
             );
           })
         }
       </ProductsContainer>
-      {renderActionButton()}
-    </Container>
+      {
+        actionButton?.text && (
+          <ActionButtonContainer>
+            <ActionButton className="text-black" customProps={actionButton}>
+              {actionButton?.text}
+            </ActionButton>
+          </ActionButtonContainer>
+        )
+      }
+    </StyledContainer>
   );
 };
 
-GridMenuWithItemCards.defaultProps = {
+Ecommerce0002.defaultProps = {
   logo: {
     url: null,
     alt: '',
   },
   title: {
     text: null,
-    color: '#fff',
-    fontSize: 1,
+    styles: {
+      color: '#fff',
+      fontSize: 1,
+    },
   },
   subtitle: {
     text: null,
-    color: '#fff',
-    fontSize: 1,
+    styles: {
+      color: '#fff',
+      fontSize: 1,
+    },
   },
   actionButton: {
     text: null,
-    color: '#fff',
-    fontSize: 1,
+    styles: {
+      color: '#fff',
+      fontSize: 1,
+    },
   },
   background: {
-    fontFamily: 'sans-serif',
-    backgroundColor: '#28282a',
+    styles: {
+      fontFamily: 'sans-serif',
+      backgroundColor: '#28282a',
+    },
   },
 };
 
-GridMenuWithItemCards.propTypes = {
+Ecommerce0002.propTypes = {
   /**
    * Logo.
    */
@@ -390,4 +372,4 @@ GridMenuWithItemCards.propTypes = {
   })).isRequired,
 };
 
-export default GridMenuWithItemCards;
+export default Ecommerce0002;
