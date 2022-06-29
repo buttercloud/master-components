@@ -1,16 +1,16 @@
 import React from 'react';
-import ClassicMenu from './ClassicMenu';
+import Ecommerce0001 from './Ecommerce0001';
 
 export default {
-  title: 'organisms/ecommerce/Classic Menu',
-  component: ClassicMenu,
+  title: 'organisms/ecommerce/Ecommerce0001',
+  component: Ecommerce0001,
 };
 
-const Template = (args) => <ClassicMenu {...args} />;
+const Template = (args) => <Ecommerce0001 {...args} />;
 
 export const Primary = Template.bind({});
 
-Primary.storyName = 'Classic Menu';
+// Primary.storyName = 'Ecommerce0001';
 
 Primary.args = {
   title: {
