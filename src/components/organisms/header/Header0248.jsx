@@ -5,11 +5,13 @@ import {
   StyledContainer,
   StyledSpan,
   StyledButton,
+  StyledImage,
 } from '../../assets/customStyledComponents';
 import {
   textType,
   backgroundType,
   buttonType,
+  imageType,
 } from '../../../customPropTypes/customPropTypes';
 import Header0248Icon from './Header0248.icon';
 
@@ -20,6 +22,7 @@ const Header0248 = (props) => {
     button9d5b64,
     buttonbd730b,
     links,
+    logo,
   } = props;
 
   return (
@@ -55,18 +58,11 @@ const Header0248 = (props) => {
           onClick={buttonbd730b.onClick}
           customProps={buttonbd730b}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
+          <StyledImage
+            src={logo?.src}
+            alt={logo?.alt}
+            customProps={logo}
+          />
           <StyledSpan
             className="ml-3 text-xl"
             id="spanb2ed6e"
@@ -110,6 +106,7 @@ Header0248.defaultProps = {
   backgroundf06d74: {
     styles: {},
   },
+  logo: {},
   spanb2ed6e: {
     text: 'MyWebsite',
     styles: {},
@@ -132,6 +129,10 @@ Header0248.propTypes = {
    * Background prop for backgroundf06d74.
    */
   backgroundf06d74: backgroundType,
+  /**
+  * Logo.
+  */
+  logo: imageType,
   /**
    * Text prop for spanb2ed6e.
    */

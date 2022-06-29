@@ -10,6 +10,10 @@ export default {
       styles: {},
       text: 'MyWebsite',
     },
+    logo: {
+      src: 'https://dummyimage.com/70x70',
+      alt: 'logo',
+    },
     links: [
       {
         buttond79b6c: {
