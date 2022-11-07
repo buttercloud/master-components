@@ -2,12 +2,23 @@ import styled from 'styled-components';
 
 const StyledContainer = styled.div.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  events: props?.customProps?.events,
   styles: props?.customProps?.styles,
 }))`
   width: 100%;
   font-size: ${({ styles }) => styles?.fontSize}rem;
   font-family: ${({ styles }) => styles?.fontFamily} !important;
   background-color: ${({ styles }) => styles?.backgroundColor};
+`;
+const StyledDiv = styled.div.attrs((props) => ({
+  onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
+}))`
+  font-size: ${({ styles }) => styles?.fontSize}rem;
+  font-family: ${({ styles }) => styles?.fontFamily} !important;
+  background-color: ${({ styles }) => styles?.backgroundColor};
+  /*border-color: ${({ styles }) => styles?.borderColor};*/
+  /*border-bottom-color: red;*/
 `;
 
 // TODO
@@ -34,7 +45,7 @@ const StyledParagraph = styled.p.attrs((props) => ({
   styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
-  font-size: ${({ styles }) => styles?.fontSize}rem;
+  font-size: ${({ styles }) => styles?.fontSize}rem !important;
   color: ${({ styles }) => styles?.color};
   text-align: ${({ styles }) => styles?.textAlign};
 `;
@@ -43,7 +54,7 @@ const StyledLabel = styled.label.attrs((props) => ({
   styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
-  font-size: ${({ styles }) => styles?.fontSize}rem;
+  font-size: ${({ styles }) => styles?.fontSize}rem !important;
   color: ${({ styles }) => styles?.color};
   text-align: ${({ styles }) => styles?.textAlign};
 `;
@@ -52,7 +63,7 @@ const StyledH1 = styled.h1.attrs((props) => ({
   styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
-  font-size: ${({ styles }) => styles?.fontSize}rem;
+  font-size: ${({ styles }) => styles?.fontSize}rem !important;
   color: ${({ styles }) => styles?.color};
   text-align: ${({ styles }) => styles?.textAlign};
 `;
@@ -61,7 +72,7 @@ const StyledH2 = styled.h2.attrs((props) => ({
   styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
-  font-size: ${({ styles }) => styles?.fontSize}rem;
+  font-size: ${({ styles }) => styles?.fontSize}rem !important;
   color: ${({ styles }) => styles?.color};
   text-align: ${({ styles }) => styles?.textAlign};
 `;
@@ -70,7 +81,7 @@ const StyledH3 = styled.h3.attrs((props) => ({
   styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
-  font-size: ${({ styles }) => styles?.fontSize}rem;
+  font-size: ${({ styles }) => styles?.fontSize}rem !important;
   color: ${({ styles }) => styles?.color};
   text-align: ${({ styles }) => styles?.textAlign};
 `;
@@ -79,7 +90,7 @@ const StyledH4 = styled.h4.attrs((props) => ({
   styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
-  font-size: ${({ styles }) => styles?.fontSize}rem;
+  font-size: ${({ styles }) => styles?.fontSize}rem !important;
   color: ${({ styles }) => styles?.color};
   text-align: ${({ styles }) => styles?.textAlign};
 `;
@@ -88,7 +99,7 @@ const StyledH5 = styled.h5.attrs((props) => ({
   styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
-  font-size: ${({ styles }) => styles?.fontSize}rem;
+  font-size: ${({ styles }) => styles?.fontSize}rem !important;
   color: ${({ styles }) => styles?.color};
   text-align: ${({ styles }) => styles?.textAlign};
 `;
@@ -97,7 +108,7 @@ const StyledH6 = styled.h6.attrs((props) => ({
   styles: props?.customProps?.styles,
 }))`
   font-family: ${({ styles }) => styles?.fontFamily} !important;
-  font-size: ${({ styles }) => styles?.fontSize}rem;
+  font-size: ${({ styles }) => styles?.fontSize}rem !important;
   color: ${({ styles }) => styles?.color};
   text-align: ${({ styles }) => styles?.textAlign};
 `;
@@ -136,6 +147,16 @@ const StyledHeader = styled.header.attrs((props) => ({
 }))`
   background-color: ${({ styles }) => styles?.backgroundColor};
 `;
+const StyledAnchor = styled.a.attrs((props) => ({
+  onClick: props?.customProps?.onClick,
+  styles: props?.customProps?.styles,
+}))`
+  font-family: ${({ styles }) => styles?.fontFamily} !important;
+  font-size: ${({ styles }) => styles?.fontSize}rem;
+  color: ${({ styles }) => styles?.color};
+  text-align: ${({ styles }) => styles?.textAlign};
+  background-color: ${({ styles }) => styles?.backgroundColor};
+`;
 
 export {
   StyledContainer,
@@ -154,4 +175,6 @@ export {
   StyledInput,
   StyledFooter,
   StyledHeader,
+  StyledDiv,
+  StyledAnchor,
 };

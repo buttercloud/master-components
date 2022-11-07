@@ -29,7 +29,6 @@ const Content8679 = (props) => {
     <StyledContainer
       className="text-gray-600 body-font"
       id="background3d5683"
-      styles={background3d5683.styles}
       customProps={background3d5683}
     >
       <div className="container flex flex-wrap px-5 py-24 mx-auto items-center">
@@ -37,7 +36,6 @@ const Content8679 = (props) => {
           <StyledH1
             className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900"
             id="h1842ec9"
-            styles={h1842ec9.styles}
             customProps={h1842ec9}
           >
             {h1842ec9.text}

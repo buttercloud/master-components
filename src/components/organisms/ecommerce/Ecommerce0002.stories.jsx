@@ -1,16 +1,16 @@
 import React from 'react';
-import GridMenuWithItemCards from './GridMenuWithItemCards';
+import Ecommerce0002 from './Ecommerce0002';
 
 export default {
-  title: 'organisms/ecommerce/Grid Menu With Item Cards',
-  component: GridMenuWithItemCards,
+  title: 'organisms/ecommerce/Ecommerce0002',
+  component: Ecommerce0002,
   argTypes: {
     fontFamily: { control: 'text' },
     backgroundColor: { control: 'color' },
   },
 };
 
-const Template = (args) => <GridMenuWithItemCards {...args} />;
+const Template = (args) => <Ecommerce0002 {...args} />;
 
 export const Primary = Template.bind({});
 
@@ -112,9 +112,17 @@ Primary.args = {
   ],
   actionButton: {
     text: 'LOREM IPSUM',
+    styles: {
+      // color: 'red',
+    },
   },
-  fontFamily: 'sans-serif',
-  backgroundColor: '#28282a',
+  background: {
+    styles: {
+      // backgroundColor: '#28282a',
+      backgroundColor: 'white',
+      fontFamily: 'sans-serif',
+    },
+  },
 };
 
-Primary.storyName = 'Grid Menu With Item Cards';
+Primary.storyName = 'Ecommerce0002';

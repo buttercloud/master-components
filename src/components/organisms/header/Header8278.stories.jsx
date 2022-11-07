@@ -6,6 +6,10 @@ export default {
   title: 'organisms/header/Header8278',
   component: Header8278,
   args: {
+    logo: {
+      src: 'https://dummyimage.com/70x70',
+      alt: 'logo',
+    },
     links: [
       {
         button9831b8: {

@@ -7,7 +7,7 @@ export default {
   component: Footer8030,
   args: {
     logo: {
-      src: 'https://dummyimage.com/100x100',
+      src: 'https://dummyimage.com/70x70',
       alt: '',
     },
     sections: [

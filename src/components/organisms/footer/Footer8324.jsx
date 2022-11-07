@@ -7,11 +7,13 @@ import {
   StyledParagraph,
   StyledH2,
   StyledButton,
+  StyledImage,
 } from '../../assets/customStyledComponents';
 import {
   textType,
   backgroundType,
   buttonType,
+  imageType,
 } from '../../../customPropTypes/customPropTypes';
 import Footer8324Icon from './Footer8324.icon';
 
@@ -29,6 +31,7 @@ const Footer8324 = (props) => {
     button632660,
     button341ca3,
     sections,
+    logo,
   } = props;
 
   return (
@@ -46,18 +49,11 @@ const Footer8324 = (props) => {
             onClick={button8ab97c.onClick}
             customProps={button8ab97c}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
+            <StyledImage
+              src={logo?.src}
+              alt={logo?.alt}
+              customProps={logo}
+            />
             <StyledSpan
               className="ml-3 text-xl"
               id="spane65d96"
@@ -234,6 +230,7 @@ Footer8324.defaultProps = {
   background9e8f73: {
     styles: {},
   },
+  logo: {},
   sections: [],
   p3ec6e0: {
     text: 'Lorem ipsum dolor sit amet',
@@ -288,6 +285,10 @@ Footer8324.propTypes = {
    * Background prop for background9e8f73.
    */
   background9e8f73: backgroundType,
+  /**
+  * Logo props.
+  */
+  logo: imageType,
   /**
    * Sections array
    */

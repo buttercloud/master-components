@@ -2,9 +2,7 @@ import './assets/css/tailwind.css';
 import './assets/css/icons.css';
 
 // import MenuWithStickyNavAndCategories from './components/organisms/MenuWithStickyNavAndCategories';
-// import GridMenuWithItemCards from './components/organisms/GridMenuWithItemCards';
 // import ProductDetails from './components/organisms/ProductDetails';
-// import ClassicMenu from './components/organisms/ClassicMenu';
 // import ItemCategoriesMenuWithBackgroundImage from './components/organisms/ItemCategoriesMenuWithBackgroundImage';
 // import ProductDetailsWithTopImage from './components/organisms/ProductDetailsWithTopImage';
 
@@ -82,6 +80,9 @@ import Testimonial7732 from './components/organisms/testimonial/Testimonial7732'
 import Testimonial8468 from './components/organisms/testimonial/Testimonial8468';
 import Testimonial9017 from './components/organisms/testimonial/Testimonial9017';
 
+import Ecommerce0001 from './components/organisms/ecommerce/Ecommerce0001';
+import Ecommerce0002 from './components/organisms/ecommerce/Ecommerce0002';
+
 export {
   Blog1776,
   Blog2197,
@@ -138,4 +139,6 @@ export {
   Testimonial7732,
   Testimonial8468,
   Testimonial9017,
+  Ecommerce0001,
+  Ecommerce0002,
 };

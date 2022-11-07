@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import {
   StyledContainer,
   StyledButton,
+  StyledImage,
 } from '../../assets/customStyledComponents';
 import {
   backgroundType,
   buttonType,
+  imageType,
 } from '../../../customPropTypes/customPropTypes';
 import Header7610Icon from './Header7610.icon';
 
@@ -16,6 +18,7 @@ const Header7610 = (props) => {
     buttonafe73c,
     button16f859,
     links,
+    logo,
   } = props;
 
   return (
@@ -34,18 +37,11 @@ const Header7610 = (props) => {
           onClick={button16f859?.onClick}
           customProps={button16f859}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
+          <StyledImage
+            src={logo?.src}
+            alt={logo?.alt}
+            customProps={logo}
+          />
           <span
             className="ml-3"
             id="span90d075"
@@ -101,6 +97,7 @@ Header7610.defaultProps = {
   background9d694a: {
     styles: {},
   },
+  logo: {},
   buttonafe73c: {
     text: 'Button',
     styles: {},
@@ -119,6 +116,10 @@ Header7610.propTypes = {
    * Background prop for background9d694a.
    */
   background9d694a: backgroundType,
+  /**
+  * Logo to display on the left.
+  */
+  logo: imageType,
   /**
    * Button prop for buttonafe73c.
    */
