@@ -1,11 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
 import {
-  textType,
-  imageType,
   backgroundType,
+  imageType,
+  textType,
 } from '../../../customPropTypes/customPropTypes';
 
 const size = {

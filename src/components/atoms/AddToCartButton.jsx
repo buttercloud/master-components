@@ -1,8 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
-import CartIcon from '../assets/CartIcon';
+
 import { textType } from '../../customPropTypes/customPropTypes';
+import CartIcon from '../assets/CartIcon';
 
 const Container = styled.button`
   display: flex;

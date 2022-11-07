@@ -1,13 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Dinero from 'dinero.js';
-import { textType, moneyType, backgroundType } from '../../../customPropTypes/customPropTypes';
+import PropTypes from 'prop-types';
+import React from 'react';
+import styled from 'styled-components';
+
+import { backgroundType,moneyType, textType } from '../../../customPropTypes/customPropTypes';
 import {
   StyledContainer,
-  StyledParagraph,
   StyledH3,
   StyledH6,
+  StyledParagraph,
   StyledSpan,
 } from '../../assets/customStyledComponents';
 

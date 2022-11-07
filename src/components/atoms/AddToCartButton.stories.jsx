@@ -1,4 +1,5 @@
 import React from 'react';
+
 import AddToCartButton from './AddToCartButton';
 
 export default {

@@ -1,7 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
-import { textType, imageType } from '../../../customPropTypes/customPropTypes';
+
+import { imageType,textType } from '../../../customPropTypes/customPropTypes';
 import { StyledParagraph } from '../../assets/customStyledComponents';
 
 const Container = styled.div`

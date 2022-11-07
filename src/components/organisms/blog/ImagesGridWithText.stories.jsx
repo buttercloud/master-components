@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ImagesGridWithText from './ImagesGridWithText';
 
 export default {

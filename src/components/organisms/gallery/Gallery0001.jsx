@@ -1,18 +1,19 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
-import {
-  StyledContainer,
-  StyledButton,
-  StyledParagraph,
-  StyledImage,
-} from '../../assets/customStyledComponents';
+
 import {
   backgroundType,
-  textType,
-  imageType,
   buttonType,
+  imageType,
+  textType,
 } from '../../../customPropTypes/customPropTypes';
+import {
+  StyledButton,
+  StyledContainer,
+  StyledImage,
+  StyledParagraph,
+} from '../../assets/customStyledComponents';
 import Gallery0001Icon from './Gallery0001.icon';
 
 const Container = styled(StyledContainer)`

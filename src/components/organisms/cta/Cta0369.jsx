@@ -1,18 +1,19 @@
 import React from 'react';
+
+import {
+  backgroundType,
+  buttonType,
+  textType,
+} from '../../../customPropTypes/customPropTypes';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 import {
+  StyledButton,
   StyledContainer,
-  StyledSpan,
   StyledH1,
   StyledH2,
-  StyledButton,
+  StyledSpan,
 } from '../../assets/customStyledComponents';
-import {
-  textType,
-  backgroundType,
-  buttonType,
-} from '../../../customPropTypes/customPropTypes';
 import Cta0369Icon from './Cta0369.icon';
 
 const Cta0369 = (props) => {

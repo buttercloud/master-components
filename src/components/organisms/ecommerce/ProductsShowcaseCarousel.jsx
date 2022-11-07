@@ -1,22 +1,23 @@
-import React, { useRef, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Dinero from 'dinero.js';
-import Carousel from '../../molecules/Carousel';
+import PropTypes from 'prop-types';
+import React, { useEffect,useRef, useState } from 'react';
+import styled from 'styled-components';
+
 import {
-  textType,
-  imageType,
-  buttonType,
-  moneyType,
   backgroundType,
+  buttonType,
+  imageType,
+  moneyType,
+  textType,
 } from '../../../customPropTypes/customPropTypes';
 import {
   StyledContainer,
-  StyledParagraph,
   StyledH1,
   StyledH4,
   StyledH5,
+  StyledParagraph,
 } from '../../assets/customStyledComponents';
+import Carousel from '../../molecules/Carousel';
 
 const ONE_SLIDE_BREAKPOINT = 500;
 const THREE_SLIDES_BREAKPOINT = 760;

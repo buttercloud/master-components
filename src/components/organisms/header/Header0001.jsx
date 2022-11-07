@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { backgroundType, imageType } from '../../../customPropTypes/customPropTypes';
 import { StyledHeader, StyledImage } from '../../assets/customStyledComponents';
 import SocialButtons, { socialMediaType } from '../../molecules/SocialButtons';
-import { backgroundType, imageType } from '../../../customPropTypes/customPropTypes';
 import Header0001Icon from './Header0001.icon';
 
 const Container = styled(StyledHeader)`

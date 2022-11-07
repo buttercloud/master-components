@@ -1,22 +1,23 @@
 import React from 'react';
+
+import {
+  backgroundType,
+  buttonType,
+  inputType,
+  textareaType,
+  textType,
+} from '../../../customPropTypes/customPropTypes';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 import {
-  StyledContainer,
-  StyledParagraph,
-  StyledLabel,
-  StyledH2,
   StyledButton,
+  StyledContainer,
+  StyledH2,
   StyledInput,
+  StyledLabel,
+  StyledParagraph,
   StyledTextarea,
 } from '../../assets/customStyledComponents';
-import {
-  textType,
-  backgroundType,
-  buttonType,
-  textareaType,
-  inputType,
-} from '../../../customPropTypes/customPropTypes';
 import Contact0527Icon from './Contact0527.icon';
 
 const Contact0527 = (props) => {

@@ -1,9 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled, { css } from 'styled-components';
+
 import {
-  textType,
   imageType,
+  textType,
   // buttonType,
   // moneyType,
 } from '../../../customPropTypes/customPropTypes';

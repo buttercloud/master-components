@@ -1,19 +1,20 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
+
 import {
-  StyledFooter,
-  StyledSpan,
-  StyledParagraph,
-  StyledButton,
-  StyledImage,
-} from '../../assets/customStyledComponents';
-import {
-  textType,
   backgroundType,
   buttonType,
   imageType,
+  textType,
 } from '../../../customPropTypes/customPropTypes';
+// import PropTypes from 'prop-types';
+// import styled from 'styled-components';
+import {
+  StyledButton,
+  StyledFooter,
+  StyledImage,
+  StyledParagraph,
+  StyledSpan,
+} from '../../assets/customStyledComponents';
 import Footer9657Icon from './Footer9657.icon';
 
 const Footer9657 = (props) => {

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Footer4879 from './Footer4879';
 import Footer4879Icon from './Footer4879.icon';
 

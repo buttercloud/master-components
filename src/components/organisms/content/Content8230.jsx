@@ -1,19 +1,20 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
+import {
+  backgroundType,
+  buttonType,
+  imageType,
+  textType,
+} from '../../../customPropTypes/customPropTypes';
 // import styled from 'styled-components';
 import {
+  StyledButton,
   StyledContainer,
+  StyledH2,
   StyledImage,
   StyledParagraph,
-  StyledH2,
-  StyledButton,
 } from '../../assets/customStyledComponents';
-import {
-  textType,
-  backgroundType,
-  imageType,
-  buttonType,
-} from '../../../customPropTypes/customPropTypes';
 import Content8230Icon from './Content8230.icon';
 
 const Content8230 = (props) => {

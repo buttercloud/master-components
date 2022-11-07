@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Content6687 from './Content6687';
 import Content6687Icon from './Content6687.icon';
 

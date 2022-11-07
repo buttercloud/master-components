@@ -1,21 +1,22 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
+
 import {
-  StyledContainer,
-  StyledParagraph,
-  StyledLabel,
-  StyledH1,
-  StyledH2,
-  StyledButton,
-  StyledInput,
-} from '../../assets/customStyledComponents';
-import {
-  textType,
   backgroundType,
   buttonType,
   inputType,
+  textType,
 } from '../../../customPropTypes/customPropTypes';
+// import PropTypes from 'prop-types';
+// import styled from 'styled-components';
+import {
+  StyledButton,
+  StyledContainer,
+  StyledH1,
+  StyledH2,
+  StyledInput,
+  StyledLabel,
+  StyledParagraph,
+} from '../../assets/customStyledComponents';
 import Cta9114Icon from './Cta9114.icon';
 
 const Cta9114 = (props) => {

@@ -1,16 +1,17 @@
 import React from 'react';
+
+import {
+  backgroundType,
+  textType,
+} from '../../../customPropTypes/customPropTypes';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 import {
   StyledContainer,
-  StyledSpan,
-  StyledParagraph,
   StyledH2,
+  StyledParagraph,
+  StyledSpan,
 } from '../../assets/customStyledComponents';
-import {
-  textType,
-  backgroundType,
-} from '../../../customPropTypes/customPropTypes';
 import Testimonial7732Icon from './Testimonial7732.icon';
 
 const Testimonial7732 = (props) => {

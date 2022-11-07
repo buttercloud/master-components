@@ -1,8 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
-import { textType, imageType, buttonType } from '../../../customPropTypes/customPropTypes';
+import { buttonType,imageType, textType } from '../../../customPropTypes/customPropTypes';
 
 const Container = styled.div`
   display: flex;

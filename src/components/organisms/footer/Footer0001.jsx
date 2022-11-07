@@ -1,10 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
+import { backgroundType,textType } from '../../../customPropTypes/customPropTypes';
 import { StyledFooter, StyledParagraph } from '../../assets/customStyledComponents';
 import SocialButtons, { socialMediaType } from '../../molecules/SocialButtons';
-import { textType, backgroundType } from '../../../customPropTypes/customPropTypes';
 import Footer0001Icon from './Footer0001.icon';
 
 const Container = styled(StyledFooter)`

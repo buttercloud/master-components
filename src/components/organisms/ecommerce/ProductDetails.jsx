@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Dinero from 'dinero.js';
-import AddToCartButton from '../../atoms/AddToCartButton';
-import TextareaWithLabel from '../../molecules/TextareaWithLabel';
-import NumberInputWithCircleActionButtons from '../../molecules/NumberInputWithCircleActionButtons';
-import ImageGalleryWithThumbnails from '../../molecules/ImageGalleryWithThumbnails';
+import PropTypes from 'prop-types';
+import React, { useEffect,useState } from 'react';
+import styled from 'styled-components';
+
 import {
-  textType,
-  imageType,
   buttonType,
+  imageType,
   moneyType,
+  textType,
 } from '../../../customPropTypes/customPropTypes';
+import AddToCartButton from '../../atoms/AddToCartButton';
+import ImageGalleryWithThumbnails from '../../molecules/ImageGalleryWithThumbnails';
+import NumberInputWithCircleActionButtons from '../../molecules/NumberInputWithCircleActionButtons';
+import TextareaWithLabel from '../../molecules/TextareaWithLabel';
 
 // TODO
 // add default values for fontSize, color, ...

@@ -1,23 +1,24 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
+
 import {
-  StyledContainer,
-  StyledSpan,
-  StyledParagraph,
-  StyledLabel,
-  StyledH1,
-  StyledButton,
-  StyledInput,
-  StyledTextarea,
-} from '../../assets/customStyledComponents';
-import {
-  textType,
   backgroundType,
   buttonType,
   inputType,
   textareaType,
+  textType,
 } from '../../../customPropTypes/customPropTypes';
+// import PropTypes from 'prop-types';
+// import styled from 'styled-components';
+import {
+  StyledButton,
+  StyledContainer,
+  StyledH1,
+  StyledInput,
+  StyledLabel,
+  StyledParagraph,
+  StyledSpan,
+  StyledTextarea,
+} from '../../assets/customStyledComponents';
 import Contact9102Icon from './Contact9102.icon';
 
 const Contact9102 = (props) => {

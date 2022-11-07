@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Footer8324 from './Footer8324';
 import Footer8324Icon from './Footer8324.icon';
 

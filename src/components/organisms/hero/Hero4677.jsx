@@ -1,23 +1,24 @@
 import React from 'react';
+
+import {
+  backgroundType,
+  buttonType,
+  imageType,
+  inputType,
+  textType,
+} from '../../../customPropTypes/customPropTypes';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 import {
-  StyledContainer,
-  StyledSpan,
-  StyledImage,
-  StyledParagraph,
-  StyledLabel,
-  StyledH1,
   StyledButton,
+  StyledContainer,
+  StyledH1,
+  StyledImage,
   StyledInput,
+  StyledLabel,
+  StyledParagraph,
+  StyledSpan,
 } from '../../assets/customStyledComponents';
-import {
-  textType,
-  backgroundType,
-  imageType,
-  buttonType,
-  inputType,
-} from '../../../customPropTypes/customPropTypes';
 import Hero4677Icon from './Hero4677.icon';
 
 const Hero4677 = (props) => {
