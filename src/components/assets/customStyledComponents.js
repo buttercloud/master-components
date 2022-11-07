@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const StyledContainer = styled.div.attrs((props) => ({
   onClick: props?.customProps?.onClick,
+  events: props?.customProps?.events,
   styles: props?.customProps?.styles,
 }))`
   width: 100%;
