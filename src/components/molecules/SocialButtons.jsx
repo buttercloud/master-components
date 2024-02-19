@@ -57,7 +57,7 @@ const SocialButtons = (props) => {
     <Container flexDirection={alignment}>
       {
         socialMedia?.map((social) => (
-          <Button>
+          <Button key={social.url}>
             {
               alignment === 'row' && (
                 <TooltipText>{social.text}</TooltipText>

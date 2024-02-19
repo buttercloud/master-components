@@ -51,7 +51,10 @@ const Content0001 = (props) => {
     title,
     paragraph,
     actionButton,
+    events,
   } = props;
+
+  useCustomEvents(events);
 
   return (
     <Container customProps={background}>

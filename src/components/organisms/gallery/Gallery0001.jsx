@@ -86,6 +86,7 @@ const Gallery0001 = (props) => {
     title,
     subtitle,
     items,
+    events,
   } = props;
 
   return (
