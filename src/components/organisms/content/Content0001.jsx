@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  StyledContainer,
-  StyledButton,
-  StyledParagraph,
-  StyledH5,
-} from '../../assets/customStyledComponents';
+
 import {
   backgroundType,
-  textType,
   buttonType,
+  textType,
 } from '../../../customPropTypes/customPropTypes';
+import {
+  StyledButton,
+  StyledContainer,
+  StyledH5,
+  StyledParagraph,
+} from '../../assets/customStyledComponents';
 import Content0001Icon from './Content0001.icon';
 
 const Container = styled(StyledContainer)`
@@ -50,7 +51,10 @@ const Content0001 = (props) => {
     title,
     paragraph,
     actionButton,
+    events,
   } = props;
+
+  useCustomEvents(events);
 
   return (
     <Container customProps={background}>

@@ -1,21 +1,22 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-// import styled from 'styled-components';
+import React from 'react';
+
 import {
-  StyledFooter,
-  StyledSpan,
-  StyledParagraph,
-  StyledLabel,
-  StyledH2,
-  StyledButton,
-  StyledInput,
-} from '../../assets/customStyledComponents';
-import {
-  textType,
   backgroundType,
   buttonType,
   inputType,
+  textType,
 } from '../../../customPropTypes/customPropTypes';
+// import styled from 'styled-components';
+import {
+  StyledButton,
+  StyledFooter,
+  StyledH2,
+  StyledInput,
+  StyledLabel,
+  StyledParagraph,
+  StyledSpan,
+} from '../../assets/customStyledComponents';
 import Footer4879Icon from './Footer4879.icon';
 
 const Footer4879 = (props) => {

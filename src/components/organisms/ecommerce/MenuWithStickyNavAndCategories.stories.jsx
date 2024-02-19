@@ -1,4 +1,5 @@
 import React from 'react';
+
 import MenuWithStickyNavAndCategories from './MenuWithStickyNavAndCategories';
 
 export default {

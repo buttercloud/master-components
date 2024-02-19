@@ -1,4 +1,5 @@
 import React from 'react';
+
 import RecommendedItemsCardsCarousel from './RecommendedItemsCardsCarousel';
 
 export default {

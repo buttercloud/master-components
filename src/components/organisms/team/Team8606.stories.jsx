@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Team8606 from './Team8606';
 import Team8606Icon from './Team8606.icon';
 

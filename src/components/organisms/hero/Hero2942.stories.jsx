@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Hero2942 from './Hero2942';
 import Hero2942Icon from './Hero2942.icon';
 

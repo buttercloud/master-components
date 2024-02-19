@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ItemsImageShowcase from './ItemsImageShowcase';
 
 export default {

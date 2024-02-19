@@ -1,4 +1,5 @@
 import React from 'react';
+
 import TitleImageAndText from './TitleImageAndText';
 
 export default {

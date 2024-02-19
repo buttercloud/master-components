@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ItemCategoriesMenuWithBackgroundImage from './ItemCategoriesMenuWithBackgroundImage';
 
 export default {

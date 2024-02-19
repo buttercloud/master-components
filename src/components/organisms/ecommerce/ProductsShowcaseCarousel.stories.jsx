@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ProductsShowcaseCarousel from './ProductsShowcaseCarousel';
 
 export default {

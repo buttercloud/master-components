@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Statistic3887 from './Statistic3887';
 import Statistic3887Icon from './Statistic3887.icon';
 

@@ -1,15 +1,16 @@
 import React from 'react';
+
+import {
+  backgroundType,
+  textType,
+} from '../../../customPropTypes/customPropTypes';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 import {
   StyledContainer,
-  StyledParagraph,
   StyledH2,
+  StyledParagraph,
 } from '../../assets/customStyledComponents';
-import {
-  textType,
-  backgroundType,
-} from '../../../customPropTypes/customPropTypes';
 import Statistic3613Icon from './Statistic3613.icon';
 
 const Statistic3613 = (props) => {

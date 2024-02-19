@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ImageGalleryWithThumbnails from './ImageGalleryWithThumbnails';
 
 export default {

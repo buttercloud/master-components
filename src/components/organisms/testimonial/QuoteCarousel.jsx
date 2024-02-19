@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
-import Carousel from '../../molecules/Carousel';
-import { textType } from '../../../customPropTypes/customPropTypes';
 
+import { textType } from '../../../customPropTypes/customPropTypes';
 import DoubleQuotesIcon from '../../assets/DoubleQuotesIcon';
+import Carousel from '../../molecules/Carousel';
 
 const Container = styled.div`
   display: flex;

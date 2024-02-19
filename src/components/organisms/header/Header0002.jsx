@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { imageType,textType } from '../../../customPropTypes/customPropTypes';
 import {
   StyledContainer,
   StyledH1,
   StyledH2,
   StyledImage,
 } from '../../assets/customStyledComponents';
-import { textType, imageType } from '../../../customPropTypes/customPropTypes';
 import Header0002Icon from './Header0002.icon';
 
 const Container = styled(StyledContainer)`

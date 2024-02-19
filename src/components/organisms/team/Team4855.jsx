@@ -1,22 +1,23 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
+import {
+  backgroundType,
+  buttonType,
+  imageType,
+  textType,
+} from '../../../customPropTypes/customPropTypes';
 // import styled from 'styled-components';
 import {
+  StyledButton,
   StyledContainer,
-  StyledSpan,
-  StyledImage,
-  StyledParagraph,
   StyledH1,
   StyledH2,
   StyledH3,
-  StyledButton,
+  StyledImage,
+  StyledParagraph,
+  StyledSpan,
 } from '../../assets/customStyledComponents';
-import {
-  textType,
-  backgroundType,
-  imageType,
-  buttonType,
-} from '../../../customPropTypes/customPropTypes';
 import Team4855Icon from './Team4855.icon';
 
 const Team4855 = (props) => {

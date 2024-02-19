@@ -1,20 +1,21 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
+import {
+  backgroundType,
+  buttonType,
+  imageType,
+  textType,
+} from '../../../customPropTypes/customPropTypes';
 // import styled from 'styled-components';
 import {
+  StyledButton,
   StyledContainer,
-  StyledSpan,
+  StyledH2,
   StyledImage,
   StyledParagraph,
-  StyledH2,
-  StyledButton,
+  StyledSpan,
 } from '../../assets/customStyledComponents';
-import {
-  textType,
-  backgroundType,
-  imageType,
-  buttonType,
-} from '../../../customPropTypes/customPropTypes';
 import Blog9197Icon from './Blog9197.icon';
 
 const Blog9197 = (props) => {

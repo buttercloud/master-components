@@ -26,7 +26,7 @@ yarn build-component type:{componentType} name:{ComponentName}
     - e.g: if current version is `0.2.8`, beta versions would be `0.2.8-beta.0`, where `.0` is the beta version
   - Build `dist` files
   ```sh
-  yarn esbuild
+  yarn build
   ```
   - Run publish command with `beta` tag
   ```sh
@@ -36,7 +36,7 @@ yarn build-component type:{componentType} name:{ComponentName}
   - Remove `-beta.{number}` if it exists in `package.json` `version`
   - Build
   ```sh
-  yarn esbuild
+  yarn build
   ```
   - Publish
   ```sh

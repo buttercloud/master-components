@@ -1,9 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
-import SocialButton, { socialTypes } from '../atoms/SocialButton';
-import { StyledButton } from '../assets/customStyledComponents';
+
 import { textType } from '../../customPropTypes/customPropTypes';
+import { StyledButton } from '../assets/customStyledComponents';
+import SocialButton, { socialTypes } from '../atoms/SocialButton';
 
 const Container = styled.div`
   display: flex;
@@ -56,7 +57,7 @@ const SocialButtons = (props) => {
     <Container flexDirection={alignment}>
       {
         socialMedia?.map((social) => (
-          <Button>
+          <Button key={social.url}>
             {
               alignment === 'row' && (
                 <TooltipText>{social.text}</TooltipText>

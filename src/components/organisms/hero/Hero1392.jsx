@@ -1,19 +1,20 @@
 import React from 'react';
+
+import {
+  backgroundType,
+  buttonType,
+  imageType,
+  textType,
+} from '../../../customPropTypes/customPropTypes';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 import {
+  StyledButton,
   StyledContainer,
+  StyledH1,
   StyledImage,
   StyledParagraph,
-  StyledH1,
-  StyledButton,
 } from '../../assets/customStyledComponents';
-import {
-  textType,
-  backgroundType,
-  imageType,
-  buttonType,
-} from '../../../customPropTypes/customPropTypes';
 import Hero1392Icon from './Hero1392.icon';
 
 const Hero1392 = (props) => {

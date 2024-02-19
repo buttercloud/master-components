@@ -1,15 +1,16 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  StyledContainer,
-  StyledButton,
-  StyledImage,
-} from '../../assets/customStyledComponents';
+import React from 'react';
+
 import {
   backgroundType,
   buttonType,
   imageType,
 } from '../../../customPropTypes/customPropTypes';
+import {
+  StyledButton,
+  StyledContainer,
+  StyledImage,
+} from '../../assets/customStyledComponents';
 import Header7610Icon from './Header7610.icon';
 
 const Header7610 = (props) => {

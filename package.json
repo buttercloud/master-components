@@ -1,60 +1,52 @@
 {
   "name": "@buttercloud/master-components",
-  "version": "0.4.0-beta-4",
+  "version": "1.0.0-beta-2",
   "homepage": "http://buttercloud.github.io/master-components",
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "private": false,
+  "type": "module",
+  "main": "./dist/master-components.umd.js",
+  "module": "./dist/master-components.es.js",
   "source": "src/index.js",
-  "engines": {
-    "node": ">=10"
-  },
   "publishConfig": {
     "registery": "https://registry.npmjs.org/"
   },
-  "repository": "git://github.com/buttercloud/master-components",
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
+    "format": "prettier --write src//**/*.{ts,tsx,css} --config ./.prettierrc",
     "clean": "rimraf dist",
-    "compile": "yarn clean && NODE_ENV=production babel src --out-dir dist --ignore **/*.stories.jsx,**/test,**/*.wip.jsx,**/*.test.js",
-    "esbuild": "yarn clean && NODE_ENV=publish node scripts/esbuild.js",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "deploy-storybook": "gh-pages -d storybook-static -m 'Update Storybook Docs'",
-    "start-playground": "cd playground && yarn install && yarn start",
-    "update-playground": "cd playground && yarn upgrade @buttercloud/master-components && cd ..",
-    "flow": "flow",
     "build-component": "ruby scripts/build_component.rb",
     "import-components": "ruby scripts/import_components.rb",
     "publish-beta": "npm publish --tag beta",
     "prettify": "npx prettier --write"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/master-components.es.js",
+      "require": "./dist/master-components.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "dependencies": {
-    "@craco/craco": "^6.3.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "autoprefixer": "^9.8.6",
     "dinero.js": "^1.8.1",
-    "esbuild": "^0.13.12",
-    "postcss": "^7.0.35",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-slick": "^0.28.1",
+    "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.2.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
-    "web-vitals": "^1.0.1"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.13",
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
-    "@babel/preset-flow": "^7.12.13",
-    "@babel/preset-react": "^7.12.13",
     "@storybook/addon-actions": "^6.4.1",
     "@storybook/addon-controls": "^6.4.1",
     "@storybook/addon-essentials": "^6.4.1",
@@ -65,54 +57,32 @@
     "@storybook/node-logger": "^6.4.1",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.4.1",
-    "cross-env": "^7.0.3",
-    "esbuild-plugin-svgr": "^0.0.3",
-    "eslint-config-airbnb": "^18.2.1",
-    "flow-bin": "^0.144.0",
+    "@vitejs/plugin-react": "^2.2.0",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
     "gh-pages": "^3.1.0",
-    "prettier": "2.4.1",
-    "react-scripts": "4.0.2",
-    "react-test-renderer": "^17.0.1"
+    "husky": "^8.0.1",
+    "postcss": "^8.4.18",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hooks": "^1.0.1",
+    "tailwindcss": "^3.2.2",
+    "vite": "^3.2.3",
+    "vite-plugin-linter": "^1.2.0"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "airbnb"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "*.stories.jsx"
-        ],
-        "rules": {
-          "import/no-extraneous-dependencies": "off",
-          "react/jsx-props-no-spreading": "off"
-        }
-      },
-      {
-        "files": [
-          "*.jsx"
-        ],
-        "rules": {
-          "prefer-template": "off"
-        }
-      }
-    ]
+  "peerDependencies": {
+    "react": "16.8.0 || >=17.x",
+    "react-dom": "16.8.0 || >=17.x"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "repository": "git://github.com/buttercloud/master-components",
   "files": [
     "dist"
-  ]
+  ],
+  "keywords": []
 }

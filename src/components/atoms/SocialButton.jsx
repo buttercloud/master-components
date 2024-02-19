@@ -1,12 +1,13 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
-import InstagramIcon from '../assets/InstagramIcon';
-import FacebookIcon from '../assets/FacebookIcon';
-import TwitterIcon from '../assets/TwitterIcon';
-import DiscordIcon from '../assets/DiscordIcon';
-import YoutubeIcon from '../assets/YoutubeIcon';
+
 import ChainIcon from '../assets/ChainIcon';
+import DiscordIcon from '../assets/DiscordIcon';
+import FacebookIcon from '../assets/FacebookIcon';
+import InstagramIcon from '../assets/InstagramIcon';
+import TwitterIcon from '../assets/TwitterIcon';
+import YoutubeIcon from '../assets/YoutubeIcon';
 
 const Container = styled.div`
   margin: 5px;

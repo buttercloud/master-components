@@ -1,22 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Dinero from 'dinero.js';
+import PropTypes from 'prop-types';
+import React from 'react';
+import styled from 'styled-components';
+
 import {
-  textType,
-  imageType,
   buttonType,
+  imageType,
   moneyType,
+  textType,
 } from '../../../customPropTypes/customPropTypes';
 import {
+  StyledAnchor,
   StyledContainer,
-  StyledImage,
+  StyledDiv,
   StyledH3,
   StyledH4,
   StyledH5,
+  StyledImage,
   StyledParagraph,
-  StyledDiv,
-  StyledAnchor,
 } from '../../assets/customStyledComponents';
 
 const Logo = styled(StyledImage)`

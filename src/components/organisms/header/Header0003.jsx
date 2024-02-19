@@ -1,22 +1,23 @@
+import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import {
-  StyledHeader,
-  StyledButton,
-  StyledH1,
-  StyledParagraph,
-  StyledImage,
-} from '../../assets/customStyledComponents';
+
+import HamburgerMenuIcon from '../../../assets/svg/hamburger-menu.svg';
+import XIcon from '../../../assets/svg/x.svg';
 import {
   backgroundType,
   buttonType,
   imageType,
   textType,
 } from '../../../customPropTypes/customPropTypes';
+import {
+  StyledButton,
+  StyledH1,
+  StyledHeader,
+  StyledImage,
+  StyledParagraph,
+} from '../../assets/customStyledComponents';
 import Header0003Icon from './Header0003.icon';
-import XIcon from '../../../assets/svg/x.svg';
-import HamburgerMenuIcon from '../../../assets/svg/hamburger-menu.svg';
 
 const Container = styled(StyledHeader)`
   display: flex;

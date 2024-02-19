@@ -1,19 +1,20 @@
 import React from 'react';
+
+import {
+  backgroundType,
+  buttonType,
+  imageType,
+  textType,
+} from '../../../customPropTypes/customPropTypes';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 import {
+  StyledButton,
   StyledContainer,
+  StyledH2,
   StyledImage,
   StyledParagraph,
-  StyledH2,
-  StyledButton,
 } from '../../assets/customStyledComponents';
-import {
-  textType,
-  backgroundType,
-  imageType,
-  buttonType,
-} from '../../../customPropTypes/customPropTypes';
 import Gallery4193Icon from './Gallery4193.icon';
 
 const Gallery4193 = (props) => {
